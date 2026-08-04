@@ -2,7 +2,7 @@ import { Link, useNavigate, useRouterState } from "@tanstack/react-router";
 import { Droplets, LogOut } from "lucide-react";
 import type { Partner } from "@/data/partners";
 import { TIER_META } from "@/data/partners";
-import { setSessionPartnerId } from "@/lib/partner-session";
+import { opsLogoutFn } from "@/lib/ops-auth.functions";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/cn";
@@ -48,8 +48,13 @@ export function PartnerShell({
             variant="outline"
             size="sm"
             onClick={() => {
-              setSessionPartnerId(null);
-              void navigate({ to: "/partners/login" });
+              void (async () => {
+                try {
+                  await opsLogoutFn();
+                } finally {
+                  await navigate({ to: "/partners/login" });
+                }
+              })();
             }}
           >
             <LogOut className="h-4 w-4" />
