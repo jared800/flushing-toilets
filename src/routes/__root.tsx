@@ -4,6 +4,7 @@ import {
   createRootRoute,
   HeadContent,
   Scripts,
+  useRouterState,
 } from "@tanstack/react-router";
 import appCss from "../styles.css?url";
 
@@ -32,6 +33,23 @@ export const Route = createRootRoute({
   component: RootComponent,
 });
 
+/** Absolute site origin used for canonical URLs. */
+const SITE_ORIGIN = (
+  import.meta.env?.VITE_SITE_URL ?? "https://www.flushingtoilets.com"
+).replace(/\/+$/, "");
+
+/**
+ * One self-referencing canonical per page, derived from the current pathname.
+ * Without this, the same page reachable with a trailing slash, a tracking
+ * parameter, or on the apex host counts as a separate URL to search engines.
+ */
+function CanonicalLink() {
+  const pathname = useRouterState({ select: (s) => s.location.pathname });
+  const clean =
+    pathname === "/" ? "/" : pathname.replace(/\/+$/, "") || "/";
+  return <link rel="canonical" href={`${SITE_ORIGIN}${clean}`} />;
+}
+
 function RootComponent() {
   return (
     <RootDocument>
@@ -45,6 +63,7 @@ function RootDocument({ children }: Readonly<{ children: ReactNode }>) {
     <html lang="en">
       <head>
         <HeadContent />
+        <CanonicalLink />
       </head>
       <body className="min-h-screen bg-bg text-fg antialiased">
         {children}
