@@ -1,0 +1,92 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@theme {
+  /* Brand: Harbor Trust — calm, competent emergency plumbing */
+  --color-bg: #f4f1ea;
+  --color-bg-elevated: #fbf9f5;
+  --color-surface: #ffffff;
+  --color-surface-muted: #ebe6dc;
+  --color-fg: #152028;
+  --color-fg-muted: #5c6670;
+  --color-fg-subtle: #8a929a;
+  --color-border: #d9d2c4;
+  --color-border-strong: #c4bbab;
+
+  --color-harbor: #0b3d4a;
+  --color-harbor-deep: #072c36;
+  --color-harbor-mid: #145668;
+  --color-stream: #1a7a72;
+  --color-stream-soft: #d8efec;
+  --color-signal: #d9921f;
+  --color-signal-hover: #c27f12;
+  --color-signal-soft: #fdf0d8;
+  --color-foam: #f4f1ea;
+  --color-ink: #152028;
+  --color-success: #2f6f4e;
+  --color-success-soft: #e3f0e8;
+  --color-danger: #a33b2d;
+  --color-danger-soft: #f8e6e3;
+
+  --font-sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Fraunces", ui-serif, Georgia, "Times New Roman", serif;
+
+  --radius-sm: 0.375rem;
+  --radius: 0.625rem;
+  --radius-lg: 0.875rem;
+  --radius-xl: 1.25rem;
+}
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-bg);
+    color: var(--color-fg);
+    font-family: var(--font-sans);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    text-wrap: balance;
+    font-family: var(--font-display);
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+
+  ::selection {
+    background: color-mix(in oklab, var(--color-stream) 28%, white);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@layer utilities {
+  .safe-pb {
+    padding-bottom: max(1rem, env(safe-area-inset-bottom));
+  }
+}
