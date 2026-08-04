@@ -12,6 +12,7 @@ export type Partner = {
   services: string[];
   license: string;
   responsePromise: string;
+  /** Real reviews only. 0 means "none yet" and every surface hides the score. */
   rating: number;
   reviewCount: number;
   about: string;
@@ -37,8 +38,8 @@ export const PARTNERS: Partner[] = [
     ],
     license: "TX-MPL-44821",
     responsePromise: "Calls returned within 15 minutes during business hours",
-    rating: 4.9,
-    reviewCount: 214,
+    rating: 0,
+    reviewCount: 0,
     about:
       "Family-owned Austin plumbing focused on toilet and drain emergencies with flat-rate options on common repairs.",
   },
@@ -60,8 +61,8 @@ export const PARTNERS: Partner[] = [
     ],
     license: "TX-MPL-39210",
     responsePromise: "Emergency dispatch goal under 60 minutes in core ZIPs",
-    rating: 4.8,
-    reviewCount: 389,
+    rating: 0,
+    reviewCount: 0,
     about:
       "Houston emergency specialists for overflows, backups, and after-hours toilet failures.",
   },
@@ -82,8 +83,8 @@ export const PARTNERS: Partner[] = [
     ],
     license: "TX-MPL-50112",
     responsePromise: "Same-day windows when booked before noon",
-    rating: 4.7,
-    reviewCount: 156,
+    rating: 0,
+    reviewCount: 0,
     about:
       "DFW install and repair team known for clean job sites and clear quotes.",
   },
@@ -105,8 +106,8 @@ export const PARTNERS: Partner[] = [
     ],
     license: "FL-CFC-882134",
     responsePromise: "Live answer during posted hours; after-hours on-call",
-    rating: 4.9,
-    reviewCount: 278,
+    rating: 0,
+    reviewCount: 0,
     about:
       "South Florida condo and home specialists for leaks, clogs, and sewer emergencies.",
   },
@@ -127,8 +128,8 @@ export const PARTNERS: Partner[] = [
     ],
     license: "FL-CFC-771902",
     responsePromise: "Quote by phone in under 10 minutes",
-    rating: 4.6,
-    reviewCount: 121,
+    rating: 0,
+    reviewCount: 0,
     about:
       "Tampa Bay team for toilet replacement, running toilets, and emergency clogs.",
   },
@@ -152,8 +153,8 @@ export const PARTNERS: Partner[] = [
     ],
     license: "AZ-ROC-329881",
     responsePromise: "Priority routing for Exclusive territory ZIPs",
-    rating: 4.9,
-    reviewCount: 412,
+    rating: 0,
+    reviewCount: 0,
     about:
       "Phoenix-area Exclusive partner covering hard-water running toilets, installs, and emergencies.",
   },
@@ -175,8 +176,8 @@ export const PARTNERS: Partner[] = [
     ],
     license: "AZ-ROC-318440",
     responsePromise: "On-site windows same day when capacity allows",
-    rating: 4.8,
-    reviewCount: 198,
+    rating: 0,
+    reviewCount: 0,
     about:
       "Southern Arizona Preferred partner for toilet problems and preventive replacements.",
   },
