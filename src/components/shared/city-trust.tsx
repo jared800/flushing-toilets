@@ -33,13 +33,15 @@ export function CityTrustBlock({
             License-verified partners · marketplace transparency
           </p>
         </div>
-        <div className="flex items-center gap-2 rounded-lg border border-border bg-bg px-3 py-2">
-          <Star className="h-4 w-4 fill-signal text-signal" />
-          <span className="font-display text-lg font-semibold tabular-nums text-harbor">
-            {trust.rating.toFixed(1)}
-          </span>
-          <span className="text-xs text-fg-subtle">{trust.label}</span>
-        </div>
+        {trust && (
+          <div className="flex items-center gap-2 rounded-lg border border-border bg-bg px-3 py-2">
+            <Star className="h-4 w-4 fill-signal text-signal" />
+            <span className="font-display text-lg font-semibold tabular-nums text-harbor">
+              {trust.rating.toFixed(1)}
+            </span>
+            <span className="text-xs text-fg-subtle">{trust.label}</span>
+          </div>
+        )}
       </div>
 
       <div className="mt-4 flex flex-wrap gap-2">
@@ -74,8 +76,9 @@ export function CityTrustBlock({
         </ul>
       ) : (
         <p className="mt-4 text-sm text-fg-muted">
-          Local reviews are collecting for {cityName}. Network partners still
-          require license and insurance to activate.
+          No customer reviews yet for {cityName} — we only publish reviews real
+          customers leave. Every partner still has to show a license and proof
+          of insurance before we activate them.
         </p>
       )}
     </section>

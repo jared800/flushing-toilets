@@ -29,13 +29,15 @@ export function PartnerCard({ partner }: { partner: Partner }) {
         </div>
       </div>
       <div className="mt-3 flex flex-wrap items-center gap-3 text-sm text-fg-muted">
-        <span className="inline-flex items-center gap-1 font-medium text-fg">
-          <Star className="h-4 w-4 fill-signal text-signal" />
-          {partner.rating.toFixed(1)}
-          <span className="font-normal text-fg-subtle">
-            ({partner.reviewCount})
+        {partner.reviewCount > 0 && (
+          <span className="inline-flex items-center gap-1 font-medium text-fg">
+            <Star className="h-4 w-4 fill-signal text-signal" />
+            {partner.rating.toFixed(1)}
+            <span className="font-normal text-fg-subtle">
+              ({partner.reviewCount})
+            </span>
           </span>
-        </span>
+        )}
         <span className="inline-flex items-center gap-1">
           <BadgeCheck className="h-4 w-4 text-stream" />
           {partner.license}

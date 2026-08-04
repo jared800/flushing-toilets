@@ -1,6 +1,6 @@
 import { Link, useNavigate, useRouterState } from "@tanstack/react-router";
 import { Droplets, LogOut } from "lucide-react";
-import { setAdminAuthed } from "@/lib/admin-session";
+import { opsLogoutFn } from "@/lib/ops-auth.functions";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/cn";
 
@@ -41,8 +41,13 @@ export function AdminShell({ children }: { children: React.ReactNode }) {
               variant="outline"
               className="border-white/20 bg-transparent text-bg-elevated hover:bg-white/10"
               onClick={() => {
-                setAdminAuthed(false);
-                void navigate({ to: "/admin/login" });
+                void (async () => {
+                  try {
+                    await opsLogoutFn();
+                  } finally {
+                    await navigate({ to: "/admin/login" });
+                  }
+                })();
               }}
             >
               <LogOut className="h-4 w-4" />

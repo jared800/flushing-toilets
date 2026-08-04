@@ -503,3 +503,20 @@ export function getMetroServiceContent(
   if (!metro) return undefined;
   return metro.services[serviceSlug];
 }
+
+/**
+ * Does this city have hand-written local content, or is it a template fill?
+ *
+ * Only six metros have genuinely unique copy. The other 24 cities render the
+ * same paragraphs with the city name swapped — two sampled pages measured 72.8%
+ * identical at ~550 words each. Indexing 168 near-duplicates invites Google to
+ * treat the whole /locations/ subfolder as thin and drags the six good metros
+ * down with it, so the templated pages are noindexed and kept out of the
+ * sitemap until real content is written for them.
+ *
+ * A city graduates simply by getting an entry in METRO_CONTENT above — nothing
+ * else to remember, and the sitemap picks it up on the next build.
+ */
+export function hasUniqueLocalContent(stateSlug: string, citySlug: string) {
+  return Boolean(getMetroContent(stateSlug, citySlug));
+}

@@ -5,16 +5,22 @@ import { PageHero } from "@/components/shared/page-hero";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { ADMIN_DEMO_CODE, setAdminAuthed } from "@/lib/admin-session";
+import { adminLoginFn } from "@/lib/ops-auth.functions";
 
 export const Route = createFileRoute("/admin/login")({
   component: AdminLoginPage,
-  head: () => ({ meta: [{ title: "Admin login — Flushing Toilets" }] }),
+  head: () => ({
+    meta: [
+      { title: "Admin login — Flushing Toilets" },
+      { name: "robots", content: "noindex, nofollow" },
+    ],
+  }),
 });
 
 function AdminLoginPage() {
   const navigate = useNavigate();
   const [code, setCode] = useState("");
+  const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
   return (
@@ -22,29 +28,40 @@ function AdminLoginPage() {
       <PageHero
         kicker="Ops"
         title="Admin login"
-        description="Demo access for the internal lead inbox. Not real security."
+        description="Internal lead inbox. Access code required."
       />
       <div className="mx-auto max-w-md px-4 py-10 sm:px-6">
         <form
           className="space-y-4 rounded-xl border border-border bg-surface p-5 shadow-sm"
           onSubmit={(e) => {
             e.preventDefault();
-            if (code.trim().toLowerCase() !== ADMIN_DEMO_CODE) {
-              setError(`Use demo code “${ADMIN_DEMO_CODE}”.`);
-              return;
-            }
-            setAdminAuthed(true);
-            void navigate({ to: "/admin" });
+            setError(null);
+            setBusy(true);
+            void (async () => {
+              try {
+                const res = await adminLoginFn({ data: { code } });
+                if (!res.ok) {
+                  setError(res.reason ?? "Sign-in failed.");
+                  return;
+                }
+                await navigate({ to: "/admin" });
+              } catch {
+                setError("Sign-in failed. Try again.");
+              } finally {
+                setBusy(false);
+              }
+            })();
           }}
         >
           <div className="space-y-1.5">
             <Label htmlFor="code">Access code</Label>
             <Input
               id="code"
+              type="password"
               value={code}
               onChange={(e) => setCode(e.target.value)}
-              placeholder={ADMIN_DEMO_CODE}
               autoComplete="off"
+              required
             />
           </div>
           {error && (
@@ -52,13 +69,11 @@ function AdminLoginPage() {
               {error}
             </p>
           )}
-          <Button type="submit" className="w-full" size="lg">
-            Enter admin
+          <Button type="submit" className="w-full" size="lg" disabled={busy}>
+            {busy ? "Checking…" : "Enter admin"}
           </Button>
         </form>
         <p className="mt-4 text-center text-sm text-fg-muted">
-          Demo code: <code className="font-semibold text-harbor">{ADMIN_DEMO_CODE}</code>
-          {" · "}
           <Link to="/" className="text-stream hover:underline">
             Back to site
           </Link>
