@@ -55,7 +55,9 @@ function PartnerProfilePage() {
           <div className="grid gap-1 sm:grid-cols-[140px_1fr]">
             <dt className="text-fg-subtle">Rating</dt>
             <dd className="font-medium text-fg">
-              {partner.rating} ({partner.reviewCount} reviews)
+              {partner.reviewCount > 0
+                ? `${partner.rating} (${partner.reviewCount} reviews)`
+                : "No reviews yet"}
             </dd>
           </div>
           <div className="grid gap-1 sm:grid-cols-[140px_1fr]">
