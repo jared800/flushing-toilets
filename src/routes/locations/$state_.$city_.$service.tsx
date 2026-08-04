@@ -11,7 +11,11 @@ import { getCity } from "@/data/locations";
 import { partnersForCity } from "@/data/partners";
 import { getService, urgencyLabel } from "@/data/services";
 import { cityServiceFaqs } from "@/data/faqs";
-import { getMetroServiceContent, getMetroContent } from "@/data/metro-content";
+import {
+  getMetroServiceContent,
+  getMetroContent,
+  hasUniqueLocalContent,
+} from "@/data/metro-content";
 
 export const Route = createFileRoute("/locations/$state_/$city_/$service")({
   loader: ({ params }) => {
@@ -43,6 +47,12 @@ export const Route = createFileRoute("/locations/$state_/$city_/$service")({
             ? `${loaderData.service.seoBlurb} Serving ${loaderData.city.name}, ${loaderData.state.abbr}.`
             : "",
       },
+      // Templated cities stay out of the index until they have real local
+      // copy — see hasUniqueLocalContent() for why.
+      ...(loaderData &&
+      !hasUniqueLocalContent(loaderData.state.slug, loaderData.city.slug)
+        ? [{ name: "robots", content: "noindex, follow" }]
+        : []),
     ],
   }),
 });
