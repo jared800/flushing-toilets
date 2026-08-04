@@ -318,6 +318,54 @@ export async function createNotificationsForLead(lead: Lead) {
     }
   }
 
+  // Safety net: a lead that matched no partner (or only placeholder partners)
+  // must still reach a human. LEAD_FALLBACK_EMAIL gets a copy of every lead.
+  if (cfg.fallbackEmail) {
+    const subject = `Lead copy · ${lead.serviceName} · ${lead.cityLabel}${
+      created.some((n) => n.status === "sent") ? "" : " · NO PARTNER NOTIFIED"
+    }`;
+    const body = [
+      `Customer: ${lead.name}`,
+      `Phone: ${lead.phone}`,
+      `ZIP: ${lead.zip}`,
+      `Service: ${lead.serviceName}`,
+      `Urgency: ${lead.urgency}`,
+      lead.notes ? `Notes: ${lead.notes}` : null,
+      `Source: ${cfg.siteUrl}${lead.sourcePath}`,
+      `Lead ID: ${lead.id}`,
+      "",
+      `Partners matched: ${lead.assignedPartnerIds.length}`,
+      `Partner emails actually sent: ${created.filter((n) => n.channel === "email" && n.status === "sent").length}`,
+    ]
+      .filter(Boolean)
+      .join("\n");
+
+    const delivery = await deliverEmail({
+      to: cfg.fallbackEmail,
+      subject,
+      text: body,
+    });
+    const fallbackId = `n-${lead.id}-fallback-email-${Date.now()}`;
+    await sql`
+      insert into ft_notifications (id, lead_id, created_at, channel, recipient, partner_id, subject, body, status)
+      values (
+        ${fallbackId}, ${lead.id}, ${at}, ${"email"}, ${cfg.fallbackEmail}, ${"fallback"},
+        ${subject}, ${body}, ${delivery.status}
+      )
+      on conflict (id) do nothing
+    `;
+    created.push({
+      id: fallbackId,
+      at,
+      channel: "email",
+      to: cfg.fallbackEmail,
+      partnerId: "fallback",
+      subject,
+      body,
+      status: delivery.status,
+    });
+  }
+
   return created;
 }
 

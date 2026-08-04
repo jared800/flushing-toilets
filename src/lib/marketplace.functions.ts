@@ -12,7 +12,15 @@ import {
   buildTerritoryBoard,
   getDeployReadiness,
 } from "@/lib/marketplace.server";
+import { adminOnlyMiddleware, opsMiddleware } from "@/lib/ops-auth.middleware";
 import type { LeadStatus } from "@/lib/leads-types";
+
+/**
+ * PUBLIC (no session): submitLeadFn, submitApplicationFn, getTerritoryBoardFn.
+ * Everything else reads or writes customer data and is gated — see
+ * `ops-auth.middleware.ts`. Partner callers are scoped server-side to their own
+ * leads; the partner id comes from the signed session, never the request body.
+ */
 
 export const submitLeadFn = createServerFn({ method: "POST" })
   .validator(
@@ -35,14 +43,31 @@ export const submitLeadFn = createServerFn({ method: "POST" })
   .handler(async ({ data }) => createLeadServer(data));
 
 export const listLeadsFn = createServerFn({ method: "GET" })
+  .middleware([opsMiddleware])
   .validator((data?: { partnerId?: string }) => data ?? {})
-  .handler(async ({ data }) => listLeadsServer(data));
+  .handler(async ({ data, context }) =>
+    listLeadsServer({
+      partnerId: context.role === "partner" ? context.partnerId : data.partnerId,
+    }),
+  );
 
 export const getLeadFn = createServerFn({ method: "GET" })
+  .middleware([opsMiddleware])
   .validator((data: { id: string }) => data)
-  .handler(async ({ data }) => getLeadServer(data.id));
+  .handler(async ({ data, context }) => {
+    const lead = await getLeadServer(data.id);
+    if (!lead) return null;
+    if (
+      context.role === "partner" &&
+      !lead.assignedPartnerIds.includes(context.partnerId ?? "")
+    ) {
+      return null;
+    }
+    return lead;
+  });
 
 export const updateLeadStatusFn = createServerFn({ method: "POST" })
+  .middleware([opsMiddleware])
   .validator(
     (data: {
       id: string;
@@ -52,19 +77,27 @@ export const updateLeadStatusFn = createServerFn({ method: "POST" })
       invalidReason?: string;
     }) => data,
   )
-  .handler(async ({ data }) =>
-    updateLeadStatusServer(data.id, data.status, {
-      by: data.by,
+  .handler(async ({ data, context }) => {
+    if (context.role === "partner") {
+      const lead = await getLeadServer(data.id);
+      if (!lead?.assignedPartnerIds.includes(context.partnerId ?? "")) {
+        return null;
+      }
+    }
+    return updateLeadStatusServer(data.id, data.status, {
+      // Never let the caller claim to be someone they are not.
+      by: context.role,
       note: data.note,
       invalidReason: data.invalidReason,
-    }),
-  );
+    });
+  });
 
-export const listNotificationsFn = createServerFn({ method: "GET" }).handler(
-  async () => listNotificationsServer(),
-);
+export const listNotificationsFn = createServerFn({ method: "GET" })
+  .middleware([adminOnlyMiddleware])
+  .handler(async () => listNotificationsServer());
 
 export const resendNotificationsFn = createServerFn({ method: "POST" })
+  .middleware([adminOnlyMiddleware])
   .validator((data: { id: string }) => data)
   .handler(async ({ data }) => resendNotificationsServer(data.id));
 
@@ -84,11 +117,12 @@ export const submitApplicationFn = createServerFn({ method: "POST" })
   )
   .handler(async ({ data }) => submitApplicationServer(data));
 
-export const listApplicationsFn = createServerFn({ method: "GET" }).handler(
-  async () => listApplicationsServer(),
-);
+export const listApplicationsFn = createServerFn({ method: "GET" })
+  .middleware([adminOnlyMiddleware])
+  .handler(async () => listApplicationsServer());
 
 export const updateApplicationStatusFn = createServerFn({ method: "POST" })
+  .middleware([adminOnlyMiddleware])
   .validator(
     (data: { id: string; status: "pending" | "approved" | "rejected" }) => data,
   )
@@ -100,6 +134,6 @@ export const getTerritoryBoardFn = createServerFn({ method: "GET" }).handler(
   async () => buildTerritoryBoard(),
 );
 
-export const getDeployReadinessFn = createServerFn({ method: "GET" }).handler(
-  async () => getDeployReadiness(),
-);
+export const getDeployReadinessFn = createServerFn({ method: "GET" })
+  .middleware([adminOnlyMiddleware])
+  .handler(async () => getDeployReadiness());

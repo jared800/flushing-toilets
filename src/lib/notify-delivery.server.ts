@@ -21,11 +21,31 @@ export function notifyConfigStatus() {
     resend,
     twilio,
     fromEmail: process.env.NOTIFY_FROM_EMAIL?.trim() || "leads@flushingtoilets.com",
+    fallbackEmail: process.env.LEAD_FALLBACK_EMAIL?.trim() || "",
     siteUrl:
       process.env.SITE_URL?.trim() ||
       process.env.VITE_SITE_URL?.trim() ||
       "https://flushingtoilets.com",
   };
+}
+
+/**
+ * Placeholder partner addresses live on a domain that does not exist, so every
+ * send to one hard-bounces and damages the sending reputation of the real
+ * domain. Treat them as undeliverable and log a stub instead.
+ */
+export function isUndeliverableAddress(address: string): boolean {
+  const a = address.trim().toLowerCase();
+  if (!a.includes("@")) return true;
+  const domain = a.slice(a.lastIndexOf("@") + 1);
+  return (
+    domain === "demo.flushingtoilets.com" ||
+    domain.endsWith(".demo.flushingtoilets.com") ||
+    domain === "example.com" ||
+    domain.endsWith(".invalid") ||
+    domain.endsWith(".test") ||
+    domain.endsWith(".example")
+  );
 }
 
 export async function deliverEmail(opts: {
@@ -36,6 +56,12 @@ export async function deliverEmail(opts: {
   const key = process.env.RESEND_API_KEY?.trim();
   if (!key) {
     return { status: "sent_stub", detail: "RESEND_API_KEY not set" };
+  }
+  if (isUndeliverableAddress(opts.to)) {
+    return {
+      status: "sent_stub",
+      detail: "placeholder address — not sent (would hard-bounce)",
+    };
   }
 
   const fromEmail =
@@ -81,6 +107,9 @@ export async function deliverSms(opts: {
   const from = process.env.TWILIO_FROM_NUMBER?.trim();
   if (!sid || !token || !from) {
     return { status: "sent_stub", detail: "Twilio env not set" };
+  }
+  if (/555-?01\d\d/.test(opts.to)) {
+    return { status: "sent_stub", detail: "placeholder number — not sent" };
   }
 
   // Normalize to E.164-ish: keep digits; if 10-digit US, prefix +1
