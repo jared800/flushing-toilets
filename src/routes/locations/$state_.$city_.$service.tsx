@@ -159,8 +159,9 @@ function CityServicePage() {
             <div className="mt-4 space-y-3">
               {partners.length === 0 ? (
                 <p className="text-sm text-fg-muted">
-                  No partner currently lists this exact service in {city.name}.
-                  Submit the form and we’ll still route your request.
+                  No signed plumber covers this exact service in {city.name}{" "}
+                  yet. Send the form anyway — your request comes straight to us
+                  and we call you back with a licensed local plumber.
                 </p>
               ) : (
                 partners.map((p) => <PartnerCard key={p.id} partner={p} />)
