@@ -70,6 +70,9 @@ const staticPaths = [
   "/",
   "/how-it-works",
   "/get-help",
+  // The diagnostic tool is the site's only genuinely linkable asset — it must
+  // never fall out of the sitemap.
+  "/diagnostic",
   "/search",
   "/about",
   "/contact",
