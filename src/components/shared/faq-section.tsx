@@ -1,46 +1,37 @@
-import { useEffect } from "react";
 import type { FaqItem } from "@/data/faqs";
+import { JsonLd } from "@/components/shared/json-ld";
 
 export function FaqSection({
   title = "Frequently asked questions",
   items,
   schemaId,
+  emitSchema = true,
 }: {
   title?: string;
   items: FaqItem[];
   schemaId: string;
+  /**
+   * Set false when the page already emits its own FAQPage block. Two FAQPage
+   * objects on one URL is a structured-data error, not twice the coverage.
+   */
+  emitSchema?: boolean;
 }) {
-  useEffect(() => {
-    const scriptId = `faq-schema-${schemaId}`;
-    const existing = document.getElementById(scriptId);
-    if (existing) existing.remove();
-
-    const data = {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      mainEntity: items.map((item) => ({
-        "@type": "Question",
-        name: item.question,
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: item.answer,
-        },
-      })),
-    };
-
-    const script = document.createElement("script");
-    script.type = "application/ld+json";
-    script.id = scriptId;
-    script.text = JSON.stringify(data);
-    document.head.appendChild(script);
-
-    return () => {
-      document.getElementById(scriptId)?.remove();
-    };
-  }, [items, schemaId]);
-
   return (
     <section className="rounded-xl border border-border bg-surface p-5 shadow-sm">
+      {emitSchema && items.length > 0 && (
+        <JsonLd
+          id={`faq-${schemaId}`}
+          data={{
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: items.map((item) => ({
+              "@type": "Question",
+              name: item.question,
+              acceptedAnswer: { "@type": "Answer", text: item.answer },
+            })),
+          }}
+        />
+      )}
       <h2 className="font-display text-xl font-semibold text-harbor">{title}</h2>
       <div className="mt-4 space-y-2">
         {items.map((item) => (
