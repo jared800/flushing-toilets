@@ -1,5 +1,5 @@
 import { useMemo, useState } from "react";
-import { CheckCircle2, Phone, Upload, Zap } from "lucide-react";
+import { CheckCircle2, Upload, Zap } from "lucide-react";
 import { findCitiesByQuery } from "@/data/locations";
 import { partnersForCity } from "@/data/partners";
 import { SERVICES } from "@/data/services";
@@ -52,7 +52,6 @@ export function LeadForm({
   const [error, setError] = useState<string | null>(null);
   const [submitting, setSubmitting] = useState(false);
   const [submittedId, setSubmittedId] = useState<string | null>(null);
-  const [notifyCount, setNotifyCount] = useState(0);
 
   const service = SERVICES.find((s) => s.slug === serviceSlug) ?? SERVICES[0];
 
@@ -86,7 +85,7 @@ export function LeadForm({
       return;
     }
     if (file.size > 2_500_000) {
-      setError("Photo must be under 2.5MB for this demo.");
+      setError("Photo must be under 2.5MB.");
       return;
     }
     const reader = new FileReader();
@@ -141,11 +140,12 @@ export function LeadForm({
             (typeof window !== "undefined"
               ? window.location.pathname
               : "/get-help"),
-          assignedPartnerIds:
-            assigned.length > 0 ? assigned : ["p-austin-flow"],
+          // Was `: ["p-austin-flow"]` — a Grok demo partner that no longer
+          // exists, so every unmatched lead claimed a phantom assignee. An
+          // empty array is correct: the server falls back to LEAD_FALLBACK_EMAIL.
+          assignedPartnerIds: assigned,
         },
       });
-      setNotifyCount(lead.notifications?.length ?? 0);
       setSubmittedId(lead.id);
     } catch (e) {
       setError(
@@ -171,27 +171,22 @@ export function LeadForm({
               Request received
             </h3>
             <p className="mt-2 text-sm leading-relaxed text-fg-muted">
-              Thanks{name ? `, ${name.split(" ")[0]}` : ""}. A licensed local
-              plumber will reach out shortly about your{" "}
-              {service.name.toLowerCase()} in {resolved?.cityLabel ?? zip}.
+              Thanks{name ? `, ${name.split(" ")[0]}` : ""}. We have your{" "}
+              {service.name.toLowerCase()} request for{" "}
+              {resolved?.cityLabel ?? zip} and we are finding you a licensed
+              local plumber now. Expect a call or text at the number you gave
+              us.
             </p>
-            {notifyCount > 0 && (
+            {urgency === "emergency" && (
               <p className="mt-2 text-sm font-medium text-stream">
-                Saved to database · {notifyCount} partner notify message
-                {notifyCount === 1 ? "" : "s"} logged
-                {urgency === "emergency" ? " (email + SMS)" : " (email)"}.
+                Marked as an emergency. If water is actively flooding, shut off
+                the supply valve behind the toilet while you wait.
               </p>
             )}
             <p className="mt-3 text-xs text-fg-subtle">
               Reference {submittedId}
             </p>
             <div className="mt-5 flex flex-wrap gap-2">
-              <Button asChild variant="secondary">
-                <a href="tel:+18005550192">
-                  <Phone className="h-4 w-4" />
-                  Call (800) 555-0192
-                </a>
-              </Button>
               <Button
                 type="button"
                 variant="outline"
@@ -468,8 +463,10 @@ export function LeadForm({
           {submitting ? "Saving…" : "Match me with a plumber"}
         </Button>
         <div className="flex items-center gap-2 text-xs text-fg-subtle">
-          <Badge variant="harbor">Licensed partners</Badge>
-          <Badge variant="stream">Saved to database</Badge>
+          {/* Do not claim partners here. The partner list is empty and any
+              "licensed partners" badge is a claim about plumbers we have not
+              signed. Licence checking is a policy we do follow, so say that. */}
+          <Badge variant="harbor">Licences checked against the state board</Badge>
         </div>
       </div>
     </form>
