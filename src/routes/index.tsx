@@ -3,7 +3,7 @@ import {
   BadgeCheck,
   Clock3,
   MapPinned,
-  Phone,
+  Stethoscope,
   Shield,
   Wrench,
 } from "lucide-react";
@@ -59,15 +59,17 @@ function HomePage() {
               </span>
               <span className="inline-flex items-center gap-1.5">
                 <Clock3 className="h-4 w-4 text-stream" />
-                Emergency & same-day options
+                Emergency &amp; same-day options
               </span>
-              <a
-                href="tel:+18005550192"
-                className="inline-flex items-center gap-1.5 font-semibold text-harbor"
+              {/* This slot held (800) 555-0192 until 2026-08-11 — a reserved
+                  fictional number that does not connect. */}
+              <Link
+                to="/diagnostic"
+                className="inline-flex items-center gap-1.5 font-semibold text-harbor hover:underline"
               >
-                <Phone className="h-4 w-4" />
-                (800) 555-0192
-              </a>
+                <Stethoscope className="h-4 w-4" />
+                Not sure what is wrong? Diagnose it free
+              </Link>
             </div>
           </div>
 
@@ -247,7 +249,7 @@ function HomePage() {
             </span>
             <span className="inline-flex items-center gap-1.5">
               <Shield className="h-4 w-4 text-stream" />
-              License & insurance required for partners
+              License &amp; insurance required for partners
             </span>
           </div>
         </div>
