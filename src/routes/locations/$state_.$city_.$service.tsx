@@ -145,6 +145,19 @@ function CityServicePage() {
             )}
           </section>
 
+          <Link
+            to="/diagnostic"
+            className="block rounded-xl border border-stream/30 bg-stream-soft/30 p-4 transition hover:border-stream/60"
+          >
+            <span className="block font-display text-lg font-semibold text-harbor">
+              Not sure this is your problem?
+            </span>
+            <span className="mt-1 block text-sm leading-relaxed text-fg-muted">
+              Run the free diagnostic — a few questions and you&rsquo;ll know
+              what&rsquo;s actually wrong and whether you need a plumber at all.
+            </span>
+          </Link>
+
           <CityTrustBlock
             stateSlug={state.slug}
             citySlug={city.slug}
