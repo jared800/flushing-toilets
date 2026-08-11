@@ -24,14 +24,14 @@ function ContactPage() {
             Need a plumber
           </h2>
           <p className="mt-2 text-sm text-fg-muted">
-            Submit a request or call the consumer line.
+            Send us the details and we will find you a licensed plumber.
           </p>
           <div className="mt-4 flex flex-col gap-2">
             <Button asChild>
               <Link to="/get-help">Get help</Link>
             </Button>
             <Button asChild variant="outline">
-              <a href="tel:+18005550192">(800) 555-0192</a>
+              <Link to="/diagnostic">Not sure what is wrong? Diagnose it</Link>
             </Button>
           </div>
         </div>

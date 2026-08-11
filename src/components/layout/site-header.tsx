@@ -1,10 +1,13 @@
 import { useState } from "react";
 import { Link } from "@tanstack/react-router";
-import { Droplets, Menu, Phone, X } from "lucide-react";
+import { Droplets, Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/cn";
 
 const links = [
+  // The diagnostic sits first on purpose. It is the only page on this site
+  // someone would link to, and until 2026-08-11 nothing linked to it at all.
+  { to: "/diagnostic", label: "Diagnose it" },
   { to: "/services", label: "Services" },
   { to: "/locations", label: "Locations" },
   { to: "/how-it-works", label: "How it works" },
@@ -45,13 +48,6 @@ export function SiteHeader() {
         </nav>
 
         <div className="flex items-center gap-2">
-          <a
-            href="tel:+18005550192"
-            className="hidden items-center gap-1.5 text-sm font-semibold text-harbor sm:inline-flex"
-          >
-            <Phone className="h-4 w-4" />
-            (800) 555-0192
-          </a>
           <Button asChild size="sm" className="hidden sm:inline-flex">
             <Link to="/get-help">Get a plumber</Link>
           </Button>
@@ -83,12 +79,6 @@ export function SiteHeader() {
               {l.label}
             </Link>
           ))}
-          <a
-            href="tel:+18005550192"
-            className="rounded-lg px-3 py-2.5 text-sm font-semibold text-harbor"
-          >
-            Call (800) 555-0192
-          </a>
           <Link
             to="/get-help"
             onClick={() => setOpen(false)}
