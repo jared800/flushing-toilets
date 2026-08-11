@@ -86,6 +86,22 @@ function CityPage() {
             </section>
           )}
 
+          {/* City pages are the only pages earning impressions, and until
+              2026-08-11 none of them linked to the diagnostic. */}
+          <Link
+            to="/diagnostic"
+            className="block rounded-xl border border-stream/30 bg-stream-soft/30 p-4 transition hover:border-stream/60"
+          >
+            <span className="block font-display text-lg font-semibold text-harbor">
+              Not sure what&rsquo;s wrong yet?
+            </span>
+            <span className="mt-1 block text-sm leading-relaxed text-fg-muted">
+              Answer two or three questions and we&rsquo;ll tell you what&rsquo;s
+              causing it, whether it&rsquo;s a fix you can do yourself, and when
+              it&rsquo;s worth calling someone in {city.name}. Free, no email.
+            </span>
+          </Link>
+
           <section>
             <h2 className="font-display text-2xl font-semibold text-harbor">
               Services in {city.name}
