@@ -7,6 +7,7 @@ import { cn } from "@/lib/cn";
 const nav = [
   { to: "/admin", label: "Overview", end: true },
   { to: "/admin/leads", label: "All leads" },
+  { to: "/admin/economics", label: "Economics" },
   { to: "/admin/notifications", label: "Notify log" },
   { to: "/admin/applications", label: "Applications" },
   { to: "/admin/go-live", label: "Go live" },

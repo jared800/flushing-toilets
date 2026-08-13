@@ -3,6 +3,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { AdminShell } from "@/components/admin/admin-shell";
 import { useAdminGate } from "@/components/admin/use-admin-gate";
 import { LeadDetailCard } from "@/components/leads/lead-detail-card";
+import { LeadOutcomeForm } from "@/components/admin/lead-outcome-form";
 import type { Lead } from "@/lib/leads-types";
 import { getLeadFn } from "@/lib/marketplace.functions";
 
@@ -58,8 +59,9 @@ function AdminLeadDetailPage() {
         Lead detail
       </h1>
       <p className="mt-1 font-mono text-xs text-fg-subtle">{lead.id}</p>
-      <div className="mt-6">
+      <div className="mt-6 space-y-6">
         <LeadDetailCard lead={lead} mode="admin" onChange={() => void refresh()} />
+        <LeadOutcomeForm leadId={lead.id} />
       </div>
     </AdminShell>
   );
