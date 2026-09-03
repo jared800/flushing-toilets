@@ -123,8 +123,28 @@ export function SiteFooter() {
               </Link>
             </li>
             <li>
+              <Link to="/about" className="hover:text-bg-elevated">
+                About
+              </Link>
+            </li>
+            <li>
+              <Link to="/contact" className="hover:text-bg-elevated">
+                Contact
+              </Link>
+            </li>
+            <li>
+              <Link to="/search" className="hover:text-bg-elevated">
+                Find a plumber
+              </Link>
+            </li>
+            <li>
               <Link to="/privacy" className="hover:text-bg-elevated">
                 Privacy
+              </Link>
+            </li>
+            <li>
+              <Link to="/terms" className="hover:text-bg-elevated">
+                Terms
               </Link>
             </li>
             <li>
