@@ -26,8 +26,8 @@ function ApplyPage() {
     <SiteShell>
       <PageHero
         kicker="Apply"
-        title="Join the partner network"
-        description="License and insurance required. Applications are stored for admin review."
+        title="Get homeowner requests in your area"
+        description="Free while we prove the leads are real. License and insurance required. A person reviews every application and gets back to you."
       />
       <div className="mx-auto max-w-xl px-4 py-10 sm:px-6">
         {doneId ? (
@@ -70,7 +70,8 @@ function ApplyPage() {
                   license: String(fd.get("license") ?? ""),
                   stateSlug: String(fd.get("state") ?? ""),
                   cities: String(fd.get("cities") ?? ""),
-                  tier: String(fd.get("tier") ?? "preferred"),
+                  // Tiers are not offered yet; keep the field for the stored schema.
+                  tier: "connect",
                   notes: String(fd.get("notes") ?? ""),
                 },
               })
@@ -131,19 +132,6 @@ function ApplyPage() {
                 name="cities"
                 placeholder="Austin, Round Rock · or list ZIPs"
               />
-            </div>
-            <div className="space-y-1.5">
-              <Label htmlFor="tier">Interested tier</Label>
-              <select
-                id="tier"
-                name="tier"
-                className="flex h-11 w-full rounded-lg border border-border bg-surface px-3 text-sm"
-                defaultValue="preferred"
-              >
-                <option value="connect">Connect</option>
-                <option value="preferred">Preferred</option>
-                <option value="exclusive">Exclusive</option>
-              </select>
             </div>
             <div className="space-y-1.5">
               <Label htmlFor="notes">Notes</Label>
