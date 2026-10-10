@@ -25,6 +25,7 @@ import { Route as AdminEconomicsRouteImport } from './routes/admin/economics'
 import { Route as AdminGoLiveRouteImport } from './routes/admin/go-live'
 import { Route as AdminLoginRouteImport } from './routes/admin/login'
 import { Route as AdminNotificationsRouteImport } from './routes/admin/notifications'
+import { Route as ApiHealthRouteImport } from './routes/api/health'
 import { Route as ForPlumbersIndexRouteImport } from './routes/for-plumbers/index'
 import { Route as ForPlumbersApplyRouteImport } from './routes/for-plumbers/apply'
 import { Route as ForPlumbersPricingRouteImport } from './routes/for-plumbers/pricing'
@@ -124,6 +125,11 @@ const AdminLoginRoute = AdminLoginRouteImport.update({
 const AdminNotificationsRoute = AdminNotificationsRouteImport.update({
   id: '/admin/notifications',
   path: '/admin/notifications',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiHealthRoute = ApiHealthRouteImport.update({
+  id: '/api/health',
+  path: '/api/health',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ForPlumbersIndexRoute = ForPlumbersIndexRouteImport.update({
@@ -244,6 +250,7 @@ export interface FileRoutesByFullPath {
   '/admin/go-live': typeof AdminGoLiveRoute
   '/admin/login': typeof AdminLoginRoute
   '/admin/notifications': typeof AdminNotificationsRoute
+  '/api/health': typeof ApiHealthRoute
   '/for-plumbers/apply': typeof ForPlumbersApplyRoute
   '/for-plumbers/pricing': typeof ForPlumbersPricingRoute
   '/for-plumbers/territory': typeof ForPlumbersTerritoryRoute
@@ -282,6 +289,7 @@ export interface FileRoutesByTo {
   '/admin/go-live': typeof AdminGoLiveRoute
   '/admin/login': typeof AdminLoginRoute
   '/admin/notifications': typeof AdminNotificationsRoute
+  '/api/health': typeof ApiHealthRoute
   '/for-plumbers/apply': typeof ForPlumbersApplyRoute
   '/for-plumbers/pricing': typeof ForPlumbersPricingRoute
   '/for-plumbers/territory': typeof ForPlumbersTerritoryRoute
@@ -321,6 +329,7 @@ export interface FileRoutesById {
   '/admin/go-live': typeof AdminGoLiveRoute
   '/admin/login': typeof AdminLoginRoute
   '/admin/notifications': typeof AdminNotificationsRoute
+  '/api/health': typeof ApiHealthRoute
   '/for-plumbers/apply': typeof ForPlumbersApplyRoute
   '/for-plumbers/pricing': typeof ForPlumbersPricingRoute
   '/for-plumbers/territory': typeof ForPlumbersTerritoryRoute
@@ -361,6 +370,7 @@ export interface FileRouteTypes {
     | '/admin/go-live'
     | '/admin/login'
     | '/admin/notifications'
+    | '/api/health'
     | '/for-plumbers/apply'
     | '/for-plumbers/pricing'
     | '/for-plumbers/territory'
@@ -399,6 +409,7 @@ export interface FileRouteTypes {
     | '/admin/go-live'
     | '/admin/login'
     | '/admin/notifications'
+    | '/api/health'
     | '/for-plumbers/apply'
     | '/for-plumbers/pricing'
     | '/for-plumbers/territory'
@@ -437,6 +448,7 @@ export interface FileRouteTypes {
     | '/admin/go-live'
     | '/admin/login'
     | '/admin/notifications'
+    | '/api/health'
     | '/for-plumbers/apply'
     | '/for-plumbers/pricing'
     | '/for-plumbers/territory'
@@ -476,6 +488,7 @@ export interface RootRouteChildren {
   AdminGoLiveRoute: typeof AdminGoLiveRoute
   AdminLoginRoute: typeof AdminLoginRoute
   AdminNotificationsRoute: typeof AdminNotificationsRoute
+  ApiHealthRoute: typeof ApiHealthRoute
   ForPlumbersApplyRoute: typeof ForPlumbersApplyRoute
   ForPlumbersPricingRoute: typeof ForPlumbersPricingRoute
   ForPlumbersTerritoryRoute: typeof ForPlumbersTerritoryRoute
@@ -611,6 +624,13 @@ declare module '@tanstack/react-router' {
       path: '/admin/notifications'
       fullPath: '/admin/notifications'
       preLoaderRoute: typeof AdminNotificationsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/health': {
+      id: '/api/health'
+      path: '/api/health'
+      fullPath: '/api/health'
+      preLoaderRoute: typeof ApiHealthRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/for-plumbers/': {
@@ -772,6 +792,7 @@ const rootRouteChildren: RootRouteChildren = {
   AdminGoLiveRoute: AdminGoLiveRoute,
   AdminLoginRoute: AdminLoginRoute,
   AdminNotificationsRoute: AdminNotificationsRoute,
+  ApiHealthRoute: ApiHealthRoute,
   ForPlumbersApplyRoute: ForPlumbersApplyRoute,
   ForPlumbersPricingRoute: ForPlumbersPricingRoute,
   ForPlumbersTerritoryRoute: ForPlumbersTerritoryRoute,

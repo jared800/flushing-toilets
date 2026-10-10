@@ -11,7 +11,7 @@ export const Route = createFileRoute("/for-plumbers/")({
       {
         name: "description",
         content:
-          "Homeowner toilet and drain requests in your area, sent by text. Free while we prove the leads are real.",
+          "Homeowner toilet and drain requests in your area, sent to you by email. Free while we prove the leads are real.",
       },
     ],
   }),
@@ -23,7 +23,7 @@ function ForPlumbersPage() {
       <PageHero
         kicker="Flushing Toilets Partners"
         title="Toilet-intent leads, not tire-kickers"
-        description="Homeowners searching for clogged, running, leaking, and emergency toilet help in your area. Right now it costs you nothing: we text you the request, you call them, the job is yours."
+        description="Homeowners searching for clogged, running, leaking, and emergency toilet help in your area. Right now it costs you nothing: we email you the request, you call them, the job is yours."
       >
         <div className="flex flex-wrap gap-3">
           <Button asChild size="lg">
@@ -51,7 +51,7 @@ function ForPlumbersPage() {
             },
             {
               t: "Simple ops",
-              d: "Each request arrives by text with the homeowner\u2019s name, phone, ZIP, and problem. Tell us when it closes so we both learn what a lead is worth.",
+              d: "Each request arrives by email with the homeowner\u2019s name, phone, ZIP, and problem. Tell us when it closes so we both learn what a lead is worth.",
             },
           ].map((item) => (
             <div

@@ -227,7 +227,7 @@ function HomePage() {
                 Are you a licensed plumber?
               </h2>
               <p className="mt-2 max-w-xl text-sm leading-relaxed text-bg-elevated/80 sm:text-base">
-                We text you toilet jobs in your area. No subscription, nothing to
+                We email you toilet jobs in your area. No subscription, nothing to
                 sign, and right now it costs you nothing.
               </p>
             </div>

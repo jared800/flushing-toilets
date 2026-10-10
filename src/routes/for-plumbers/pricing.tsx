@@ -40,7 +40,7 @@ function PricingPage() {
             The current offer, in one line
           </h2>
           <p className="mt-2 text-base leading-relaxed text-fg-muted">
-            When a homeowner in your area sends us a toilet problem, we text it
+            When a homeowner in your area sends us a toilet problem, we email it
             to you. You call them. If it turns into work, it is yours. You pay
             us nothing, and there is nothing to sign.
           </p>
