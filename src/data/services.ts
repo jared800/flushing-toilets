@@ -1,5 +1,16 @@
+import type { GuideFaq, GuideSection } from "@/data/guides";
+
 export type Service = {
   slug: string;
+  /** Page <title> written for the query. */
+  metaTitle?: string;
+  /** 40-60 word direct answer shown first (AEO). */
+  answer?: string;
+  /** Long-form body; rendered below the summary when present. */
+  sections?: GuideSection[];
+  /** Overrides the generic service FAQs when present. */
+  faqs?: GuideFaq[];
+  sources?: { label: string; url: string }[];
   name: string;
   shortName: string;
   urgency: "medium" | "high" | "critical";
@@ -93,7 +104,7 @@ export const SERVICES: Service[] = [
       "Confirm rough-in and clearance",
       "Set flange and seal correctly",
       "Connect supply and test",
-      "Haul-away options with many partners",
+      "Ask whether haul-away of the old toilet is included",
     ],
     seoBlurb:
       "Professional toilet installation by licensed local plumbers.",
@@ -125,22 +136,106 @@ export const SERVICES: Service[] = [
     name: "Emergency plumber",
     shortName: "Emergency",
     urgency: "critical",
+    metaTitle: "24 Hour Emergency Plumber: Costs & What to Do First",
+    answer:
+      "A plumbing emergency is water you can't stop, sewage coming up, or your only toilet out of service. Shut off the water first. Emergency plumbers typically charge $100-$350 an hour plus a $150-$250 call-out fee (HomeGuide), and Angi puts the national average at $170 an hour, with holiday rates up to $600.",
     summary:
-      "Overflowing toilets, active leaks, and after-hours backups need someone who can respond now — not next week.",
+      "Overflowing toilets, water you can't shut off, and sewage backing up can't wait until Monday. Here's what to do in the first five minutes, what a 24-hour plumber costs, and how to get one.",
     symptoms: [
       "Active overflow or flooding",
       "No working toilet in the home",
-      "After-hours or weekend emergency",
+      "Sewage coming up a tub, shower or floor drain",
       "Water won’t shut off fully",
     ],
     whatWeDo: [
-      "Priority dispatch with partner network",
-      "Stabilize the situation",
-      "Clear clogs / stop leaks",
-      "Outline next steps if larger repair needed",
+      "Stop the water and stabilize the situation first",
+      "Clear clogs and stop leaks",
+      "Clear a main line from the cleanout if needed",
+      "Outline next steps if a larger repair is needed",
+    ],
+    sections: [
+      {
+        heading: "Is it really an emergency?",
+        paragraphs: [
+          "Call a 24-hour plumber now if water is running that you can't shut off, sewage is backing up into a tub, shower or floor drain, a pipe has burst, or the only toilet in the house is unusable and you can't wait. Also call if you smell gas near a water heater: leave the house and call your gas utility first.",
+          "It can probably wait for a regular appointment if the toilet is running but not overflowing, there's a slow drip at the base you can contain with a towel, one of several toilets is clogged, or a drain is slow but working. Booking during business hours is much cheaper, because emergency rates are typically 1.5 to 3 times normal rates, according to Angi.",
+        ],
+      },
+      {
+        heading: "Do this before anyone arrives",
+        paragraphs: [],
+        steps: [
+          "Stop the water. For a toilet, turn the oval valve on the wall or floor behind it clockwise until it stops. If the bowl is about to overflow, lift the tank lid and push the flapper down by hand.",
+          "If you can't stop it there, close your house main. In colder places like Utah it's usually in the basement or a utility room where the water line enters; in warmer states it's often outside near the foundation or in a box by the street.",
+          "Don't flush again, and if more than one drain is backing up, stop using water anywhere in the house.",
+          "Keep people and pets out of standing water, especially sewage. Switch off power to any area where water is near outlets or appliances, if you can reach the panel safely.",
+          "Take photos of the damage for insurance before you clean up.",
+          "Clear a path to the problem and to any cleanout or main valve, so the plumber can start working immediately.",
+        ],
+      },
+      {
+        heading: "What a 24-hour emergency plumber costs",
+        paragraphs: [
+          "HomeGuide's national figures: emergency plumbers typically charge $100-$350 an hour, plus a $150-$250 service call fee or surcharge for non-business hours. By timing, they list $100-$200 an hour for a same-day visit during business hours, $120-$300 for weekday after-hours, $150-$350 for weekends, and $200-$450 or more for holidays.",
+          "Angi's 2026 figures: a national average of $170 an hour, with most homeowners paying $100-$500 an hour, and holiday calls reaching $600. Angi also notes a flat emergency or trip fee of $150-$300 is common.",
+          "For specific jobs, HomeGuide puts an after-hours toilet or drain clog at $300-$800 if it can be cleared by snaking, and emergency sewer line work at $500-$3,800.",
+          "These are national ranges. What you'll pay depends on your area, the time and the job, so ask for the rate and call-out fee on the phone before anyone drives out.",
+        ],
+      },
+      {
+        heading: "How to keep the bill down",
+        paragraphs: [
+          "Ask for the short-term fix. If it's 11pm on a Saturday, getting the water stopped and one toilet working tonight, then doing the bigger repair on a weekday at normal rates, can save a lot. Angi recommends exactly this.",
+          "Know your shut-off valves before you need them. Most emergency damage happens in the minutes before someone finds the main.",
+          "Check your homeowners insurance or home warranty. HomeGuide notes that insurance usually covers sudden events like a burst pipe but not damage from neglect.",
+        ],
+      },
+      {
+        heading: "Questions to ask on the phone",
+        paragraphs: [
+          "What's your hourly rate right now, and is there a call-out or trip fee? Is there a minimum charge? How soon can you be here? Are you licensed and insured? Will you give me a price before starting work? HomeGuide says emergency response is typically 30 minutes to 2 hours, depending on location, time and demand.",
+        ],
+      },
+      {
+        heading: "How Flushing Toilets fits in",
+        paragraphs: [
+          "We're a free referral service, not a plumbing company, and we don't promise a response time. Send a request marked Emergency with your ZIP. A person reviews it and tries to match you with an independent licensed plumber who covers your area, and we follow up by phone. If water is actively flowing, shut it off first, and don't wait on us if you already know a plumber who can come.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Is a clogged toilet an emergency?",
+        answer:
+          "Only if it's your only toilet and you can't wait, if it's overflowing and won't stop, or if other drains are backing up too, which points to the main line. A single clogged toilet in a house with another working bathroom can usually wait for a regular appointment, which costs much less.",
+      },
+      {
+        question: "Are 24-hour plumbers more expensive?",
+        answer:
+          "Yes. Angi says emergency rates typically run 1.5 to 3 times normal, and HomeGuide lists weekend rates of $150-$350 an hour and holiday rates of $200-$450 or more, plus a call-out fee. If it can safely wait until business hours, it's cheaper.",
+      },
+      {
+        question: "How fast does an emergency plumber come?",
+        answer:
+          "HomeGuide puts typical emergency response at 30 minutes to 2 hours, depending on where you live, the time of day, the weather and how many other calls they have. Always ask for an arrival estimate on the phone.",
+      },
+      {
+        question: "What should I do while waiting for an emergency plumber?",
+        answer:
+          "Shut off the water at the fixture or the house main, stop using water if more than one drain is backing up, keep everyone out of sewage, take photos for insurance, and clear a path to the problem.",
+      },
+      {
+        question: "Does homeowners insurance cover emergency plumbing?",
+        answer:
+          "Often for sudden events like a burst pipe and the water damage it causes, but usually not for damage from neglect or wear, according to HomeGuide. Sewer backups often need a separate endorsement. Check your policy and call your insurer early.",
+      },
+    ],
+    sources: [
+      { label: "HomeGuide: How much does an emergency plumber cost?", url: "https://homeguide.com/costs/emergency-plumber-cost" },
+      { label: "Angi: How much does an emergency plumber cost? (2026)", url: "https://www.angi.com/articles/emergency-plumber-cost.htm" },
     ],
     seoBlurb:
-      "Emergency toilet and drain plumbers near you — day or night.",
+      "24 hour emergency plumber help: what counts as an emergency, what to do first, and sourced costs ($100-$350/hr plus a call-out fee, per HomeGuide)."
   },
   {
     slug: "sewer-backup",

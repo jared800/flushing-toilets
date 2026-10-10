@@ -4,7 +4,8 @@ import { PageHero } from "@/components/shared/page-hero";
 import { Button } from "@/components/ui/button";
 import { FaqSection } from "@/components/shared/faq-section";
 import { JsonLd } from "@/components/shared/json-ld";
-import { getGuide } from "@/data/guides";
+import { getGuide, GUIDE_LINKS, relatedGuides } from "@/data/guides";
+import { getService } from "@/data/services";
 
 const SITE = (
   import.meta.env?.VITE_SITE_URL ?? "https://www.flushingtoilets.com"
@@ -35,6 +36,9 @@ export const Route = createFileRoute("/guides/$slug")({
 function GuidePage() {
   const { guide } = Route.useLoaderData();
   const hasSections = !!guide.sections?.length;
+  const links = GUIDE_LINKS[guide.slug];
+  const fixService = links ? getService(links.service) : undefined;
+  const related = relatedGuides(guide.slug);
 
   return (
     <SiteShell>
@@ -163,6 +167,64 @@ function GuidePage() {
             schemaId={`guide-${guide.slug}`}
           />
         ) : null}
+
+        {guide.sources?.length ? (
+          <section aria-label="Sources" className="border-t border-border pt-5">
+            <h2 className="font-display text-lg font-semibold text-harbor">
+              Sources
+            </h2>
+            <ul className="mt-2 space-y-1 text-sm text-fg-muted">
+              {guide.sources.map((src) => (
+                <li key={src.url}>
+                  <a
+                    href={src.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-stream hover:underline"
+                  >
+                    {src.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+            <p className="mt-2 text-xs text-fg-subtle">
+              Costs are national ranges from the sources above. Prices where
+              you live may differ; a written quote is the only firm number.
+            </p>
+          </section>
+        ) : null}
+
+        {(fixService || related.length > 0) && (
+          <section aria-label="Related" className="space-y-3">
+            <h2 className="font-display text-lg font-semibold text-harbor">
+              Related
+            </h2>
+            <ul className="space-y-2 text-sm">
+              {fixService && (
+                <li>
+                  <Link
+                    to="/services/$service"
+                    params={{ service: fixService.slug }}
+                    className="font-semibold text-stream hover:underline"
+                  >
+                    {fixService.name}: find a local plumber
+                  </Link>
+                </li>
+              )}
+              {related.map((g) => (
+                <li key={g.slug}>
+                  <Link
+                    to="/guides/$slug"
+                    params={{ slug: g.slug }}
+                    className="text-stream hover:underline"
+                  >
+                    {g.title}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </section>
+        )}
 
         <div className="rounded-xl border border-border bg-surface p-5 shadow-sm">
           <p className="font-display text-lg font-semibold text-harbor">

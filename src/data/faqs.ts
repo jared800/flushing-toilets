@@ -9,18 +9,18 @@ export function serviceFaqs(service: Service): FaqItem[] {
       question: `How fast can I get help for a ${service.name.toLowerCase()}?`,
       answer:
         service.urgency === "critical" || service.urgency === "high"
-          ? "Many partner plumbers offer same-day or emergency windows. Submit a request with your ZIP and urgency set to Emergency for priority routing."
-          : "Most non-emergency requests are handled same-day or next-day depending on partner capacity in your city.",
+          ? "Many local plumbers offer same-day or after-hours service. Send a request with your ZIP and urgency set to Emergency, and a person will try to match you with one who covers your area. If water is still running, shut the valve behind the toilet first."
+          : "It depends on which plumbers cover your area and how busy they are. We send your request on as soon as a person has reviewed it, and we follow up by phone if we can't find anyone.",
     },
     {
       question: `Do I need to buy parts myself for a ${service.name.toLowerCase()}?`,
       answer:
-        "Usually not. Partner plumbers typically bring common parts (flappers, fill valves, wax rings, supply lines). Specialty fixtures may require a return trip or a parts allowance on the quote.",
+        "Usually not. Most plumbers carry common parts (flappers, fill valves, wax rings, supply lines). Specialty fixtures may need a return trip or a parts allowance on the quote, so ask when they call.",
     },
     {
       question: "Is Flushing Toilets the plumbing company?",
       answer:
-        "No. We are a marketplace that connects you with independent licensed local plumbers. The partner who contacts you performs the work.",
+        "No. We are a free referral service that passes your request to independent licensed local plumbers. The plumber who contacts you quotes and does the work.",
     },
     {
       question: "What should I do while I wait?",
@@ -58,7 +58,7 @@ export function cityServiceFaqs(
   const base = [
     {
       question: `Who handles ${service.name.toLowerCase()} in ${cityName}?`,
-      answer: `Licensed partner plumbers covering ${cityName}, ${stateAbbr}. Submit the form on this page to get matched — we are not the plumbing company.`,
+      answer: `Independent licensed plumbers who cover ${cityName}, ${stateAbbr}. Send the form on this page and a person will try to match you with one. We are a referral service, not the plumbing company.`,
     },
     ...serviceFaqs(service).slice(0, 2),
     {

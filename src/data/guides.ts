@@ -29,6 +29,8 @@ export type Guide = {
    * snippet or an AI answer can quote it whole without losing meaning.
    */
   answer?: string;
+  /** Published sources for any number or fact quoted in the guide. */
+  sources?: { label: string; url: string }[];
 };
 
 export const GUIDES: Guide[] = [
@@ -37,29 +39,157 @@ export const GUIDES: Guide[] = [
     answer:
       "A toilet that clogs again and again usually has a partial blockage past the bowl, a low-flow bowl that can't clear what your household sends it, a failing wax seal or flange, or a blocked roof vent. Stop flushing wipes, try a closet auger, and call a plumber if more than one drain is slow.",
     title: "Why your toilet keeps clogging",
+    metaTitle: "Why Does My Toilet Keep Clogging? 6 Causes and Fixes",
     excerpt:
-      "Recurring clogs often mean more than too much paper — here’s what pros check first.",
-    readMinutes: 5,
-    body: [
-      "A one-off clog is annoying. A toilet that clogs every week usually has an underlying issue: partial blockage further down the line, a low-flow fixture mismatched to your household, a failing flange, or a venting problem.",
-      "Start with the basics: only human waste and toilet paper in the bowl. Wipes labeled “flushable” still cause a large share of residential clogs.",
-      "If plunging only helps temporarily, a plumber can snake past the bowl trap and determine whether the clog is local or in the main. Multiple fixtures backing up together is a red flag for a sewer-line issue.",
-      "Chronic clogs on an older toilet are sometimes cheaper to solve with a modern replacement than repeated service calls — especially if the trapway is narrow or glazed poorly.",
+      "Recurring clogs usually mean something specific is wrong, not just too much paper. Here's how to work out which, in order of likelihood.",
+    readMinutes: 7,
+    updated: "2026-10-10",
+    body: [],
+    sections: [
+      {
+        heading: "One clog is bad luck. Weekly clogs are a symptom",
+        paragraphs: [
+          "Every toilet clogs occasionally. A toilet that needs the plunger every few days is telling you something, and plunging harder won't fix it. The causes below are in rough order of how often they turn out to be the answer, from the cheapest to check to the most involved.",
+          "Before you start, notice one thing: is it only this toilet, or do other drains in the house also drain slowly or gurgle? If it's only this toilet, the problem is in the toilet or the short pipe right below it. If several fixtures are affected, skip to the last section, because you're probably dealing with the main line.",
+        ],
+      },
+      {
+        heading: "1. What's going down it",
+        paragraphs: [
+          "The most common cause is also the least exciting. \"Flushable\" wipes, paper towels, cotton pads, dental floss and thick quilted paper don't break up the way standard toilet paper does. They snag on each other and on any rough spot in the trap, and each one makes the next clog more likely.",
+          "If you have kids, tenants or guests, assume something is going down that you don't know about. A small bin next to the toilet and a quick word solve a surprising number of \"bad toilet\" problems.",
+        ],
+      },
+      {
+        heading: "2. A partial blockage the plunger keeps pushing around",
+        paragraphs: [
+          "If the plunger works every time but the clog keeps coming back within days, something is probably lodged in the trap: a toy, a toothbrush cap, a wad of wipes. The plunger pushes water past it, so the toilet drains, but the object stays and catches the next load.",
+          "A closet auger (a toilet snake with a protective rubber sleeve, sold at any hardware store) can reach through the trap and either break up the blockage or hook it. If you feel the auger hit something solid it can't get past, the toilet may need to come off the floor so it can be cleared from below.",
+        ],
+      },
+      {
+        heading: "3. An older low-flow toilet that was never very good",
+        paragraphs: [
+          "Federal rules have limited new toilets to 1.6 gallons per flush since the 1990s, and EPA notes that some of the early low-flow models from that era had performance problems that needed double flushing. If your toilet dates from then and has always been weak, it may simply not have enough flushing power for your household.",
+          "Today's toilets are a different story: EPA says WaterSense-labeled models use 1.28 gallons or less and are tested to clear waste from the bowl. Replacing a chronically weak old toilet is often cheaper than paying for repeat service calls. See our toilet installation cost guide for what that runs.",
+        ],
+      },
+      {
+        heading: "4. Weak flush from the tank side",
+        paragraphs: [
+          "Sometimes the bowl is fine and the flush just isn't delivering enough water. Check that the tank fills to the line marked inside it (usually about an inch below the overflow tube), that the flapper chain has only a little slack, and that the small holes under the rim aren't crusted with mineral scale. Hard water, which is common along Utah's Wasatch Front and much of Texas, Arizona and Florida, slowly closes those holes.",
+          "Our guide to a toilet that won't flush properly walks through each of these checks.",
+        ],
+      },
+      {
+        heading: "5. A blocked vent",
+        paragraphs: [
+          "Your drain system needs air to flow. Vent pipes run up through the roof so the system can breathe. If a vent is blocked by leaves, a bird's nest or ice, the toilet drains sluggishly and you may hear gurgling in the bowl or a nearby sink when something else drains.",
+          "Clearing a roof vent means getting on the roof, which isn't a job worth risking a fall for. If the toilet gurgles and drains slowly but plunging finds no clog, mention the vent when you call a plumber.",
+        ],
+      },
+      {
+        heading: "6. The problem is further down the line",
+        paragraphs: [
+          "If the toilet clogs and other drains are slow too, or the tub gurgles or rises when you flush, the blockage is probably in the main drain or the sewer line to the street. Tree roots, grease and collapsed or sagging pipe are the usual causes. No amount of work on the toilet will fix it.",
+          "Stop running water in the house and read our guide to telling a toilet clog from a main sewer line clog. This is the point to call a plumber, who can clear the line from a cleanout and, if it keeps happening, run a camera down it.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Why does my toilet clog every time I flush?",
+        answer:
+          "If it clogs on every flush, something is almost certainly stuck in the trap or the toilet's tank isn't delivering a full flush. Try a closet auger first. If it comes back clean and the tank fills properly, the blockage may be past the toilet, especially if other drains are slow.",
+      },
+      {
+        question: "Can too much toilet paper cause repeated clogs?",
+        answer:
+          "Yes, especially with older low-flow toilets and thick quilted paper. Try flushing halfway through for big loads, or switch to a paper that breaks up faster. If the clogs keep happening with ordinary use, look for one of the other causes.",
+      },
+      {
+        question: "Should I replace a toilet that keeps clogging?",
+        answer:
+          "If you've ruled out objects in the trap, the tank fill, the rim jets and the main line, and the toilet is an older weak-flushing model, replacement usually makes sense. A modern WaterSense toilet uses less water per flush and is performance-tested to clear the bowl.",
+      },
+    ],
+    sources: [
+      { label: "US EPA WaterSense: Residential toilets", url: "https://www.epa.gov/watersense/residential-toilets" },
     ],
   },
   {
     slug: "running-toilet-cost",
     answer:
-      "A running toilet costs money every hour it runs, because the water goes straight to the drain. The fix is usually a flapper or fill valve that costs under twenty dollars. A plumber's visit for the same repair is typically a short service call, so the real cost of waiting is the water bill.",
+      "A running toilet wastes water around the clock, and EPA says household leaks can waste 180 gallons a week, with worn toilet flappers among the most common culprits. The fix is usually a flapper or fill valve costing under twenty dollars. To see your cost, multiply the wasted gallons by your utility's water and sewer rate.",
     title: "How much a running toilet really costs",
+    metaTitle: "How Much Does a Running Toilet Cost? (And How to Check)",
     excerpt:
-      "A silent runner can waste hundreds of gallons a month. Spot it early and fix the right part.",
-    readMinutes: 4,
-    body: [
-      "A toilet that never fully shuts off can waste hundreds of gallons per month. You may hear a faint hiss, see ripples in the bowl, or notice the tank warm to the touch from constant refill.",
-      "Most running toilets come down to a worn flapper, a mis-set chain, a failing fill valve, or a tank water level set too high so water spills into the overflow tube.",
-      "Parts are inexpensive; labor is usually a short visit. Waiting rarely saves money — water bills climb quietly while mineral deposits make the flapper worse.",
-      "If dye testing shows a leak from tank to bowl, don’t ignore it. A local plumber can replace the right component and confirm the flush valve seat isn’t damaged.",
+      "A quiet runner can waste a lot of water before you notice. Here's how to estimate what yours is costing, and the cheap part that usually fixes it.",
+    readMinutes: 6,
+    updated: "2026-10-10",
+    body: [],
+    sections: [
+      {
+        heading: "Why a running toilet is easy to ignore and expensive to keep",
+        paragraphs: [
+          "EPA says toilets are the single biggest source of indoor water use, at nearly 30 percent of an average home's indoor water. They're also a leading source of leaks: EPA puts household leaks at up to 180 gallons a week and says most toilet leaks come from old or worn flappers.",
+          "The trouble is that a leaking toilet sends the water straight down the drain. There's no puddle, so the first sign is often an unexplained jump in the water bill. And because most utilities bill sewer based on water use, you pay twice: once for the water and once to treat it.",
+        ],
+      },
+      {
+        heading: "How to estimate what yours is costing",
+        paragraphs: [
+          "We won't give you a made-up dollar figure, because the answer depends entirely on how fast your toilet is leaking and what your utility charges. You can work it out in about an hour.",
+        ],
+        steps: [
+          "Find your water meter (usually in a box near the street, or in the basement or garage in colder areas).",
+          "Make sure nothing in the house is using water, then note the meter reading.",
+          "Wait an hour without using any water, then read it again. The difference is roughly what is leaking per hour, and the toilet is the usual suspect.",
+          "Close the shut-off valve behind the toilet and repeat. If the meter stops moving, the toilet was the leak.",
+          "Multiply the hourly loss by 24 for a daily figure and by 30 for a month, then multiply by your utility's combined water and sewer rate (it's printed on your bill, usually per 1,000 gallons).",
+        ],
+      },
+      {
+        heading: "Signs it's running even if you can't hear it",
+        paragraphs: [
+          "A hiss or trickle after the tank should be full. Ripples in the bowl long after a flush. The tank refilling for a few seconds on its own every so often, which is called a phantom flush. A bill noticeably higher than the same month last year with no change in household.",
+          "The quickest test: put a few drops of food colouring in the tank and don't flush for 15 minutes. Colour in the bowl means water is leaking past the flapper.",
+        ],
+      },
+      {
+        heading: "What fixes it, and what that costs",
+        paragraphs: [
+          "Most running toilets come down to one of three things: a worn or warped flapper, a fill valve that won't shut off, or the water level set so high that it spills into the overflow tube. A flapper or fill valve is typically under twenty dollars at a hardware store, and EPA describes replacing a flapper as quick and easy.",
+          "If you'd rather have a plumber do it, HomeGuide puts typical toilet repair at $130-$300 for parts and labor. Even at the high end, that's usually less than a few months of a steady leak. Our guide to why a toilet keeps running walks through the dye test and each fix step by step.",
+        ],
+      },
+      {
+        heading: "When the running toilet is a sign to replace",
+        paragraphs: [
+          "If you've replaced the flapper and it still runs, the flush valve seat underneath may be pitted or scaled. That's common with hard water, and an all-in-one tank rebuild kit or a new toilet fixes it. Older toilets can use as much as 6 gallons per flush, according to EPA, while WaterSense models use 1.28 or less. EPA estimates a family can save nearly 13,000 gallons a year by replacing old toilets, and many utilities offer rebates.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Can a running toilet really raise my water bill?",
+        answer:
+          "Yes. The water runs continuously and goes straight to the drain, and most utilities bill sewer based on water use, so you pay for it twice. A meter test with the toilet's valve open and then closed tells you how much it's actually costing.",
+      },
+      {
+        question: "Is it OK to leave a running toilet until the weekend?",
+        answer:
+          "It won't cause damage the way a leak onto the floor would, but it wastes water the whole time. If you can't fix it right away, close the shut-off valve behind the toilet between uses and open it to refill before you flush.",
+      },
+      {
+        question: "Do I need a plumber to fix a running toilet?",
+        answer:
+          "Usually not. Flappers and fill valves are designed to be replaced by homeowners. Call a plumber if the shut-off valve behind the toilet won't turn or starts leaking when you move it, or if the tank is cracked.",
+      },
+    ],
+    sources: [
+      { label: "US EPA WaterSense: Residential toilets", url: "https://www.epa.gov/watersense/residential-toilets" },
+      { label: "HomeGuide: Toilet installation and repair costs", url: "https://homeguide.com/costs/toilet-installation-cost" },
     ],
   },
   {
@@ -67,14 +197,73 @@ export const GUIDES: Guide[] = [
     answer:
       "Repair a toilet when one part has failed on a solid, quiet fixture: flapper, fill valve, handle, or supply line. Replace it when the bowl or tank is cracked, it rocks because the flange has failed, it clogs constantly, or you need a different height or rough-in. Cracked porcelain cannot be reliably repaired.",
     title: "Repair or replace your toilet?",
+    metaTitle: "Repair or Replace a Toilet? How to Decide (With Costs)",
     excerpt:
-      "Cracks, rocking bases, and endless part swaps are signals it may be time for a new fixture.",
-    readMinutes: 6,
-    body: [
-      "Repair makes sense for isolated flapper, fill valve, or supply-line issues on a solid, quiet toilet that still flushes well.",
-      "Replacement is usually smarter when the bowl or tank is cracked, the toilet rocks because the flange is failed, you’re dealing with repeated clogs on an inefficient model, or a remodel needs a different rough-in or comfort height.",
-      "A good install includes inspecting the flange, setting a proper seal, leveling the base, and testing through several flushes. Skipping those steps is how “new” toilets start leaking in a month.",
-      "Ask partners for haul-away and whether your shutoff valve should be replaced while the supply is open — old angle stops often seize or drip after disturbance.",
+      "Cracks, rocking bases and endless part swaps are signs it may be time for a new toilet. Here's a straight way to decide, with sourced costs.",
+    readMinutes: 7,
+    updated: "2026-10-10",
+    body: [],
+    sections: [
+      {
+        heading: "The quick rule",
+        paragraphs: [
+          "Toilets are simple machines. Nearly everything that moves (flapper, fill valve, handle, chain, supply line, wax ring, bolts) is a cheap, standard part designed to be replaced. The porcelain itself rarely fails, but when it does, it can't be fixed.",
+          "So repair when the problem is a part, and replace when the problem is the porcelain, the fit, or the toilet's basic design.",
+        ],
+      },
+      {
+        heading: "Repair it when...",
+        paragraphs: [
+          "It runs, refills on its own, or the handle feels loose. These are flapper, fill valve and handle problems, and any homeowner can usually fix them for under twenty dollars in parts.",
+          "It leaks at the base only after flushing. That's usually the wax ring, which means lifting the toilet and resetting it on a new ring. It's a repair, not a replacement, unless the flange underneath is broken.",
+          "It leaks from the supply line or the shut-off valve. Supply lines are cheap. An old shut-off valve that drips when turned is worth replacing while the water is off anyway.",
+          "HomeGuide puts typical toilet repair at $130-$300 for parts and labor when a plumber does it.",
+        ],
+      },
+      {
+        heading: "Replace it when...",
+        paragraphs: [
+          "The bowl or tank is cracked. A hairline crack above the waterline may be cosmetic, but a crack below it, or one that weeps, will eventually fail, sometimes suddenly. Epoxy is not a permanent fix for porcelain that holds water under pressure.",
+          "It rocks and keeps breaking the seal. A toilet that rocks has usually damaged its flange or the floor underneath. Sometimes that's a flange repair, but if the floor is soft, the toilet has to come up anyway, and it's a natural time to replace an old one.",
+          "It clogs or flushes weakly no matter what you fix. Some early low-flow toilets simply weren't good, as EPA itself acknowledges. A modern WaterSense model is performance-tested and uses 1.28 gallons per flush or less.",
+          "You're remodeling, or you need a different height or rough-in. Comfort-height toilets and different rough-in sizes (the distance from the wall to the floor bolts, usually 12 inches) mean a new fixture.",
+        ],
+      },
+      {
+        heading: "What replacing costs",
+        paragraphs: [
+          "National cost guides put a professional toilet replacement at roughly $224-$533 for installation (Angi, 2026; average about $374), or $350-$800 including a standard toilet (HomeGuide; average about $600). Removal and disposal of the old one adds $50-$200, and a damaged flange or floor adds more. Our toilet installation cost guide breaks these numbers down.",
+        ],
+      },
+      {
+        heading: "What a good replacement includes",
+        paragraphs: [
+          "A good install includes checking the flange, setting a new wax ring or foam seal, leveling the toilet so it doesn't rock, connecting a new supply line, and testing through several flushes. Skipping those steps is how a \"new\" toilet starts leaking within a month.",
+          "Ask whether the quote includes haul-away and whether your shut-off valve should be replaced while the water is off. Old valves often seize or drip once they've been disturbed.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "How long do toilets last?",
+        answer:
+          "The porcelain can last decades. HomeGuide says most toilets last 10 to 20 years and some 50 or more, while the internal parts (flapper, fill valve, wax seal) wear out much sooner and are meant to be replaced. Angi suggests replacing a toilet at least every 25 years.",
+      },
+      {
+        question: "Is it worth repairing an old toilet?",
+        answer:
+          "If it flushes well and the porcelain is sound, yes. Parts are cheap. If it's an older high-volume or weak-flushing model, replacing it can pay back in water savings: EPA estimates nearly 13,000 gallons a year for an average family switching to WaterSense toilets.",
+      },
+      {
+        question: "Can a cracked toilet tank be repaired?",
+        answer:
+          "Not reliably. Sealants can slow a weep, but a tank or bowl that holds water under pressure and is cracked should be replaced before it fails and floods the floor.",
+      },
+    ],
+    sources: [
+      { label: "Angi: Toilet installation cost (2026)", url: "https://www.angi.com/articles/how-much-does-toilet-installation-cost.htm" },
+      { label: "HomeGuide: Toilet installation cost", url: "https://homeguide.com/costs/toilet-installation-cost" },
+      { label: "US EPA WaterSense: Residential toilets", url: "https://www.epa.gov/watersense/residential-toilets" },
     ],
   },
 
@@ -143,6 +332,20 @@ export const GUIDES: Guide[] = [
         ],
       },
       {
+        heading: "How to unclog a toilet without a plunger",
+        paragraphs: [
+          "No plunger in the house? These work on ordinary paper-and-waste clogs. None of them will move a solid object like a toy, so if you suspect one, skip to the next section.",
+          "Whatever you try, protect the floor with towels first and don't flush to test it until the water level in the bowl has dropped on its own.",
+        ],
+        steps: [
+          "Dish soap and hot water: squeeze a generous amount of dish soap into the bowl and let it sink for 10 to 15 minutes. Then pour in a bucket of hot tap water from waist height. Use hot, not boiling: boiling water can crack porcelain.",
+          "Wait it out: if nothing is urgent, leave it for an hour or overnight. Paper clogs often soften and drain on their own.",
+          "Wire coat hanger: straighten one, wrap the end in a rag and tape it so it can't scratch the bowl, then work it gently into the drain opening to break up the clog. It only reaches a few inches, so it helps only if the clog is near the opening.",
+          "Wet/dry shop vacuum: if you have one (never an ordinary household vacuum), empty the bowl into a bucket, push the hose into the drain opening, wrap a towel around it for a seal, and suck the clog back out.",
+          "Buy a flange plunger or closet auger: honestly, this is the fix. Both are cheap and available at any hardware store, and they work when none of the above do.",
+        ],
+      },
+      {
         heading: "If you suspect an object rather than a blockage",
         paragraphs: [
           "Toys, toothbrushes, phones and cleaning-wand heads behave differently from a paper clog: the water often drains slowly rather than not at all, and plunging may work briefly before failing again as the object shifts back into place.",
@@ -158,6 +361,16 @@ export const GUIDES: Guide[] = [
       },
     ],
     faqs: [
+      {
+        question: "How do you unclog a toilet without a plunger?",
+        answer:
+          "For an ordinary paper clog, squirt dish soap into the bowl, wait 10-15 minutes, then pour in a bucket of hot (not boiling) tap water. Waiting an hour also works surprisingly often. If neither works, a flange plunger or closet auger is the real fix.",
+      },
+      {
+        question: "Can boiling water unclog a toilet?",
+        answer:
+          "Don't use boiling water. The sudden heat can crack the porcelain bowl. Hot tap water with dish soap does the same job safely.",
+      },
       {
         question: "Will a clogged toilet eventually unclog itself?",
         answer:
@@ -257,6 +470,26 @@ export const GUIDES: Guide[] = [
     ],
     faqs: [
       {
+        question: "How do I stop my toilet from running right now?",
+        answer:
+          "Take the tank lid off and lift the float arm or float cup up. If the water stops, the fill valve or water level is the problem. If you need it to stop completely, turn the shut-off valve behind the toilet clockwise until it closes.",
+      },
+      {
+        question: "Why does my toilet keep running after I replaced the flapper?",
+        answer:
+          "The usual reasons: the new flapper is the wrong size (2-inch and 3-inch flush valves need different flappers), the chain is too short and holds it open, the flush valve seat under the flapper is scaled or pitted, or the water level is still above the overflow tube.",
+      },
+      {
+        question: "Is it bad if my toilet keeps running?",
+        answer:
+          "It won't flood the house, but it wastes water constantly and usually gets worse. EPA says household leaks can waste 180 gallons a week and that worn flappers cause most toilet leaks. Fix it soon.",
+      },
+      {
+        question: "Do I need a plumber for a running toilet?",
+        answer:
+          "Usually not. Flappers and fill valves are made to be replaced by homeowners in under half an hour. Call a plumber if the shut-off valve won't close or starts dripping, or if the tank is cracked.",
+      },
+      {
         question: "How much water does a running toilet waste?",
         answer:
           "It depends entirely on how badly it is leaking, from a slow seep past a flapper to a continuous flow into the overflow. Because the water goes straight to the drain there is no visible sign, which is why the first indication is usually an unexpected bill. If your dye test showed colour in the bowl, it is leaking around the clock.",
@@ -318,6 +551,19 @@ export const GUIDES: Guide[] = [
           "Pour white vinegar down the overflow tube in the tank — it distributes around the rim channel rather than running straight out.",
           "Leave it an hour, then clear each hole gently with a bent piece of stiff wire or a small Allen key.",
           "Turn the water back on and flush several times to clear the debris.",
+        ],
+      },
+      {
+        heading: "Weak flush, or not flushing all the way",
+        paragraphs: [
+          "A toilet that flushes but leaves waste behind, or needs two flushes, almost always has one of these problems. Work through them in order; the first three take a minute each.",
+        ],
+        steps: [
+          "Tank water too low: the water should come up to the fill line marked inside the tank, usually about an inch below the top of the overflow tube. Raise it with the adjustment screw or clip on the fill valve.",
+          "Flapper closing too early: if the chain has a lot of slack, or the flapper has an adjustable dial, the tank may only half-empty. Give the chain about half an inch of slack and set any dial to its fullest setting.",
+          "Clogged rim jets: hard water leaves scale in the small holes under the rim and in the siphon jet at the bottom of the bowl. Use a mirror to look under the rim; if the holes are crusted, scrub them and poke them clear with a small wire or Allen key.",
+          "A partial clog in the trap: if the bowl fills higher than normal then drains slowly, something is partly blocking the trap. Use a flange plunger or closet auger.",
+          "A blocked vent: gurgling plus a weak flush with no clog found often means the roof vent is blocked. That's a job for a plumber.",
         ],
       },
       {
@@ -427,13 +673,83 @@ export const GUIDES: Guide[] = [
       "A toilet clog affects one toilet; other drains work. A main sewer line clog shows up in several places: the tub or shower fills when you flush, floor drains gurgle, or the lowest drain in the house backs up first. If more than one fixture is affected, stop using water and call a plumber.",
     title: "Toilet clog or sewer backup?",
     excerpt:
-      "Knowing the difference helps you call the right help before wastewater spreads.",
-    readMinutes: 5,
-    body: [
-      "A simple toilet clog usually affects one fixture. Water rises in the bowl; other sinks and showers still drain normally.",
-      "A sewer backup often shows up as multiple fixtures draining slowly, water appearing in a tub when you flush, sewage odor, or a cleanout overflowing outside.",
-      "If you suspect a main-line backup, avoid running water elsewhere in the home. Stop using sinks, laundry, and other toilets until a plumber assesses the line.",
-      "A plumber can clear the line from a cleanout and, if it keeps happening, run a camera to check for roots, grease, or a broken pipe.",
+      "Knowing the difference tells you whether to grab the plunger or stop using water and call a plumber, before wastewater spreads.",
+    readMinutes: 8,
+    updated: "2026-10-10",
+    body: [],
+    sections: [
+      {
+        heading: "The one question that tells you which it is",
+        paragraphs: [
+          "Is it only this toilet? Every drain in your house feeds into one main line that runs out to the city sewer or your septic tank. A clog in the toilet itself affects just that toilet. A clog in the main line affects everything upstream of it, and water from one fixture starts coming up through another.",
+          "So before you plunge, run the bathroom sink for ten seconds and watch the toilet and the tub. Then check the lowest drain in the house, such as a basement floor drain, shower or laundry standpipe. If they're all fine, you have a toilet clog. If water appears where it shouldn't, stop.",
+        ],
+      },
+      {
+        heading: "Signs of a main sewer line clog",
+        paragraphs: [
+          "The tub or shower fills or gurgles when you flush the toilet. Several drains are slow at the same time. A basement floor drain or the lowest shower backs up first, because water finds the lowest opening. Sewage smell from drains. Water bubbling up from the cleanout pipe in the yard or basement. The washing machine draining causes the toilet to rise.",
+          "Any one of these, together with a clogged toilet, points to the main line rather than the toilet.",
+        ],
+      },
+      {
+        heading: "What to do right now",
+        paragraphs: [],
+        steps: [
+          "Stop using water everywhere in the house: no flushing, showers, dishwasher or laundry. Every gallon you send down has nowhere to go but up the lowest drain.",
+          "Don't plunge hard. Plunging a toilet against a main-line clog can push sewage out of the tub or floor drain instead.",
+          "Keep people and pets away from any backed-up water. Sewage carries bacteria, and you shouldn't clean it up barehanded.",
+          "Find your cleanout, a capped pipe (often 3 to 4 inches wide) in the yard near the house, in a basement or crawlspace, or on an outside wall. A plumber will want to know where it is. Don't open it yourself if it's under pressure; it can spray.",
+          "Call a plumber. A main-line clog needs a powered drain machine through the cleanout, which isn't a homeowner tool.",
+          "Take photos if water has reached floors or walls. You'll want them if you make an insurance claim.",
+        ],
+      },
+      {
+        heading: "What causes main line clogs",
+        paragraphs: [
+          "Tree roots are the classic cause in older neighborhoods. They find tiny gaps in older clay or cast-iron joints, grow into the pipe and catch everything that passes. Grease poured down the kitchen sink cools and coats the pipe until it closes. Wipes, even \"flushable\" ones, snag on roots and joints and build up. Settled or broken pipe can create a low spot (called a belly) where waste collects, or a section can collapse entirely.",
+          "Sometimes the problem is the city's main, not yours. If neighbors are having the same problem at the same time, call your city or sewer district too.",
+        ],
+      },
+      {
+        heading: "Whose problem is it: yours or the city's?",
+        paragraphs: [
+          "In most places, the homeowner is responsible for the sewer lateral, the pipe from the house to where it joins the public main, and the city is responsible for the main itself. The exact dividing line varies by city and sometimes by property line, so check with your city or sewer district. If the plumber finds the blockage is in the public main, the city usually handles it.",
+        ],
+      },
+      {
+        heading: "What clearing a main line costs",
+        paragraphs: [
+          "National guides put emergency sewer line work at $500-$3,800, depending on whether it's a simple obstruction cleared with a snake or a broken line that needs partial replacement (HomeGuide). Angi lists main sewer line clog repair at $1,325-$5,000. The spread is wide because a root clog cleared through a cleanout and a collapsed pipe that has to be dug up are very different jobs.",
+          "If it keeps happening, ask for a camera inspection. It shows whether you have roots, grease, a belly or a break, so you're paying to fix the cause rather than clearing the same clog every few months.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "How do I know if my main sewer line is clogged?",
+        answer:
+          "Look for more than one fixture affected at once: the tub fills when you flush, several drains are slow, or the lowest drain in the house backs up first. A clog that affects only one toilet is almost always in the toilet itself.",
+      },
+      {
+        question: "Can I unclog a main sewer line myself?",
+        answer:
+          "It's not a good idea. Clearing a main line needs a powered drain machine through the cleanout, and opening a cleanout with sewage backed up behind it can spray. Stop using water and call a plumber.",
+      },
+      {
+        question: "Does homeowners insurance cover a sewer backup?",
+        answer:
+          "It depends on your policy. HomeGuide notes that insurance typically covers sudden events but not damage from neglect, and many policies need a separate sewer or water backup endorsement. Check your policy, document everything with photos, and call your insurer early.",
+      },
+      {
+        question: "Is a sewer backup an emergency?",
+        answer:
+          "Yes, if sewage is coming into the house. It's a health hazard and the damage spreads the longer water keeps flowing. Stop using water immediately; a plumber can usually clear the line the same day.",
+      },
+    ],
+    sources: [
+      { label: "HomeGuide: Emergency plumber cost", url: "https://homeguide.com/costs/emergency-plumber-cost" },
+      { label: "Angi: Emergency plumber cost (2026)", url: "https://www.angi.com/articles/emergency-plumber-cost.htm" },
     ],
   },
   // ---------------------------------------------------------------------
@@ -660,8 +976,149 @@ export const GUIDES: Guide[] = [
       },
     ],
   },
+  {
+    // "toilet installation cost" 2,300/mo KD 0; "toilet replacement cost" 1,200/mo KD 2;
+    // "cost to install/replace a toilet" 600/500; "toilet repair cost" 350. Ahrefs US, 2026-10-09.
+    slug: "toilet-installation-cost",
+    title: "How much does toilet installation cost?",
+    metaTitle: "Toilet Installation Cost (2026): What to Expect to Pay",
+    answer:
+      "Nationally, professional toilet installation typically costs about $224-$533 (Angi, 2026; average about $374). HomeGuide puts it at $350-$800 including a standard toilet (average about $600), with labor alone at $150-$450. Removing the old toilet adds $50-$200, and a broken flange or damaged floor adds more.",
+    excerpt:
+      "Sourced national price ranges for installing or replacing a toilet, what's included, the extras that change a quote, and how to get an accurate price.",
+    readMinutes: 8,
+    updated: "2026-10-10",
+    body: [],
+    sections: [
+      {
+        heading: "Why the published numbers don't match",
+        paragraphs: [
+          "If you've seen very different figures online, it's usually because they're measuring different things. Some quote installation labor only, some include the toilet, and some include removal and haul-away. Here's what two widely used national cost guides say, and what each figure covers.",
+          "Angi (2026 data): professional toilet installation typically costs $224-$533, with most homeowners paying around $374. The low end is about $120 and the high end can reach $826. Angi says replacing a toilet, including removing the old one and installing the new one, typically costs $275-$480, averaging around $375.",
+          "HomeGuide: $350-$800 for the toilet plus installation labor, with a national average of $600. Labor alone is $150-$450, and can go past $900 for complicated jobs.",
+          "These are national figures. Prices in your area may be higher or lower. The only way to know your price is a written quote, and the rest of this guide will help you get an accurate one.",
+        ],
+      },
+      {
+        heading: "What the toilet itself costs",
+        paragraphs: [
+          "If you're buying the toilet yourself and paying only for installation, add the fixture price. HomeGuide puts a standard two-piece toilet (separate tank and bowl, the most common type in the US) at $100-$500 before installation, and a one-piece toilet at $200-$900. Angi lists average prices of about $375 for a two-piece and $800 for a one-piece.",
+          "Specialty toilets cost more to buy and often to install. HomeGuide lists wall-mounted toilets at $300-$1,500 before installation, because the tank sits inside the wall, and upflush (macerating) toilets at $750-$1,500 before labor. These are used in basements where there's no drain below the floor.",
+        ],
+      },
+      {
+        heading: "Extras that change the quote",
+        paragraphs: [
+          "Most quotes for a straight swap are close to the national ranges above. These are the things that push a quote up, with the figures the cost guides give.",
+          "Removing and disposing of the old toilet: $50-$200 (both Angi and HomeGuide).",
+          "A broken or corroded flange, the fitting that anchors the toilet to the drain: $145-$300 on average to replace (Angi). You often don't know until the old toilet is off.",
+          "Damaged flooring under the old toilet, usually from a slow leak: $8-$24 per square foot for bathroom flooring (Angi). HomeGuide puts tile and grout repair at $10-$50 per square foot.",
+          "Moving the toilet to a new spot: about $3,000 on average, because the drain and vent have to move too (Angi).",
+          "After-hours or emergency service: HomeGuide says this sometimes doubles or triples the cost. If your only toilet is broken, a same-day weekday appointment is much cheaper than a Sunday night.",
+        ],
+      },
+      {
+        heading: "Before you get quotes",
+        paragraphs: [
+          "A few minutes of checking makes quotes more accurate and avoids buying the wrong toilet.",
+        ],
+        steps: [
+          "Measure the rough-in: the distance from the finished wall behind the toilet to the center of the floor bolts. Most US homes are 12 inches, but 10 and 14 exist. The new toilet has to match.",
+          "Check whether the shut-off valve behind the toilet turns easily. If it's stiff or crusty, ask for it to be replaced at the same time while the water is off.",
+          "Press on the floor around the base. Soft or spongy flooring means there's been a leak and there may be subfloor work.",
+          "Decide whether you want a standard or comfort-height bowl, and round or elongated. Elongated bowls need a little more room in front.",
+          "Look for the WaterSense label. EPA says WaterSense toilets use 1.28 gallons per flush or less, and many utilities offer rebates on them.",
+        ],
+      },
+      {
+        heading: "Questions to ask a plumber",
+        paragraphs: [
+          "Is this a flat price or hourly? Does it include a new wax ring or seal, new closet bolts and a new supply line? Does it include removing and hauling away the old toilet? What happens to the price if the flange is broken? Do you warranty the installation? How long should we wait before using it?",
+          "A detailed written quote that answers these is worth more than the lowest number. Leaks from rushed installs often show up weeks later, under the floor.",
+        ],
+      },
+      {
+        heading: "Repair instead of replace?",
+        paragraphs: [
+          "If the toilet is running, leaking at the base, or the handle is loose, you may not need a new one. HomeGuide puts typical toilet repair at $130-$300 for parts and labor. Our repair-or-replace guide explains how to decide.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "How much does it cost to replace a toilet?",
+        answer:
+          "Angi puts toilet replacement, including removing the old toilet and installing the new one, at about $275-$480, averaging around $375. HomeGuide's range of $350-$800 includes a standard toilet. A specialty toilet, a broken flange or floor damage increases the cost.",
+      },
+      {
+        question: "How long does it take to install a toilet?",
+        answer:
+          "HomeGuide says a professional typically installs a toilet in 2 to 3 hours. A wall-mounted toilet or a toilet in a new location can take 4 to 6 hours or more because of the extra plumbing and wall work.",
+      },
+      {
+        question: "Is toilet installation cheaper if I buy the toilet myself?",
+        answer:
+          "Often, because you control the fixture price, and installation-only labor runs $150-$450 according to HomeGuide. Make sure it matches your rough-in and that the plumber is willing to install a customer-supplied toilet; some don't warranty fixtures they didn't supply.",
+      },
+      {
+        question: "Can I install a toilet myself?",
+        answer:
+          "Many homeowners do. It's mostly lifting, leveling and making a good seal. The risks are a cracked bowl from overtightened bolts, a wax ring that doesn't seal, and a seized shut-off valve that breaks. If the flange is damaged or the floor is soft, call a plumber.",
+      },
+    ],
+    sources: [
+      { label: "Angi: How much does toilet installation cost? (2026)", url: "https://www.angi.com/articles/how-much-does-toilet-installation-cost.htm" },
+      { label: "HomeGuide: How much does toilet installation cost?", url: "https://homeguide.com/costs/toilet-installation-cost" },
+      { label: "US EPA WaterSense: Residential toilets", url: "https://www.epa.gov/watersense/residential-toilets" },
+    ],
+  },
 ];
 
 export function getGuide(slug: string) {
   return GUIDES.find((g) => g.slug === slug);
+}
+
+/**
+ * Internal links: each guide points at the service page that fixes the
+ * problem and at closely related guides. Service pages read this in reverse
+ * to list "guides for this problem".
+ */
+export const GUIDE_LINKS: Record<string, { service: string; guides: string[] }> = {
+  "why-toilet-keeps-clogging": { service: "clogged-toilet", guides: ["how-to-unclog-a-toilet", "toilet-wont-flush", "sewer-backup-vs-clog"] },
+  "running-toilet-cost": { service: "running-toilet", guides: ["why-is-my-toilet-running", "toilet-runs-by-itself", "toilet-tank-not-filling"] },
+  "when-to-replace-vs-repair": { service: "toilet-replacement", guides: ["toilet-installation-cost", "toilet-leaking-at-base", "why-toilet-keeps-clogging"] },
+  "how-to-unclog-a-toilet": { service: "clogged-toilet", guides: ["why-toilet-keeps-clogging", "toilet-overflowing", "sewer-backup-vs-clog"] },
+  "why-is-my-toilet-running": { service: "running-toilet", guides: ["toilet-runs-by-itself", "running-toilet-cost", "toilet-tank-not-filling"] },
+  "toilet-wont-flush": { service: "clogged-toilet", guides: ["how-to-unclog-a-toilet", "why-toilet-keeps-clogging", "toilet-tank-not-filling"] },
+  "toilet-leaking-at-base": { service: "toilet-leak", guides: ["toilet-leaking-from-tank", "when-to-replace-vs-repair", "toilet-installation-cost"] },
+  "sewer-backup-vs-clog": { service: "sewer-backup", guides: ["how-to-unclog-a-toilet", "toilet-overflowing", "why-toilet-keeps-clogging"] },
+  "toilet-tank-not-filling": { service: "running-toilet", guides: ["why-is-my-toilet-running", "toilet-wont-flush", "toilet-runs-by-itself"] },
+  "toilet-runs-by-itself": { service: "running-toilet", guides: ["why-is-my-toilet-running", "running-toilet-cost", "toilet-leaking-from-tank"] },
+  "toilet-overflowing": { service: "emergency-plumber", guides: ["how-to-unclog-a-toilet", "sewer-backup-vs-clog", "toilet-wont-flush"] },
+  "toilet-leaking-from-tank": { service: "toilet-leak", guides: ["toilet-leaking-at-base", "toilet-runs-by-itself", "when-to-replace-vs-repair"] },
+  "toilet-installation-cost": { service: "toilet-install", guides: ["when-to-replace-vs-repair", "toilet-leaking-at-base", "why-toilet-keeps-clogging"] },
+};
+
+export function relatedGuides(slug: string): Guide[] {
+  return (GUIDE_LINKS[slug]?.guides ?? [])
+    .map((g) => getGuide(g))
+    .filter((g): g is Guide => Boolean(g));
+}
+
+/** Guides whose fix is this service, for the service page. */
+export function guidesForService(serviceSlug: string): Guide[] {
+  const extra: Record<string, string[]> = {
+    "toilet-install": ["when-to-replace-vs-repair"],
+    "toilet-replacement": ["toilet-installation-cost"],
+    "emergency-plumber": ["sewer-backup-vs-clog", "how-to-unclog-a-toilet"],
+  };
+  const slugs = [
+    ...Object.entries(GUIDE_LINKS)
+      .filter(([, v]) => v.service === serviceSlug)
+      .map(([k]) => k),
+    ...(extra[serviceSlug] ?? []),
+  ];
+  return [...new Set(slugs)]
+    .map((g) => getGuide(g))
+    .filter((g): g is Guide => Boolean(g));
 }
