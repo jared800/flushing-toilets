@@ -10,7 +10,7 @@ import { getCity } from "@/data/locations";
 import { partnersForCity } from "@/data/partners";
 import { SERVICES } from "@/data/services";
 import { cityFaqs } from "@/data/faqs";
-import { getMetroContent } from "@/data/metro-content";
+import { getMetroContent, hasUniqueLocalContent } from "@/data/metro-content";
 
 export const Route = createFileRoute("/locations/$state_/$city")({
   loader: ({ params }) => {
@@ -31,6 +31,13 @@ export const Route = createFileRoute("/locations/$state_/$city")({
         content:
           loaderData?.metro?.heroExtra ?? loaderData?.city.blurb ?? "",
       },
+      // Template-filled cities measured ~69% identical to each other
+      // (2026-10-09 audit). Keep them usable for visitors but out of the
+      // index until they get real local copy in METRO_CONTENT.
+      ...(loaderData &&
+      !hasUniqueLocalContent(loaderData.state.slug, loaderData.city.slug)
+        ? [{ name: "robots", content: "noindex, follow" }]
+        : []),
     ],
   }),
 });

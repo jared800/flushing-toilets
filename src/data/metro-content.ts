@@ -484,6 +484,128 @@ export const METRO_CONTENT: MetroContent[] = [
       },
     },
   },
+  {
+    stateSlug: "utah",
+    citySlug: "salt-lake-city",
+    heroExtra:
+      "Hard water, freezing winters, and older homes with finished basements make toilet leaks and backups a costly problem in Salt Lake City, from the Avenues to Rose Park.",
+    trustLine:
+      "Requests from Salt Lake City ZIPs go to an independent, licensed Utah plumber who covers your area.",
+    localFactors: ["Hard water along the Wasatch Front scales up flappers, fill valves, and rim jets", "Finished basements turn small leaks into ceiling and drywall damage", "Older neighborhoods still have original clay or cast-iron sewer laterals", "Winter cold snaps add frozen and burst pipes to the same week"],
+    neighborhoods: ["Sugar House", "The Avenues", "Rose Park", "Liberty Wells", "Capitol Hill", "East Bench"],
+    services: {
+      "clogged-toilet": {
+        headline: "Clogged toilet help in Salt Lake City",
+        intro: "Most Salt Lake clogs are a single toilet and clear with a flange plunger or auger. In older Avenues and Sugar House homes, a toilet that clogs repeatedly can point to an aging drain line instead.",
+        localFactors: ["Older homes may still have original clay or cast-iron sewer laterals", "Low-flow toilets from the 1990s often clog more than modern ones"],
+        neighborhoods: ["Sugar House", "The Avenues", "Rose Park", "Liberty Wells"],
+        responseNote: "Stop flushing after one failed attempt — a second flush is what overflows the bowl.",
+      },
+      "running-toilet": {
+        headline: "Running toilet repair in Salt Lake City",
+        intro: "Hard water leaves scale on flappers, seats and fill valves, so Salt Lake toilets start running sooner than in soft-water cities. It's usually a cheap part.",
+        localFactors: ["Mineral scale on the flapper seat stops a new flapper sealing", "Fill valves clog with sediment and hiss or refill slowly"],
+        neighborhoods: ["Sugar House", "Capitol Hill", "Glendale", "East Bench"],
+        responseNote: "Do the dye test first: a few drops of food colouring in the tank tells you flapper vs. fill valve.",
+      },
+      "toilet-leak": {
+        headline: "Toilet leak repair in Salt Lake City",
+        intro: "A leak at the base or tank can soak into subfloor fast, and in homes with finished basements it shows up as a stained ceiling below.",
+        localFactors: ["Finished basements turn a slow upstairs leak into drywall damage", "Original chrome supply lines and angle stops corrode and weep"],
+        neighborhoods: ["The Avenues", "Federal Heights", "Yalecrest", "Sugar House"],
+        responseNote: "Turn the supply valve behind the toilet clockwise to stop a leak while you wait.",
+      },
+      "toilet-install": {
+        headline: "Toilet installation in Salt Lake City",
+        intro: "Remodels in older Salt Lake homes often uncover an off-height or cracked flange. A correct install fixes that before the new toilet is set.",
+        localFactors: ["Older bathrooms may have a 10-inch or 14-inch rough-in, not 12", "Uneven old floors need shimming so the toilet doesn't rock"],
+        neighborhoods: ["Sugar House", "9th and 9th", "Marmalade", "Rose Park"],
+        responseNote: "Measure the rough-in (wall to bolt centre, usually 12 in.) before buying a new toilet.",
+      },
+      "toilet-replacement": {
+        headline: "Toilet replacement in Salt Lake City",
+        intro: "Replacing an old 3.5-gallon toilet or a cracked tank is often cheaper long term than repeated repairs, and it saves water in a dry state.",
+        localFactors: ["Hairline cracks in old tanks can split without warning", "Comfort-height models are popular in older homes being updated"],
+        neighborhoods: ["East Bench", "Sugar House", "Liberty Wells", "Poplar Grove"],
+        responseNote: "Ask whether the quote includes a new wax ring, closet bolts, supply line and haul-away.",
+      },
+      "emergency-plumber": {
+        headline: "Emergency toilet help in Salt Lake City",
+        intro: "An overflowing toilet or a leak that won't stop needs the water shut off first. Then a plumber can clear or repair it.",
+        localFactors: ["Winter cold snaps add frozen-pipe calls to the same week", "Old shut-off valves often seize when you need them most"],
+        neighborhoods: ["Downtown", "Sugar House", "Rose Park", "The Avenues"],
+        responseNote: "If water is still running, shut the valve behind the toilet or the house main before anything else.",
+      },
+      "sewer-backup": {
+        headline: "Sewer backup help in Salt Lake City",
+        intro: "When the basement floor drain or tub backs up as you flush, the blockage is in the main line. Older Salt Lake laterals are prone to tree roots.",
+        localFactors: ["Mature trees in older neighborhoods send roots into clay sewer pipe", "The lowest drain in the house, often a basement floor drain, backs up first"],
+        neighborhoods: ["The Avenues", "Sugar House", "Westpointe", "Fairpark"],
+        responseNote: "If more than one drain is backing up, stop using water everywhere in the house until it is cleared.",
+      },
+    },
+  },
+  {
+    stateSlug: "utah",
+    citySlug: "provo",
+    heroExtra:
+      "Heavy-use rentals and student housing, hard water, and basement apartments make Provo a city of worn flappers, frequent clogs, and leaks into the unit below.",
+    trustLine:
+      "Requests from Provo ZIPs go to an independent, licensed Utah plumber who covers your area.",
+    localFactors: ["Shared bathrooms in student and rental housing wear parts out faster", "Utah County hard water scales flappers and fill valves", "Basement apartments sit under upstairs bathrooms", "Older laterals near downtown are prone to roots"],
+    neighborhoods: ["Joaquin", "Pleasant View", "Grandview", "Edgemont", "Riverbottoms", "North Park"],
+    services: {
+      "clogged-toilet": {
+        headline: "Clogged toilet help in Provo",
+        intro: "In shared student and rental housing, toilets get heavy use and clog more often. Most clear with a flange plunger; repeat clogs point further down the line.",
+        localFactors: ["Shared bathrooms see far more flushes per day than a typical home", "Wipes and paper towels are a common cause in rentals"],
+        neighborhoods: ["Joaquin", "Pleasant View", "North Park", "Grandview"],
+        responseNote: "Stop flushing after one failed attempt — a second flush is what overflows the bowl.",
+      },
+      "running-toilet": {
+        headline: "Running toilet repair in Provo",
+        intro: "Utah County's hard water scales up flappers and fill valves. A toilet that runs or refills on its own is usually a cheap part.",
+        localFactors: ["Scale on the flapper seat causes slow tank-to-bowl leaks", "Heavily used rental toilets wear out flappers sooner"],
+        neighborhoods: ["Edgemont", "Riverbottoms", "Joaquin", "Carterville"],
+        responseNote: "Do the dye test first: a few drops of food colouring in the tank tells you flapper vs. fill valve.",
+      },
+      "toilet-leak": {
+        headline: "Toilet leak repair in Provo",
+        intro: "A leak at the base often means a failed wax ring. In basement apartments, it can drip straight into the unit below.",
+        localFactors: ["Basement apartments sit under many upstairs bathrooms", "Rocking toilets break the wax seal over time"],
+        neighborhoods: ["Pleasant View", "Grandview", "Sherwood Hills", "Edgemont"],
+        responseNote: "Turn the supply valve behind the toilet clockwise to stop a leak while you wait.",
+      },
+      "toilet-install": {
+        headline: "Toilet installation in Provo",
+        intro: "New construction and basement finishes across Utah County need correct flange height and a solid seal on the first try.",
+        localFactors: ["Basement bathrooms may need an up-flush or ejector setup", "Confirm the rough-in before buying"],
+        neighborhoods: ["Riverbottoms", "Edgemont", "Lakeview", "Sunset"],
+        responseNote: "Measure the rough-in (wall to bolt centre, usually 12 in.) before buying a new toilet.",
+      },
+      "toilet-replacement": {
+        headline: "Toilet replacement in Provo",
+        intro: "For landlords, replacing a worn-out toilet often costs less than repeated service calls between tenants.",
+        localFactors: ["Older rentals often have high-volume tanks that waste water", "Cracked lids and tanks are common turnover finds"],
+        neighborhoods: ["Joaquin", "Carterville", "Franklin", "Timp"],
+        responseNote: "Ask whether the quote includes a new wax ring, closet bolts, supply line and haul-away.",
+      },
+      "emergency-plumber": {
+        headline: "Emergency toilet help in Provo",
+        intro: "Overflowing toilets in shared housing affect everyone. Shut off the valve behind the toilet first, then get it cleared.",
+        localFactors: ["Winter freezes can crack exposed pipes in older rentals", "Tenants often can't find the house main, so know where it is"],
+        neighborhoods: ["Downtown", "Joaquin", "East Bay", "Pleasant View"],
+        responseNote: "If water is still running, shut the valve behind the toilet or the house main before anything else.",
+      },
+      "sewer-backup": {
+        headline: "Sewer backup help in Provo",
+        intro: "If the shower or a floor drain fills when you flush, the main line is blocked. Stop using water until it's cleared.",
+        localFactors: ["Older laterals near downtown are prone to roots", "Multi-unit buildings share lines, so one blockage hits several units"],
+        neighborhoods: ["Downtown", "Maeser", "Franklin", "Timp"],
+        responseNote: "If more than one drain is backing up, stop using water everywhere in the house until it is cleared.",
+      },
+    },
+  },
 ];
 
 export function getMetroContent(stateSlug: string, citySlug: string) {

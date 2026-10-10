@@ -251,6 +251,71 @@ export const STATES: State[] = [
       },
     ],
   },
+  {
+    slug: "utah",
+    name: "Utah",
+    abbr: "UT",
+    blurb:
+      "Hard water along the Wasatch Front, freezing winters, and a lot of homes with finished basements make toilet leaks, worn fill valves, and backups a costly problem in Utah. We match you with licensed local plumbers from Ogden to Utah County.",
+    cities: [
+      {
+        slug: "salt-lake-city",
+        name: "Salt Lake City",
+        blurb:
+          "Salt Lake City mixes century-old homes in the Avenues and Sugar House with newer condos downtown, so calls range from corroded supply lines to clogged main lines.",
+        zips: ["84101", "84102", "84103", "84105", "84106", "84108", "84109", "84111", "84115", "84116"],
+      },
+      {
+        slug: "provo",
+        name: "Provo",
+        blurb:
+          "Provo has a high share of rentals and student housing, where shared bathrooms and heavy use wear out flappers and fill valves and clog toilets often.",
+        zips: ["84601", "84604", "84606"],
+      },
+      {
+        slug: "orem",
+        name: "Orem",
+        blurb:
+          "Orem's mid-century homes and basement apartments mean older wax rings, seized shut-off valves, and toilets that leak into the room below.",
+        zips: ["84057", "84058", "84097"],
+      },
+      {
+        slug: "lehi",
+        name: "Lehi",
+        blurb:
+          "Lehi's fast-growing neighborhoods have lots of newer toilets, where builder-grade fill valves and loose installs are common first repairs.",
+        zips: ["84043"],
+      },
+      {
+        slug: "american-fork",
+        name: "American Fork",
+        blurb:
+          "American Fork homeowners deal with hard-water scale on flappers and rim jets, and with older homes near Main Street that need valve and seal work.",
+        zips: ["84003"],
+      },
+      {
+        slug: "sandy",
+        name: "Sandy",
+        blurb:
+          "Sandy's family homes with finished basements make a slow toilet leak or a main-line backup an expensive problem quickly.",
+        zips: ["84070", "84092", "84093", "84094"],
+      },
+      {
+        slug: "west-jordan",
+        name: "West Jordan",
+        blurb:
+          "West Jordan's mix of 1970s-1990s homes and new builds means everything from cracked tanks to first-time toilet installs.",
+        zips: ["84081", "84084", "84088"],
+      },
+      {
+        slug: "ogden",
+        name: "Ogden",
+        blurb:
+          "Ogden's older housing stock has many original shut-off valves and cast-iron drains, which raise the odds of seized valves and sewer backups.",
+        zips: ["84401", "84403", "84404", "84405"],
+      },
+    ],
+  },
 ];
 
 export function getState(slug: string) {

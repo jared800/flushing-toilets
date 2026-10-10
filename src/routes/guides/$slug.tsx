@@ -20,7 +20,12 @@ export const Route = createFileRoute("/guides/$slug")({
   head: ({ loaderData }) => ({
     meta: [
       {
-        title: `${loaderData?.guide.metaTitle ?? loaderData?.guide.title ?? "Guide"} — Flushing Toilets`,
+        // Keep titles under ~60 characters so Google doesn't cut them off.
+        title: (() => {
+          const base =
+            loaderData?.guide.metaTitle ?? loaderData?.guide.title ?? "Guide";
+          return base.length > 42 ? base : `${base} — Flushing Toilets`;
+        })(),
       },
       { name: "description", content: loaderData?.guide.excerpt ?? "" },
     ],
@@ -39,7 +44,7 @@ function GuidePage() {
           "@context": "https://schema.org",
           "@type": "Article",
           headline: guide.title,
-          description: guide.excerpt,
+          description: guide.answer ?? guide.excerpt,
           mainEntityOfPage: `${SITE}/guides/${guide.slug}`,
           ...(guide.updated ? { dateModified: guide.updated } : {}),
           publisher: {
@@ -79,6 +84,22 @@ function GuidePage() {
       />
 
       <article className="mx-auto max-w-3xl space-y-6 px-4 py-10 sm:px-6">
+        {guide.answer && (
+          <section
+            aria-label="Short answer"
+            className="rounded-xl border border-border bg-surface p-5 shadow-sm"
+          >
+            <h2 className="font-display text-lg font-semibold text-harbor">
+              Short answer
+            </h2>
+            <p className="mt-2 leading-relaxed text-fg">{guide.answer}</p>
+            {guide.updated && (
+              <p className="mt-2 text-xs text-fg-subtle">
+                Updated {guide.updated}
+              </p>
+            )}
+          </section>
+        )}
         {/* Someone with a live problem wants the tool, not an essay. */}
         <div className="rounded-xl border border-stream/30 bg-stream-soft/30 p-4">
           <p className="text-sm leading-relaxed text-fg">

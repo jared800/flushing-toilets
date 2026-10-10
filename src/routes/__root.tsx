@@ -16,10 +16,13 @@ export const Route = createRootRoute({
       {
         title: "Flushing Toilets — Local plumbers for toilet trouble",
       },
+      { property: "og:site_name", content: "Flushing Toilets" },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary" },
       {
         name: "description",
         content:
-          "Get a licensed local plumber for clogged, running, leaking, or emergency toilet problems. City pages across Texas, Florida, and Arizona.",
+          "Free referral service for clogged, running, leaking, or overflowing toilets. Plain-English fix guides, a free diagnostic, and licensed local plumbers in Texas, Florida, Arizona, and Utah.",
       },
     ],
     links: [
@@ -50,6 +53,46 @@ function CanonicalLink() {
   return <link rel="canonical" href={`${SITE_ORIGIN}${clean}`} />;
 }
 
+/**
+ * Sitewide entity markup. Deliberately Organization, not LocalBusiness or
+ * Plumber: Flushing Toilets is a referral service with no storefront, and
+ * marking it up as a local plumbing business would be a false claim. Add
+ * `telephone` here only once PUBLIC_PHONE (src/data/site-config.ts) is real.
+ */
+const ORG_LD = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": `${SITE_ORIGIN}/#org`,
+      name: "Flushing Toilets",
+      url: `${SITE_ORIGIN}/`,
+      email: "hello@flushingtoilets.com",
+      description:
+        "Free referral service that connects homeowners with independent, licensed local plumbers for toilet and drain problems. Not a plumbing company.",
+      areaServed: ["Texas", "Florida", "Arizona", "Utah"],
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${SITE_ORIGIN}/#site`,
+      url: `${SITE_ORIGIN}/`,
+      name: "Flushing Toilets",
+      publisher: { "@id": `${SITE_ORIGIN}/#org` },
+    },
+  ],
+};
+
+function OrgJsonLd() {
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{
+        __html: JSON.stringify(ORG_LD).replace(/</g, "\\u003c"),
+      }}
+    />
+  );
+}
+
 function RootComponent() {
   return (
     <RootDocument>
@@ -64,6 +107,7 @@ function RootDocument({ children }: Readonly<{ children: ReactNode }>) {
       <head>
         <HeadContent />
         <CanonicalLink />
+        <OrgJsonLd />
       </head>
       <body className="min-h-screen bg-bg text-fg antialiased">
         {children}

@@ -99,11 +99,12 @@ let skipped = 0;
 for (const s of states) {
   urls.add(`/locations/${s.slug}`);
   for (const c of s.cities) {
-    urls.add(`/locations/${s.slug}/${c}`);
     if (!deepMetros.has(`${s.slug}/${c}`)) {
+      // Template city page is noindexed in the route; keep it out of the sitemap too.
       skipped += services.length;
       continue;
     }
+    urls.add(`/locations/${s.slug}/${c}`);
     for (const svc of services) {
       urls.add(`/locations/${s.slug}/${c}/${svc}`);
     }
@@ -143,6 +144,34 @@ const robots = [
 mkdirSync(resolve(root, "public"), { recursive: true });
 writeFileSync(resolve(root, "public/sitemap.xml"), sitemap);
 writeFileSync(resolve(root, "public/robots.txt"), robots);
+
+// llms.txt: a plain summary for AI assistants (llmstxt.org format).
+const titleOf = (src, slug) => {
+  const m = src.match(new RegExp(`slug:\\s*"${slug}",[\\s\\S]*?title:\\s*"([^"]+)"`));
+  return m ? m[1] : slug;
+};
+const guidesSrc = read("src/data/guides.ts");
+const llms = [
+  "# Flushing Toilets",
+  "",
+  "> Free referral service for toilet and drain problems. Plain-English repair guides, a free diagnostic, and requests routed to independent, licensed local plumbers. Flushing Toilets is not a plumbing company and does not do the work.",
+  "",
+  "Coverage: Texas, Florida, Arizona, and Utah (Salt Lake City and Utah County). Contact: hello@flushingtoilets.com",
+  "",
+  "## Repair guides",
+  ...guides.map((g) => `- [${titleOf(guidesSrc, g)}](${SITE}/guides/${g})`),
+  "",
+  "## Tools",
+  `- [Toilet diagnostic](${SITE}/diagnostic): answer a few questions to find the likely cause`,
+  `- [Get a plumber](${SITE}/get-help): request form, reviewed by a person`,
+  "",
+  "## About",
+  `- [How it works](${SITE}/how-it-works)`,
+  `- [About](${SITE}/about)`,
+  `- [Privacy](${SITE}/privacy)`,
+  "",
+].join("\n");
+writeFileSync(resolve(root, "public/llms.txt"), llms);
 console.log(
   `[seo] wrote sitemap.xml (${urls.size} urls) and robots.txt for ${SITE}`,
 );

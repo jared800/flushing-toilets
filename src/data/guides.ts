@@ -24,11 +24,18 @@ export type Guide = {
   faqs?: GuideFaq[];
   /** Published/updated date for Article schema. */
   updated?: string;
+  /**
+   * 40-60 word direct answer shown first on the page. Written so a search
+   * snippet or an AI answer can quote it whole without losing meaning.
+   */
+  answer?: string;
 };
 
 export const GUIDES: Guide[] = [
   {
     slug: "why-toilet-keeps-clogging",
+    answer:
+      "A toilet that clogs again and again usually has a partial blockage past the bowl, a low-flow bowl that can't clear what your household sends it, a failing wax seal or flange, or a blocked roof vent. Stop flushing wipes, try a closet auger, and call a plumber if more than one drain is slow.",
     title: "Why your toilet keeps clogging",
     excerpt:
       "Recurring clogs often mean more than too much paper — here’s what pros check first.",
@@ -42,6 +49,8 @@ export const GUIDES: Guide[] = [
   },
   {
     slug: "running-toilet-cost",
+    answer:
+      "A running toilet costs money every hour it runs, because the water goes straight to the drain. The fix is usually a flapper or fill valve that costs under twenty dollars. A plumber's visit for the same repair is typically a short service call, so the real cost of waiting is the water bill.",
     title: "How much a running toilet really costs",
     excerpt:
       "A silent runner can waste hundreds of gallons a month. Spot it early and fix the right part.",
@@ -55,6 +64,8 @@ export const GUIDES: Guide[] = [
   },
   {
     slug: "when-to-replace-vs-repair",
+    answer:
+      "Repair a toilet when one part has failed on a solid, quiet fixture: flapper, fill valve, handle, or supply line. Replace it when the bowl or tank is cracked, it rocks because the flange has failed, it clogs constantly, or you need a different height or rough-in. Cracked porcelain cannot be reliably repaired.",
     title: "Repair or replace your toilet?",
     excerpt:
       "Cracks, rocking bases, and endless part swaps are signals it may be time for a new fixture.",
@@ -79,6 +90,8 @@ export const GUIDES: Guide[] = [
   // ---------------------------------------------------------------------
   {
     slug: "how-to-unclog-a-toilet",
+    answer:
+      "Use a flange plunger, not a flat cup plunger. Seal it over the drain opening, push down gently first to push the air out, then pump firmly ten to fifteen times without breaking the seal. If that fails twice, use a closet auger. Never use chemical drain cleaner in a toilet.",
     title: "How to unclog a toilet",
     metaTitle: "How to Unclog a Toilet (Without a Plumber, in Most Cases)",
     excerpt:
@@ -169,6 +182,8 @@ export const GUIDES: Guide[] = [
   },
   {
     slug: "why-is-my-toilet-running",
+    answer:
+      "A toilet runs because water is escaping past a worn flapper, the fill valve isn't shutting off, or the water level is set above the overflow tube. Put food colouring in the tank and wait fifteen minutes: colour in the bowl means the flapper, no colour means the fill valve or level.",
     title: "Why your toilet keeps running",
     metaTitle: "Why Is My Toilet Running? The 15-Minute Fix (and the Dye Test)",
     excerpt:
@@ -260,6 +275,8 @@ export const GUIDES: Guide[] = [
   },
   {
     slug: "toilet-wont-flush",
+    answer:
+      "If the toilet isn't clogged but won't flush or flushes weakly, check the tank first: a loose handle or chain, a water level set too low, or a flapper closing early. Then check under the rim, where mineral scale blocks the rinse holes, and the siphon jet at the bottom of the bowl.",
     title: "Toilet won't flush properly",
     metaTitle: "Toilet Won't Flush But Isn't Clogged? Here's What to Check",
     excerpt:
@@ -331,6 +348,8 @@ export const GUIDES: Guide[] = [
   },
   {
     slug: "toilet-leaking-at-base",
+    answer:
+      "Water at the base of a toilet comes from one of four places: a failed wax ring, loose closet bolts, a leaking supply line or tank bolts dripping down the outside, or condensation. Dry everything, lay paper towel around the base, and see where it gets wet first before you fix anything.",
     title: "Water around the base of the toilet",
     metaTitle: "Toilet Leaking at the Base? Find the Source Before You Fix It",
     excerpt:
@@ -403,6 +422,9 @@ export const GUIDES: Guide[] = [
   },
   {
     slug: "sewer-backup-vs-clog",
+    metaTitle: "Main Sewer Line Clog or Just a Toilet Clog? How to Tell",
+    answer:
+      "A toilet clog affects one toilet; other drains work. A main sewer line clog shows up in several places: the tub or shower fills when you flush, floor drains gurgle, or the lowest drain in the house backs up first. If more than one fixture is affected, stop using water and call a plumber.",
     title: "Toilet clog or sewer backup?",
     excerpt:
       "Knowing the difference helps you call the right help before wastewater spreads.",
@@ -411,7 +433,231 @@ export const GUIDES: Guide[] = [
       "A simple toilet clog usually affects one fixture. Water rises in the bowl; other sinks and showers still drain normally.",
       "A sewer backup often shows up as multiple fixtures draining slowly, water appearing in a tub when you flush, sewage odor, or a cleanout overflowing outside.",
       "If you suspect a main-line backup, avoid running water elsewhere in the home. Stop using sinks, laundry, and other toilets until a plumber assesses the line.",
-      "Emergency partners can stabilize the situation, clear accessible blockages, and recommend camera inspection when roots, grease, or collapse are possible.",
+      "A plumber can clear the line from a cleanout and, if it keeps happening, run a camera to check for roots, grease, or a broken pipe.",
+    ],
+  },
+  // ---------------------------------------------------------------------
+  // Low-competition symptom guides, added 2026-10-09 from an Ahrefs US pull
+  // (Keywords Explorer overview, 2026-10-09). Volumes are monthly US.
+  // ---------------------------------------------------------------------
+  {
+    // "toilet tank not filling" 3,700/mo KD 0; "toilet tank filling slowly" 600/mo KD 0
+    slug: "toilet-tank-not-filling",
+    title: "Toilet tank not filling (or filling slowly)",
+    metaTitle: "Toilet Tank Not Filling or Filling Slowly? 5 Causes",
+    excerpt:
+      "A tank that won't refill, or takes minutes to do it, is nearly always the supply valve, the fill valve, or debris in the valve. Here's the order to check.",
+    answer:
+      "A toilet tank that won't fill, or fills slowly, is usually a partly closed shut-off valve, a fill valve clogged with sediment, a float set too low, or a kinked supply line. Open the valve behind the toilet fully, flush the fill valve to clear debris, and replace the fill valve if it still won't refill.",
+    readMinutes: 5,
+    updated: "2026-10-09",
+    body: [],
+    sections: [
+      {
+        heading: "Check the shut-off valve first",
+        paragraphs: [
+          "The oval handle on the wall behind the toilet controls all the water going into the tank. If someone turned it during a repair, or it has been bumped, it may be only partly open. Turn it counter-clockwise until it stops.",
+          "If the valve won't move, don't force it. Old valves can snap or start leaking at the stem. That is a good reason to call a plumber.",
+        ],
+      },
+      {
+        heading: "Clear debris from the fill valve",
+        paragraphs: [
+          "Sediment and mineral flakes collect in the small opening at the top of the fill valve, especially in hard-water areas. The water still comes in, just slowly.",
+        ],
+        steps: [
+          "Turn the water off at the shut-off valve.",
+          "Remove the cap on top of the fill valve (on most modern valves, press down and twist a quarter turn).",
+          "Hold a cup upside down over the open valve so you don't spray the ceiling.",
+          "Turn the water on for a few seconds to flush grit out, then off again.",
+          "Refit the cap, turn the water on, and watch it fill.",
+        ],
+      },
+      {
+        heading: "Check the float and water level",
+        paragraphs: [
+          "If the tank fills but stops well short, the float is set too low. Adjust the screw or clip on the fill valve until the water stops about an inch below the top of the overflow tube.",
+          "A float rubbing against the tank wall or the flush valve can stick and shut the water off early. Make sure it moves freely.",
+        ],
+      },
+      {
+        heading: "Look at the supply line",
+        paragraphs: [
+          "The flexible hose from the valve to the tank can kink when a toilet is pushed back, and older plastic or metal lines narrow inside over time. A new braided supply line is a cheap part and a quick swap.",
+        ],
+      },
+      {
+        heading: "When to replace the fill valve",
+        paragraphs: [
+          "If the valve is open, the line is clear and the tank still won't fill properly, the fill valve itself has worn out. Fill valves are close to universal and are one of the easier toilet repairs. If the whole house has low pressure, not just the toilet, that is a plumbing issue to have looked at.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Why does my toilet take so long to fill?",
+        answer:
+          "A slow fill is almost always restricted flow into the tank: a partly closed shut-off valve, debris in the fill valve, or an old supply line. Flushing the fill valve clears it in most cases. If the whole house has low water pressure, the problem is upstream of the toilet.",
+      },
+      {
+        question: "Is a toilet that won't fill an emergency?",
+        answer:
+          "No, unless water is leaking onto the floor. You can still flush by pouring a bucket of water into the bowl. If the tank is also leaking, turn the shut-off valve clockwise to stop the water and get it repaired.",
+      },
+      {
+        question: "How long should a toilet tank take to refill?",
+        answer:
+          "Most toilets refill within about a minute. If yours takes several minutes, start by flushing debris out of the fill valve.",
+      },
+    ],
+  },
+  {
+    // "toilet runs intermittently" 400/mo KD 0; "phantom flush" 150 KD 0; "toilet phantom flush" 100 KD 0
+    slug: "toilet-runs-by-itself",
+    title: "Toilet runs by itself every few minutes (phantom flush)",
+    metaTitle: "Toilet Runs by Itself? How to Fix a Phantom Flush",
+    excerpt:
+      "A toilet that refills on its own for a few seconds is leaking water from the tank into the bowl. It's a slow, silent leak and usually a cheap fix.",
+    answer:
+      "A toilet that runs on its own for a few seconds every so often, called a phantom flush, is leaking water from the tank into the bowl. The usual cause is a worn flapper or a dirty flapper seat. Confirm it with a dye test, clean the seat, and replace the flapper if colour still reaches the bowl.",
+    readMinutes: 4,
+    updated: "2026-10-09",
+    body: [],
+    sections: [
+      {
+        heading: "What a phantom flush actually is",
+        paragraphs: [
+          "Nobody touched the handle, but the toilet refills for a few seconds. What happened is that water has been seeping from the tank into the bowl. When the level drops far enough, the fill valve tops it up. It sounds like a short flush.",
+          "Less often, water is siphoning out through the fill valve's refill tube because the tube is pushed too far down into the overflow pipe.",
+        ],
+      },
+      {
+        heading: "Confirm it with a dye test",
+        paragraphs: [],
+        steps: [
+          "Put a few drops of food colouring in the tank.",
+          "Don't flush for 20 to 30 minutes.",
+          "If colour shows up in the bowl, water is getting past the flapper.",
+        ],
+      },
+      {
+        heading: "Fix it",
+        paragraphs: [
+          "Turn off the water and flush to empty the tank. Wipe the ring the flapper lands on; mineral scale or grit there stops even a new flapper from sealing. If the flapper is stiff, warped or slimy, replace it with one the same size (2-inch or 3-inch). Take the old one to the store.",
+          "Check the chain too. If it's too short it holds the flapper slightly open. About half an inch of slack is right.",
+          "Finally, clip the refill tube so its end sits above the top of the overflow pipe, not down inside it.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Does a phantom flush waste a lot of water?",
+        answer:
+          "It wastes water around the clock, because the leak never stops between refills. It is usually less than a toilet that runs constantly, but it still shows up on the water bill and is worth fixing.",
+      },
+      {
+        question: "I replaced the flapper and it still does it. Why?",
+        answer:
+          "The seat the flapper sits on may be scratched or scaled, the new flapper may be the wrong size, or the refill tube may be siphoning water. Check those three. If the flush valve seat is damaged, the flush valve or the whole tank kit needs replacing.",
+      },
+    ],
+  },
+  {
+    // "toilet overflowing" 1,700/mo KD 0 (parent: "what to do if toilet is overflowing")
+    slug: "toilet-overflowing",
+    title: "Toilet overflowing? What to do right now",
+    metaTitle: "Toilet Overflowing? What to Do in the First 60 Seconds",
+    excerpt:
+      "Stop the water first, then deal with the clog. Here's the order that keeps water off your floor and out of the ceiling below.",
+    answer:
+      "If a toilet is overflowing, lift the tank lid and push the flapper down to stop water entering the bowl, then turn the shut-off valve behind the toilet clockwise. Don't flush again. Once the water stops, clear the clog with a flange plunger. If other drains are backing up too, call a plumber.",
+    readMinutes: 4,
+    updated: "2026-10-09",
+    body: [],
+    sections: [
+      {
+        heading: "Stop the water (first 60 seconds)",
+        paragraphs: [],
+        steps: [
+          "Lift the tank lid and press the rubber flapper at the bottom of the tank closed. That stops more water flowing into the bowl.",
+          "Lift the float or float arm up to stop the tank refilling.",
+          "Turn the shut-off valve behind the toilet clockwise until it stops.",
+          "If the valve won't turn, shut off the water to the house at the main valve.",
+        ],
+      },
+      {
+        heading: "Then clear the clog",
+        paragraphs: [
+          "Once the bowl level drops, use a flange plunger. Seal it over the drain hole and pump firmly without breaking the seal. If two good tries don't clear it, use a closet auger, not chemicals.",
+          "Do not flush to test it until the water in the bowl drains on its own.",
+        ],
+      },
+      {
+        heading: "When it's more than a toilet clog",
+        paragraphs: [
+          "If the tub, shower or a floor drain backs up when the toilet overflows, the blockage is in the main sewer line. Stop using water in the whole house and call a plumber. Plunging won't fix a main line.",
+          "If water has soaked into the floor or is coming through a ceiling below, dry it fast and check for damage. Water that sits under flooring causes rot and mould.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Will an overflowing toilet stop on its own?",
+        answer:
+          "Usually, once the tank has emptied into the bowl. But if the fill valve keeps running, or the flapper is stuck open, it can keep overflowing. Push the flapper closed and turn off the shut-off valve to be sure.",
+      },
+      {
+        question: "Is toilet overflow water dangerous?",
+        answer:
+          "Treat it as contaminated if it came from the bowl. Wear gloves, clean hard surfaces with disinfectant, and throw away soaked rugs or cardboard. Sewage from a main-line backup needs a more thorough clean-up.",
+      },
+    ],
+  },
+  {
+    // "toilet leaking from tank" 1,900/mo KD 3
+    slug: "toilet-leaking-from-tank",
+    title: "Toilet leaking from the tank",
+    metaTitle: "Toilet Leaking From the Tank? Bolts, Gasket or Crack",
+    excerpt:
+      "Water dripping from under the tank usually comes from the tank bolts, the tank-to-bowl gasket, or the supply connection, and occasionally a crack.",
+    answer:
+      "A toilet leaking from the tank is usually leaking at the tank bolts, the rubber tank-to-bowl gasket, or the supply line connection, and sometimes through a hairline crack. Dry the tank, run your hand under each bolt and the fill-valve nut, and look for the first drip. Worn bolts and gaskets come as an inexpensive kit.",
+    readMinutes: 5,
+    updated: "2026-10-09",
+    body: [],
+    sections: [
+      {
+        heading: "Find the drip",
+        paragraphs: [
+          "Dry the outside of the tank and the floor. Put dry paper towel under the tank and wait. Check, in order: the supply line nut under the left side, the two or three tank bolts underneath, and the joint between the tank and bowl.",
+          "Water beading on the whole tank surface on a humid day is condensation, not a leak.",
+        ],
+      },
+      {
+        heading: "Tank bolts and gasket",
+        paragraphs: [
+          "The rubber washers on the tank bolts and the big gasket between tank and bowl harden over time. Tightening a little can stop a drip, but over-tightening cracks porcelain. If it still drips, replace the bolts, washers and gasket together as a kit.",
+        ],
+      },
+      {
+        heading: "Supply line and fill valve nut",
+        paragraphs: [
+          "A drip at the supply connection is usually a worn line or a loose nut. Snug it by hand, then a quarter turn. If the line is old, replace it with a braided one.",
+        ],
+      },
+      {
+        heading: "If the tank is cracked",
+        paragraphs: [
+          "A hairline crack that weeps cannot be reliably repaired. Turn the water off and replace the tank or the whole toilet. A crack can split further without warning.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Can I keep using a toilet that leaks from the tank?",
+        answer:
+          "For a slow drip at a bolt, yes, for a short time with a towel underneath, but get it fixed soon. Water under the floor causes rot. For a cracked tank, turn the water off and don't use it.",
+      },
     ],
   },
 ];
