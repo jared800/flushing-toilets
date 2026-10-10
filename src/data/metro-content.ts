@@ -27,7 +27,7 @@ export const METRO_CONTENT: MetroContent[] = [
     heroExtra:
       "Houston’s clay soil, slab foundations, and heavy rain weeks mean toilet seals, cleanouts, and main lines take real stress — especially inside the Loop and older bungalow belts.",
     trustLine:
-      "Requests from Houston ZIPs go to an independent, licensed Texas plumber who covers your area.",
+      "Requests from Houston ZIPs are reviewed by a person and passed to an independent, licensed Texas plumber who covers your area, when one is available.",
     localFactors: [
       "Expansive clay soil can shift slabs and stress drain lines",
       "Tropical storm weeks spike sewer backup and overflow calls",
@@ -128,7 +128,7 @@ export const METRO_CONTENT: MetroContent[] = [
     heroExtra:
       "Miami condos, coastal humidity, and older supply lines make toilet leaks and emergency overflows a year-round problem — from Brickell towers to Coral Gables homes.",
     trustLine:
-      "Requests from Miami ZIPs go to an independent, licensed Florida plumber who covers your area.",
+      "Requests from Miami ZIPs are reviewed by a person and passed to an independent, licensed Florida plumber who covers your area, when one is available.",
     localFactors: [
       "High-rise shutoff logistics and building access rules",
       "Salt air and humidity accelerate supply-line corrosion",
@@ -229,7 +229,7 @@ export const METRO_CONTENT: MetroContent[] = [
     citySlug: "austin",
     heroExtra:
       "Austin’s mix of older central homes and fast-growing suburbs means constant demand for clogged toilets, flange repairs, and new installs in South Austin, East Austin, and the Domain corridor.",
-    trustLine: "Requests from Austin ZIPs go to an independent, licensed Texas plumber who covers your area.",
+    trustLine: "Requests from Austin ZIPs are reviewed by a person and passed to an independent, licensed Texas plumber who covers your area, when one is available.",
     localFactors: [
       "Older central Austin flanges and wax rings fail often",
       "Student and short-term rentals spike clog calls",
@@ -294,7 +294,7 @@ export const METRO_CONTENT: MetroContent[] = [
     citySlug: "dallas",
     heroExtra:
       "Dallas spans mid-century homes, high-rise condos, and sprawling suburbs — toilet failures, install work, and after-hours emergencies stay busy year-round.",
-    trustLine: "Requests from Dallas ZIPs go to an independent, licensed Texas plumber who covers your area.",
+    trustLine: "Requests from Dallas ZIPs are reviewed by a person and passed to an independent, licensed Texas plumber who covers your area, when one is available.",
     localFactors: [
       "Condo building access rules slow unprepared techs",
       "Clay soil movement stresses drain lines",
@@ -359,7 +359,7 @@ export const METRO_CONTENT: MetroContent[] = [
     citySlug: "phoenix",
     heroExtra:
       "Phoenix hard water and extreme heat put constant stress on flappers, fill valves, and seals across a huge metro service area.",
-    trustLine: "Requests from Phoenix ZIPs go to an independent, licensed Arizona plumber who covers your area.",
+    trustLine: "Requests from Phoenix ZIPs are reviewed by a person and passed to an independent, licensed Arizona plumber who covers your area, when one is available.",
     localFactors: [
       "Hard water shortens flapper and valve life",
       "Desert heat expands/contracts supply lines",
@@ -424,7 +424,7 @@ export const METRO_CONTENT: MetroContent[] = [
     citySlug: "tampa",
     heroExtra:
       "Tampa Bay humidity, older bungalows, and storm seasons drive toilet leaks, clogs, and sewer calls across South Tampa, Seminole Heights, and nearby suburbs.",
-    trustLine: "Requests from Tampa ZIPs go to an independent, licensed Florida plumber who covers your area.",
+    trustLine: "Requests from Tampa ZIPs are reviewed by a person and passed to an independent, licensed Florida plumber who covers your area, when one is available.",
     localFactors: [
       "Humidity accelerates supply-line corrosion",
       "Storm weeks spike backup calls",
@@ -490,7 +490,7 @@ export const METRO_CONTENT: MetroContent[] = [
     heroExtra:
       "Hard water, freezing winters, and older homes with finished basements make toilet leaks and backups a costly problem in Salt Lake City, from the Avenues to Rose Park.",
     trustLine:
-      "Requests from Salt Lake City ZIPs go to an independent, licensed Utah plumber who covers your area.",
+      "Requests from Salt Lake City ZIPs are reviewed by a person and passed to an independent, licensed Utah plumber who covers your area, when one is available.",
     localFactors: ["Hard water along the Wasatch Front scales up flappers, fill valves, and rim jets", "Finished basements turn small leaks into ceiling and drywall damage", "Older neighborhoods still have original clay or cast-iron sewer laterals", "Winter cold snaps add frozen and burst pipes to the same week"],
     neighborhoods: ["Sugar House", "The Avenues", "Rose Park", "Liberty Wells", "Capitol Hill", "East Bench"],
     services: {
@@ -551,7 +551,7 @@ export const METRO_CONTENT: MetroContent[] = [
     heroExtra:
       "Heavy-use rentals and student housing, hard water, and basement apartments make Provo a city of worn flappers, frequent clogs, and leaks into the unit below.",
     trustLine:
-      "Requests from Provo ZIPs go to an independent, licensed Utah plumber who covers your area.",
+      "Requests from Provo ZIPs are reviewed by a person and passed to an independent, licensed Utah plumber who covers your area, when one is available.",
     localFactors: ["Shared bathrooms in student and rental housing wear parts out faster", "Utah County hard water scales flappers and fill valves", "Basement apartments sit under upstairs bathrooms", "Older laterals near downtown are prone to roots"],
     neighborhoods: ["Joaquin", "Pleasant View", "Grandview", "Edgemont", "Riverbottoms", "North Park"],
     services: {
@@ -612,7 +612,7 @@ export const METRO_CONTENT: MetroContent[] = [
     heroExtra:
       "Orem is full of 1950s-1970s ramblers and split-levels, many with a basement apartment rented to UVU students, so an upstairs toilet leak often ends up as somebody else's ceiling stain.",
     trustLine:
-      "Requests from Orem ZIPs go to an independent, licensed Utah plumber who covers your area.",
+      "Requests from Orem ZIPs are reviewed by a person and passed to an independent, licensed Utah plumber who covers your area, when one is available.",
     localFactors: [
       "Mid-century homes still have original shut-off valves that seize when you finally need them",
       "Basement apartments sit directly under the main-floor bathroom",
@@ -713,7 +713,7 @@ export const METRO_CONTENT: MetroContent[] = [
     heroExtra:
       "Most of Lehi was built in the last twenty years, so toilet calls here are less about corroded pipes and more about builder-grade parts wearing out, installs that were never quite level, and new basements being finished.",
     trustLine:
-      "Requests from Lehi ZIPs go to an independent, licensed Utah plumber who covers your area.",
+      "Requests from Lehi ZIPs are reviewed by a person and passed to an independent, licensed Utah plumber who covers your area, when one is available.",
     localFactors: [
       "Builder-grade fill valves and flappers in 2000s and 2010s homes are reaching the end of their life",
       "Toilets set fast during construction can rock and break the wax seal over time",
@@ -811,7 +811,7 @@ export const METRO_CONTENT: MetroContent[] = [
     heroExtra:
       "American Fork mixes older homes near Main Street, some with original galvanized pipes and cast-iron drains, with newer subdivisions on the benches, and hard water wears out toilet parts in both.",
     trustLine:
-      "Requests from American Fork ZIPs go to an independent, licensed Utah plumber who covers your area.",
+      "Requests from American Fork ZIPs are reviewed by a person and passed to an independent, licensed Utah plumber who covers your area, when one is available.",
     localFactors: [
       "Hard water scale clogs rim jets and makes flappers leak",
       "Older homes near Main Street may still have galvanized supply pipes and cast-iron drains",
@@ -910,7 +910,7 @@ export const METRO_CONTENT: MetroContent[] = [
     heroExtra:
       "Sandy runs from the Jordan River up into the Wasatch foothills, so water pressure varies a lot from street to street, and most homes have a finished basement where a small leak turns into a big repair.",
     trustLine:
-      "Requests from Sandy ZIPs go to an independent, licensed Utah plumber who covers your area.",
+      "Requests from Sandy ZIPs are reviewed by a person and passed to an independent, licensed Utah plumber who covers your area, when one is available.",
     localFactors: [
       "Big elevation changes mean some homes see high water pressure that wears out fill valves and supply lines",
       "Many homes have a pressure-reducing valve near the main that eventually fails",
@@ -1008,7 +1008,7 @@ export const METRO_CONTENT: MetroContent[] = [
     heroExtra:
       "West Jordan has grown in waves, from older homes on the east side to newer subdivisions toward the Oquirrhs, so toilet calls range from cracked 1970s tanks to builder-grade parts in homes a few years old.",
     trustLine:
-      "Requests from West Jordan ZIPs go to an independent, licensed Utah plumber who covers your area.",
+      "Requests from West Jordan ZIPs are reviewed by a person and passed to an independent, licensed Utah plumber who covers your area, when one is available.",
     localFactors: [
       "Older east-side homes have original valves, supply lines and wax rings",
       "Newer west-side homes have builder-grade parts now wearing out",
@@ -1106,7 +1106,7 @@ export const METRO_CONTENT: MetroContent[] = [
     heroExtra:
       "Ogden has some of the oldest housing on the Wasatch Front, with historic districts full of pre-war homes and original cast-iron drains, so seized valves, corroded supply lines and root-filled sewer laterals are everyday calls.",
     trustLine:
-      "Requests from Ogden ZIPs go to an independent, licensed Utah plumber who covers your area.",
+      "Requests from Ogden ZIPs are reviewed by a person and passed to an independent, licensed Utah plumber who covers your area, when one is available.",
     localFactors: [
       "Pre-war and mid-century homes often have original cast-iron drains and clay sewer laterals",
       "Original shut-off valves seize or snap when finally turned",
