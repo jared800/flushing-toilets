@@ -13,6 +13,7 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as BrandRouteImport } from './routes/brand'
 import { Route as ContactRouteImport } from './routes/contact'
+import { Route as DiagnosticRouteImport } from './routes/diagnostic'
 import { Route as GetHelpRouteImport } from './routes/get-help'
 import { Route as HowItWorksRouteImport } from './routes/how-it-works'
 import { Route as PrivacyRouteImport } from './routes/privacy'
@@ -20,6 +21,7 @@ import { Route as SearchRouteImport } from './routes/search'
 import { Route as TermsRouteImport } from './routes/terms'
 import { Route as AdminIndexRouteImport } from './routes/admin/index'
 import { Route as AdminApplicationsRouteImport } from './routes/admin/applications'
+import { Route as AdminEconomicsRouteImport } from './routes/admin/economics'
 import { Route as AdminGoLiveRouteImport } from './routes/admin/go-live'
 import { Route as AdminLoginRouteImport } from './routes/admin/login'
 import { Route as AdminNotificationsRouteImport } from './routes/admin/notifications'
@@ -64,6 +66,11 @@ const ContactRoute = ContactRouteImport.update({
   path: '/contact',
   getParentRoute: () => rootRouteImport,
 } as any)
+const DiagnosticRoute = DiagnosticRouteImport.update({
+  id: '/diagnostic',
+  path: '/diagnostic',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const GetHelpRoute = GetHelpRouteImport.update({
   id: '/get-help',
   path: '/get-help',
@@ -97,6 +104,11 @@ const AdminIndexRoute = AdminIndexRouteImport.update({
 const AdminApplicationsRoute = AdminApplicationsRouteImport.update({
   id: '/admin/applications',
   path: '/admin/applications',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminEconomicsRoute = AdminEconomicsRouteImport.update({
+  id: '/admin/economics',
+  path: '/admin/economics',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AdminGoLiveRoute = AdminGoLiveRouteImport.update({
@@ -221,12 +233,14 @@ export interface FileRoutesByFullPath {
   '/about': typeof AboutRoute
   '/brand': typeof BrandRoute
   '/contact': typeof ContactRoute
+  '/diagnostic': typeof DiagnosticRoute
   '/get-help': typeof GetHelpRoute
   '/how-it-works': typeof HowItWorksRoute
   '/privacy': typeof PrivacyRoute
   '/search': typeof SearchRoute
   '/terms': typeof TermsRoute
   '/admin/applications': typeof AdminApplicationsRoute
+  '/admin/economics': typeof AdminEconomicsRoute
   '/admin/go-live': typeof AdminGoLiveRoute
   '/admin/login': typeof AdminLoginRoute
   '/admin/notifications': typeof AdminNotificationsRoute
@@ -257,12 +271,14 @@ export interface FileRoutesByTo {
   '/about': typeof AboutRoute
   '/brand': typeof BrandRoute
   '/contact': typeof ContactRoute
+  '/diagnostic': typeof DiagnosticRoute
   '/get-help': typeof GetHelpRoute
   '/how-it-works': typeof HowItWorksRoute
   '/privacy': typeof PrivacyRoute
   '/search': typeof SearchRoute
   '/terms': typeof TermsRoute
   '/admin/applications': typeof AdminApplicationsRoute
+  '/admin/economics': typeof AdminEconomicsRoute
   '/admin/go-live': typeof AdminGoLiveRoute
   '/admin/login': typeof AdminLoginRoute
   '/admin/notifications': typeof AdminNotificationsRoute
@@ -294,12 +310,14 @@ export interface FileRoutesById {
   '/about': typeof AboutRoute
   '/brand': typeof BrandRoute
   '/contact': typeof ContactRoute
+  '/diagnostic': typeof DiagnosticRoute
   '/get-help': typeof GetHelpRoute
   '/how-it-works': typeof HowItWorksRoute
   '/privacy': typeof PrivacyRoute
   '/search': typeof SearchRoute
   '/terms': typeof TermsRoute
   '/admin/applications': typeof AdminApplicationsRoute
+  '/admin/economics': typeof AdminEconomicsRoute
   '/admin/go-live': typeof AdminGoLiveRoute
   '/admin/login': typeof AdminLoginRoute
   '/admin/notifications': typeof AdminNotificationsRoute
@@ -332,12 +350,14 @@ export interface FileRouteTypes {
     | '/about'
     | '/brand'
     | '/contact'
+    | '/diagnostic'
     | '/get-help'
     | '/how-it-works'
     | '/privacy'
     | '/search'
     | '/terms'
     | '/admin/applications'
+    | '/admin/economics'
     | '/admin/go-live'
     | '/admin/login'
     | '/admin/notifications'
@@ -368,12 +388,14 @@ export interface FileRouteTypes {
     | '/about'
     | '/brand'
     | '/contact'
+    | '/diagnostic'
     | '/get-help'
     | '/how-it-works'
     | '/privacy'
     | '/search'
     | '/terms'
     | '/admin/applications'
+    | '/admin/economics'
     | '/admin/go-live'
     | '/admin/login'
     | '/admin/notifications'
@@ -404,12 +426,14 @@ export interface FileRouteTypes {
     | '/about'
     | '/brand'
     | '/contact'
+    | '/diagnostic'
     | '/get-help'
     | '/how-it-works'
     | '/privacy'
     | '/search'
     | '/terms'
     | '/admin/applications'
+    | '/admin/economics'
     | '/admin/go-live'
     | '/admin/login'
     | '/admin/notifications'
@@ -441,12 +465,14 @@ export interface RootRouteChildren {
   AboutRoute: typeof AboutRoute
   BrandRoute: typeof BrandRoute
   ContactRoute: typeof ContactRoute
+  DiagnosticRoute: typeof DiagnosticRoute
   GetHelpRoute: typeof GetHelpRoute
   HowItWorksRoute: typeof HowItWorksRoute
   PrivacyRoute: typeof PrivacyRoute
   SearchRoute: typeof SearchRoute
   TermsRoute: typeof TermsRoute
   AdminApplicationsRoute: typeof AdminApplicationsRoute
+  AdminEconomicsRoute: typeof AdminEconomicsRoute
   AdminGoLiveRoute: typeof AdminGoLiveRoute
   AdminLoginRoute: typeof AdminLoginRoute
   AdminNotificationsRoute: typeof AdminNotificationsRoute
@@ -503,6 +529,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ContactRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/diagnostic': {
+      id: '/diagnostic'
+      path: '/diagnostic'
+      fullPath: '/diagnostic'
+      preLoaderRoute: typeof DiagnosticRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/get-help': {
       id: '/get-help'
       path: '/get-help'
@@ -550,6 +583,13 @@ declare module '@tanstack/react-router' {
       path: '/admin/applications'
       fullPath: '/admin/applications'
       preLoaderRoute: typeof AdminApplicationsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/economics': {
+      id: '/admin/economics'
+      path: '/admin/economics'
+      fullPath: '/admin/economics'
+      preLoaderRoute: typeof AdminEconomicsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/admin/go-live': {
@@ -721,12 +761,14 @@ const rootRouteChildren: RootRouteChildren = {
   AboutRoute: AboutRoute,
   BrandRoute: BrandRoute,
   ContactRoute: ContactRoute,
+  DiagnosticRoute: DiagnosticRoute,
   GetHelpRoute: GetHelpRoute,
   HowItWorksRoute: HowItWorksRoute,
   PrivacyRoute: PrivacyRoute,
   SearchRoute: SearchRoute,
   TermsRoute: TermsRoute,
   AdminApplicationsRoute: AdminApplicationsRoute,
+  AdminEconomicsRoute: AdminEconomicsRoute,
   AdminGoLiveRoute: AdminGoLiveRoute,
   AdminLoginRoute: AdminLoginRoute,
   AdminNotificationsRoute: AdminNotificationsRoute,

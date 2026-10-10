@@ -39,7 +39,7 @@ export function cityFaqs(cityName: string, stateAbbr: string): FaqItem[] {
     {
       question: `How does matching work in ${cityName}?`,
       answer:
-        "A person reviews your request and sends it to a licensed independent plumber who covers your ZIP code. If no plumber covers your area yet, we text you so you can call someone else right away.",
+        "A person reviews your request and sends it to a licensed independent plumber who covers your ZIP code. If no plumber covers your area yet, we follow up by phone so you can call someone else right away.",
     },
     {
       question: "Will I get multiple calls?",

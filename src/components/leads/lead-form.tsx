@@ -176,9 +176,9 @@ export function LeadForm({
               Thanks{name ? `, ${name.split(" ")[0]}` : ""}. We have your{" "}
               {service.name.toLowerCase()} request for{" "}
               {resolved?.cityLabel ?? zip}. A real person reviews every
-              request and matches it with a licensed local plumber who covers
-              your area. If we cannot find one, we will text you so you are not
-              left waiting.
+              request and tries to match it with a licensed local plumber who
+              covers your area. Either way, we&apos;ll follow up by phone so you
+              are not left waiting.
             </p>
             {urgency === "emergency" && (
               <p className="mt-2 text-sm font-medium text-stream">
