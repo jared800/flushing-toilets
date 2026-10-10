@@ -26,7 +26,7 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Clogged, running, or leaking toilet? Get matched with licensed local plumbers in Texas, Florida, and Arizona.",
+          "Clogged, running, or leaking toilet? Get matched with licensed local plumbers in Texas, Florida, Arizona, and Utah.",
       },
     ],
   }),
@@ -185,8 +185,9 @@ function HomePage() {
                 Deep coverage to start
               </h2>
               <p className="mt-2 max-w-xl text-fg-muted">
-                Launching deep in Texas, Florida, and Arizona — with fully unique
-                depth in Houston and Miami first.
+                Texas, Florida, Arizona, and Utah, with local pages for Houston,
+                Miami, Austin, Dallas, Phoenix, Tampa, and eight Wasatch Front
+                cities from Ogden to Provo.
               </p>
             </div>
             <Button asChild variant="outline" className="hidden sm:inline-flex">

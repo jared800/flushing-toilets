@@ -40,7 +40,7 @@ function AboutPage() {
           plumbers pay to receive requests.
         </p>
         <p>
-          We launch deep in Texas, Florida, and Arizona first, then expand state
+          We launch deep in Texas, Florida, Arizona, and Utah first, then expand state
           by state once supply and conversion are proven.
         </p>
       </div>

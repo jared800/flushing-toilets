@@ -12,7 +12,7 @@ export const Route = createFileRoute("/locations/")({
       {
         name: "description",
         content:
-          "Browse toilet plumber coverage by state and city across Texas, Florida, and Arizona.",
+          "Browse toilet plumber coverage by state and city across Texas, Florida, Arizona, and Utah.",
       },
     ],
   }),
