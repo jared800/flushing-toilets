@@ -1,4 +1,6 @@
 import { createServerFn } from "@tanstack/react-start";
+import { z } from "zod";
+import { partnersForCity } from "@/data/partners";
 import {
   createLeadServer,
   getLeadServer,
@@ -22,25 +24,56 @@ import type { LeadStatus } from "@/lib/leads-types";
  * leads; the partner id comes from the signed session, never the request body.
  */
 
+/**
+ * Public lead intake. Validated server-side: the browser no longer decides who
+ * receives a lead (assignedPartnerIds from the client is ignored and recomputed
+ * from the city), sizes are capped, and a hidden honeypot field drops bots.
+ */
+const MAX_PHOTO_DATA_URL = 3_000_000; // ~2.2 MB image
+const leadInput = z.object({
+  name: z.string().trim().max(120),
+  phone: z
+    .string()
+    .trim()
+    .max(32)
+    .refine((v) => v.replace(/\D/g, "").length >= 10, "Enter a full phone number."),
+  zip: z.string().trim().min(3).max(64),
+  cityLabel: z.string().trim().max(120),
+  stateSlug: z.string().max(40).optional(),
+  citySlug: z.string().max(60).optional(),
+  serviceSlug: z.string().max(60),
+  serviceName: z.string().max(80),
+  urgency: z.enum(["emergency", "today", "this-week"]),
+  notes: z.string().max(2000).default(""),
+  photoDataUrl: z
+    .string()
+    .max(MAX_PHOTO_DATA_URL, "Photo is too large.")
+    .refine((v) => v.startsWith("data:image/"), "Photo must be an image.")
+    .optional(),
+  sourcePath: z.string().max(300),
+  assignedPartnerIds: z.array(z.string()).max(10).optional(),
+  /** Honeypot. Real visitors never see or fill this. */
+  website: z.string().max(200).optional(),
+});
+
 export const submitLeadFn = createServerFn({ method: "POST" })
-  .validator(
-    (data: {
-      name: string;
-      phone: string;
-      zip: string;
-      cityLabel: string;
-      stateSlug?: string;
-      citySlug?: string;
-      serviceSlug: string;
-      serviceName: string;
-      urgency: "emergency" | "today" | "this-week";
-      notes: string;
-      photoDataUrl?: string;
-      sourcePath: string;
-      assignedPartnerIds: string[];
-    }) => data,
-  )
-  .handler(async ({ data }) => createLeadServer(data));
+  .validator((data: z.input<typeof leadInput>) => leadInput.parse(data))
+  .handler(async ({ data }) => {
+    const { website, assignedPartnerIds: _ignored, ...rest } = data;
+    if (website && website.trim()) {
+      // Pretend success so bots get no signal; nothing is stored or sent.
+      return { id: "ok", notifications: [] } as unknown as Awaited<
+        ReturnType<typeof createLeadServer>
+      >;
+    }
+    const assigned =
+      rest.stateSlug && rest.citySlug
+        ? partnersForCity(rest.stateSlug, rest.citySlug)
+            .slice(0, 3)
+            .map((p) => p.id)
+        : [];
+    return createLeadServer({ ...rest, assignedPartnerIds: assigned });
+  });
 
 export const listLeadsFn = createServerFn({ method: "GET" })
   .middleware([opsMiddleware])

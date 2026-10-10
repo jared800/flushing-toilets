@@ -10,7 +10,7 @@ export const Route = createFileRoute("/terms")({
 function TermsPage() {
   return (
     <SiteShell>
-      <PageHero kicker="Legal" title="Terms of use" description="Demo terms for the Flushing Toilets site." />
+      <PageHero kicker="Legal" title="Terms of use" description="The short version of how Flushing Toilets works." />
       <div className="mx-auto max-w-3xl space-y-4 px-4 py-10 text-sm leading-relaxed text-fg-muted sm:px-6">
         <p>
           Flushing Toilets provides a platform that connects consumers with
@@ -18,8 +18,19 @@ function TermsPage() {
           and are not responsible for workmanship of partner plumbers.
         </p>
         <p>
-          Partner pricing, lead fees, and territory rules are described on the
-          partner pricing page and in individual partner agreements.
+          The service is free for homeowners. Plumbers who receive requests
+          agree to separate partner terms. Any quote, price, warranty, or
+          schedule comes from the plumber you choose, not from us.
+        </p>
+        <p>
+          When you submit a request you agree that we and up to three
+          independent plumbers may contact you about it by call, text, or
+          email, as described on the form. Reply STOP to any text to opt out,
+          or email hello@flushingtoilets.com.
+        </p>
+        <p>
+          Guides on this site are general information. If you are unsure, or
+          a shut-off valve will not turn, stop and call a licensed plumber.
         </p>
         <p>
           Submitting a request does not guarantee service availability or a

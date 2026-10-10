@@ -32,8 +32,8 @@ function HowItWorksPage() {
             d: "City or ZIP, service type, urgency, and phone. We keep the form short so you can finish on a wet bathroom floor with one hand.",
           },
           {
-            t: "We route to local partners",
-            d: "Exclusive and Preferred partners get priority in their territories. Connect partners may share leads with up to two other shops.",
+            t: "We match a local plumber",
+            d: "A person reviews your request and sends it to a licensed independent plumber who covers your ZIP. No more than three plumbers ever see it. If nobody covers your area yet, we tell you.",
           },
           {
             t: "A licensed plumber contacts you",
@@ -41,7 +41,7 @@ function HowItWorksPage() {
           },
           {
             t: "Transparency always",
-            d: "Every conversion page discloses that independent plumbers perform the work. Partners must show license and insurance to go live.",
+            d: "We are a free referral service, not a plumbing company. Independent plumbers quote and do the work, and must show a current license and insurance before we send them anything.",
           },
         ].map((item, i) => (
           <div

@@ -32,9 +32,12 @@ function AboutPage() {
           them to independent partner plumbers.
         </p>
         <p>
-          Our brand system — Harbor Trust — is intentionally calm and
-          professional. No cartoon plungers as the hero story. No fake “our
-          technicians are en route” copy when partners do the work.
+          We are not a plumbing company and we do not send technicians. We
+          write plain-English guides for the most common toilet problems, a
+          free diagnostic to help you decide whether you need a pro at all,
+          and a short request form that a real person reviews before it goes
+          to a licensed local plumber. The service is free for homeowners;
+          plumbers pay to receive requests.
         </p>
         <p>
           We launch deep in Texas, Florida, and Arizona first, then expand state

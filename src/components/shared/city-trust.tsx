@@ -30,7 +30,7 @@ export function CityTrustBlock({
             Trust in {cityName}
           </h2>
           <p className="mt-1 text-sm text-fg-muted">
-            License-verified partners · marketplace transparency
+            Independent local plumbers · free referral service
           </p>
         </div>
         {trust && (
@@ -48,11 +48,11 @@ export function CityTrustBlock({
         <Badge variant="harbor">
           <span className="inline-flex items-center gap-1">
             <Shield className="h-3 w-3" />
-            License checked
+            License required to join
           </span>
         </Badge>
         <Badge variant="stream">Independent local plumbers</Badge>
-        <Badge variant="signal">TCPA consent on form</Badge>
+        <Badge variant="signal">Clear contact consent</Badge>
       </div>
 
       {reviews.length > 0 ? (

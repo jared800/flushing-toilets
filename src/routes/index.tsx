@@ -58,11 +58,11 @@ function HomePage() {
             <div className="mt-5 flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-fg-muted">
               <span className="inline-flex items-center gap-1.5">
                 <Shield className="h-4 w-4 text-stream" />
-                Licences checked against the state board
+                Free referral service · independent plumbers
               </span>
               <span className="inline-flex items-center gap-1.5">
                 <Clock3 className="h-4 w-4 text-stream" />
-                Emergency &amp; same-day options
+                Emergency requests flagged first
               </span>
               {/* This slot held (800) 555-0192 until 2026-08-11 — a reserved
                   fictional number that does not connect. */}
@@ -143,7 +143,7 @@ function HomePage() {
               {
                 n: "2",
                 t: "We match a partner",
-                d: "Licensed plumbers in your area — Preferred and Exclusive first when available.",
+                d: "We send your request to a licensed plumber who covers your ZIP. If nobody covers it yet, we tell you instead of leaving you waiting.",
               },
               {
                 n: "3",
@@ -248,7 +248,7 @@ function HomePage() {
           <div className="mt-8 flex flex-wrap gap-4 text-sm text-fg-muted">
             <span className="inline-flex items-center gap-1.5">
               <BadgeCheck className="h-4 w-4 text-stream" />
-              TCPA-compliant consent on every form
+              Clear contact consent on every form
             </span>
             <span className="inline-flex items-center gap-1.5">
               <Shield className="h-4 w-4 text-stream" />

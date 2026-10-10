@@ -1,4 +1,4 @@
-import { getSql } from "@/lib/db";
+import { dbSource, getSql } from "@/lib/db";
 import { getPartner, PARTNERS } from "@/data/partners";
 import type {
   Lead,
@@ -104,6 +104,9 @@ function rowToLead(row: LeadRow, notifications: LeadNotification[]): Lead {
 }
 
 export async function ensureSeedLeads() {
+  // Demo leads are for the local PGLite preview only. Never write invented
+  // homeowners into the production database (three were found there 2026-10-09).
+  if (dbSource === "neon") return;
   const sql = await getSql();
   const countRows = await sql<{ c: number }>`select count(*)::int as c from ft_leads`;
   if ((countRows[0]?.c ?? 0) > 0) return;
@@ -320,6 +323,14 @@ export async function createNotificationsForLead(lead: Lead) {
 
   // Safety net: a lead that matched no partner (or only placeholder partners)
   // must still reach a human. LEAD_FALLBACK_EMAIL gets a copy of every lead.
+  if (!cfg.fallbackEmail || !cfg.resend) {
+    // Shows up in Vercel function logs so a silently dropped lead is visible.
+    console.error(
+      `[leads] lead ${lead.id} saved but NO HUMAN NOTIFIED: ` +
+        `RESEND_API_KEY ${cfg.resend ? "set" : "missing"}, ` +
+        `LEAD_FALLBACK_EMAIL ${cfg.fallbackEmail ? "set" : "missing"}`,
+    );
+  }
   if (cfg.fallbackEmail) {
     const subject = `Lead copy · ${lead.serviceName} · ${lead.cityLabel}${
       created.some((n) => n.status === "sent") ? "" : " · NO PARTNER NOTIFIED"

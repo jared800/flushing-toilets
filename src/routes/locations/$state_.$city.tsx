@@ -142,7 +142,7 @@ function CityPage() {
             </h2>
             {partners.length > 0 && (
               <p className="mt-1 text-sm text-fg-muted">
-                Exclusive and Preferred partners appear first.
+                Independent plumbers who have agreed to take requests here.
               </p>
             )}
             <div className="mt-4 space-y-3">

@@ -49,6 +49,7 @@ export function LeadForm({
   const [photoDataUrl, setPhotoDataUrl] = useState<string | undefined>();
   const [photoName, setPhotoName] = useState<string | null>(null);
   const [consent, setConsent] = useState(false);
+  const [website, setWebsite] = useState("");
   const [error, setError] = useState<string | null>(null);
   const [submitting, setSubmitting] = useState(false);
   const [submittedId, setSubmittedId] = useState<string | null>(null);
@@ -144,6 +145,7 @@ export function LeadForm({
           // exists, so every unmatched lead claimed a phantom assignee. An
           // empty array is correct: the server falls back to LEAD_FALLBACK_EMAIL.
           assignedPartnerIds: assigned,
+          website,
         },
       });
       setSubmittedId(lead.id);
@@ -173,9 +175,10 @@ export function LeadForm({
             <p className="mt-2 text-sm leading-relaxed text-fg-muted">
               Thanks{name ? `, ${name.split(" ")[0]}` : ""}. We have your{" "}
               {service.name.toLowerCase()} request for{" "}
-              {resolved?.cityLabel ?? zip} and we are finding you a licensed
-              local plumber now. Expect a call or text at the number you gave
-              us.
+              {resolved?.cityLabel ?? zip}. A real person reviews every
+              request and matches it with a licensed local plumber who covers
+              your area. If we cannot find one, we will text you so you are not
+              left waiting.
             </p>
             {urgency === "emergency" && (
               <p className="mt-2 text-sm font-medium text-stream">
@@ -211,8 +214,18 @@ export function LeadForm({
     return (
       <form
         onSubmit={onSubmit}
-        className="rounded-xl border border-danger/25 bg-surface p-5 shadow-sm sm:p-6"
+        className="relative rounded-xl border border-danger/25 bg-surface p-5 shadow-sm sm:p-6"
       >
+        <input
+          type="text"
+          name="website"
+          tabIndex={-1}
+          autoComplete="off"
+          aria-hidden="true"
+          value={website}
+          onChange={(e) => setWebsite(e.target.value)}
+          className="absolute left-[-9999px] h-0 w-0 opacity-0"
+        />
         <div className="mb-4 flex items-start gap-2">
           <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-danger-soft text-danger">
             <Zap className="h-4 w-4" />
@@ -248,7 +261,7 @@ export function LeadForm({
               type="tel"
               value={phone}
               onChange={(e) => setPhone(e.target.value)}
-              placeholder="(555) 555-5555"
+              placeholder="Mobile number"
               required
               autoComplete="tel"
             />
@@ -262,8 +275,11 @@ export function LeadForm({
             className="mt-1 h-4 w-4 rounded border-border"
           />
           <span>
-            I agree to be contacted by phone/text/email by Flushing Toilets and
-            independent plumbers about this emergency request.
+            By tapping the button, I agree that Flushing Toilets and up to
+            three independent local plumbers may call or text me at this
+            number, including by automated means, about this request. Consent
+            is not a condition of purchase. Msg &amp; data rates may apply.
+            Reply STOP to opt out.
           </span>
         </label>
         {error && (
@@ -291,8 +307,18 @@ export function LeadForm({
   return (
     <form
       onSubmit={onSubmit}
-      className="rounded-xl border border-border bg-surface p-5 shadow-sm sm:p-6"
+      className="relative rounded-xl border border-border bg-surface p-5 shadow-sm sm:p-6"
     >
+      <input
+        type="text"
+        name="website"
+        tabIndex={-1}
+        autoComplete="off"
+        aria-hidden="true"
+        value={website}
+        onChange={(e) => setWebsite(e.target.value)}
+        className="absolute left-[-9999px] h-0 w-0 opacity-0"
+      />
       <div className="mb-5">
         <h3 className="font-display text-xl font-semibold text-harbor">{title}</h3>
         <p className="mt-1 text-sm text-fg-muted">{subtitle}</p>
@@ -326,7 +352,7 @@ export function LeadForm({
             type="tel"
             value={phone}
             onChange={(e) => setPhone(e.target.value)}
-            placeholder="(555) 555-5555"
+            placeholder="Mobile number"
             autoComplete="tel"
             required
           />
@@ -440,9 +466,11 @@ export function LeadForm({
           className="mt-1 h-4 w-4 rounded border-border text-harbor"
         />
         <span>
-          I agree to be contacted by phone, text, or email by Flushing Toilets
-          and independent local plumbers about my request. Message/data rates
-          may apply. Consent is not a condition of purchase.{" "}
+          By submitting, I agree that Flushing Toilets and up to three
+          independent local plumbers may call, text, or email me at the
+          contact details above, including by automated means, about this
+          request. Consent is not a condition of purchase. Msg &amp; data rates
+          may apply. Reply STOP to opt out.{" "}
           <a
             href="/privacy"
             className="font-medium text-stream underline-offset-2 hover:underline"
@@ -466,7 +494,7 @@ export function LeadForm({
           {/* Do not claim partners here. The partner list is empty and any
               "licensed partners" badge is a claim about plumbers we have not
               signed. Licence checking is a policy we do follow, so say that. */}
-          <Badge variant="harbor">Licences checked against the state board</Badge>
+          <Badge variant="harbor">Free referral service · not a plumbing company</Badge>
         </div>
       </div>
     </form>

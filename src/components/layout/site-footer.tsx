@@ -108,18 +108,8 @@ export function SiteFooter() {
               </Link>
             </li>
             <li>
-              <Link to="/for-plumbers/territory" className="hover:text-bg-elevated">
-                Territory board
-              </Link>
-            </li>
-            <li>
               <Link to="/partners/login" className="hover:text-bg-elevated">
                 Partner login
-              </Link>
-            </li>
-            <li>
-              <Link to="/admin/login" className="hover:text-bg-elevated">
-                Admin
               </Link>
             </li>
             <li>
@@ -147,18 +137,16 @@ export function SiteFooter() {
                 Terms
               </Link>
             </li>
-            <li>
-              <Link to="/brand" className="hover:text-bg-elevated">
-                Brand system
-              </Link>
-            </li>
           </ul>
         </div>
       </div>
       <div className="border-t border-white/10">
         <div className="mx-auto flex max-w-6xl flex-col gap-2 px-4 py-5 text-xs text-bg-elevated/55 sm:flex-row sm:items-center sm:justify-between sm:px-6">
           <p>© {new Date().getFullYear()} Flushing Toilets. All rights reserved.</p>
-          <p>Leads stored in database · notify pipeline stubbed for email/SMS</p>
+          <p>
+            Flushing Toilets is a free referral service. Independent plumbers
+            quote and do the work.
+          </p>
         </div>
       </div>
     </footer>

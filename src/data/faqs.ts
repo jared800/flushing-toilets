@@ -34,17 +34,17 @@ export function cityFaqs(cityName: string, stateAbbr: string): FaqItem[] {
   return [
     {
       question: `Are plumbers in ${cityName} licensed?`,
-      answer: `Partners listed for ${cityName}, ${stateAbbr} must provide license and insurance information before activation on Flushing Toilets.`,
+      answer: `Any plumber we send to a ${cityName}, ${stateAbbr} request must give us a current ${stateAbbr} license number and proof of insurance first. Flushing Toilets is a referral service; the plumber you hire does the work and gives you the quote.`,
     },
     {
       question: `How does matching work in ${cityName}?`,
       answer:
-        "We route your request to partners covering your city. Exclusive and Preferred partners get priority when available; Connect partners may share leads.",
+        "A person reviews your request and sends it to a licensed independent plumber who covers your ZIP code. If no plumber covers your area yet, we text you so you can call someone else right away.",
     },
     {
       question: "Will I get multiple calls?",
       answer:
-        "On shared (Connect) leads, up to three partners may receive your request. Preferred/Exclusive routing reduces that. You can decline anyone you don’t want to hire.",
+        "No more than three plumbers will ever receive your request, and usually just one. You are never obligated to hire anyone who calls.",
     },
   ];
 }

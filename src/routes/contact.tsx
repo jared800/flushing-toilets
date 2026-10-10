@@ -40,7 +40,7 @@ function ContactPage() {
             Become a partner
           </h2>
           <p className="mt-2 text-sm text-fg-muted">
-            Apply for Connect, Preferred, or Exclusive.
+            Get toilet and drain requests from homeowners in your area.
           </p>
           <Button asChild className="mt-4" variant="secondary">
             <Link to="/for-plumbers/apply">Apply now</Link>
