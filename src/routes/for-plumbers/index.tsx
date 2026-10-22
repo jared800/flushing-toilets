@@ -7,7 +7,7 @@ export const Route = createFileRoute("/for-plumbers/")({
   component: ForPlumbersPage,
   head: () => ({
     meta: [
-      { title: "For plumbers — Flushing Toilets Partners" },
+      { title: "For plumbers — Flushing Toilets" },
       {
         name: "description",
         content:
@@ -21,19 +21,19 @@ function ForPlumbersPage() {
   return (
     <SiteShell>
       <PageHero
-        kicker="Flushing Toilets Partners"
+        kicker="For plumbers"
         title="Toilet-intent leads, not tire-kickers"
         description="Homeowners searching for clogged, running, leaking, and emergency toilet help in your area. Right now it costs you nothing: we email you the request, you call them, the job is yours."
       >
         <div className="flex flex-wrap gap-3">
           <Button asChild size="lg">
-            <Link to="/for-plumbers/apply">Apply to partner</Link>
+            <Link to="/for-plumbers/apply">Apply</Link>
           </Button>
           <Button asChild variant="outline" size="lg">
             <Link to="/for-plumbers/pricing">What it costs</Link>
           </Button>
           <Button asChild variant="ghost" size="lg">
-            <Link to="/partners/login">Partner login</Link>
+            <Link to="/partners/login">Plumber login</Link>
           </Button>
         </div>
       </PageHero>

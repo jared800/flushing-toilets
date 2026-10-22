@@ -112,7 +112,7 @@ function PricingPage() {
             <Link to="/for-plumbers/apply">Send us your details</Link>
           </Button>
           <Button asChild variant="outline" size="lg">
-            <Link to="/partners/login">Partner login</Link>
+            <Link to="/partners/login">Plumber login</Link>
           </Button>
         </div>
       </div>

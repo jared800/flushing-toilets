@@ -143,28 +143,23 @@ function CityPage() {
             cityName={city.name}
           />
 
-          <section>
-            <h2 className="font-display text-2xl font-semibold text-harbor">
-              Partner plumbers
-            </h2>
-            {partners.length > 0 && (
+          {/* Empty "Partner plumbers" block removed 2026-10-22: no plumber has
+              signed. It renders again only for real entries in partners.ts. */}
+          {partners.length > 0 && (
+            <section>
+              <h2 className="font-display text-2xl font-semibold text-harbor">
+                Plumbers who take requests here
+              </h2>
               <p className="mt-1 text-sm text-fg-muted">
                 Independent plumbers who have agreed to take requests here.
               </p>
-            )}
-            <div className="mt-4 space-y-3">
-              {partners.length === 0 ? (
-                <p className="rounded-lg border border-dashed border-border bg-bg px-4 py-6 text-sm text-fg-muted">
-                  We are still signing plumbers in {city.name}. Send your
-                  request anyway — it comes straight to us, and we call you back
-                  with a licensed local plumber instead of leaving you waiting
-                  on a listing.
-                </p>
-              ) : (
-                partners.map((p) => <PartnerCard key={p.id} partner={p} />)
-              )}
-            </div>
-          </section>
+              <div className="mt-4 space-y-3">
+                {partners.map((p) => (
+                  <PartnerCard key={p.id} partner={p} />
+                ))}
+              </div>
+            </section>
+          )}
 
           <FaqSection
             title={`FAQ · ${city.name}`}

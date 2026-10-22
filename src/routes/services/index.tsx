@@ -24,7 +24,7 @@ function ServicesIndexPage() {
       <PageHero
         kicker="Services"
         title="Toilet problems we help with"
-        description="Pick a service to learn what to expect, then search your city for a licensed local plumber."
+        description="Pick a service to learn what to expect, then read the fix guide or send a request."
       />
       <div className="mx-auto max-w-6xl px-4 py-10 sm:px-6">
         <div className="grid gap-4 md:grid-cols-2">

@@ -54,6 +54,17 @@ const deepMetros = new Set(
   ].map((m) => `${m[1]}/${m[2]}`),
 );
 
+// City x service pages allowed in the index. Mirrors isIndexableCityService()
+// in src/data/indexable-city-services.ts; everything else is noindex in the
+// route, so it stays out of the sitemap too.
+const indexableCityServices = new Set(
+  [
+    ...read("src/data/indexable-city-services.ts").matchAll(
+      /"([a-z0-9-]+\/[a-z0-9-]+\/[a-z0-9-]+)"/g,
+    ),
+  ].map((m) => m[1]),
+);
+
 if (deepMetros.size === 0) {
   console.error("[seo] refusing to build — found no deep metros to index");
   process.exit(1);
@@ -106,6 +117,10 @@ for (const s of states) {
     }
     urls.add(`/locations/${s.slug}/${c}`);
     for (const svc of services) {
+      if (!indexableCityServices.has(`${s.slug}/${c}/${svc}`)) {
+        skipped += 1;
+        continue;
+      }
       urls.add(`/locations/${s.slug}/${c}/${svc}`);
     }
   }
@@ -176,5 +191,5 @@ console.log(
   `[seo] wrote sitemap.xml (${urls.size} urls) and robots.txt for ${SITE}`,
 );
 console.log(
-  `[seo] ${deepMetros.size} deep metros indexed; ${skipped} templated city x service pages omitted (noindex until they have real local copy)`,
+  `[seo] ${deepMetros.size} deep metros indexed; ${skipped} city x service pages omitted (noindex: templated city or not in src/data/indexable-city-services.ts)`,
 );

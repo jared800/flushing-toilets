@@ -15,6 +15,8 @@ import {
 } from "lucide-react";
 
 export const Route = createFileRoute("/brand")({
+  // Internal brand sheet: keep it out of search (2026-10-22 claims cleanup).
+  head: () => ({ meta: [{ name: "robots", content: "noindex, nofollow" }] }),
   component: BrandSystemPage,
 });
 
@@ -266,8 +268,8 @@ function BrandSystemPage() {
                 Product thesis
               </p>
               <p className="mt-3 font-display text-xl font-medium leading-snug text-harbor">
-                “Local help for toilet trouble — matched to licensed plumbers
-                near you.”
+                “Toilet repair guides, plus a free referral when you need a
+                plumber.”
               </p>
               <ul className="mt-5 space-y-3 text-sm text-fg-muted">
                 <li className="flex gap-2">
@@ -297,7 +299,7 @@ function BrandSystemPage() {
               <dl className="mt-4 space-y-3 text-sm">
                 <Row term="Product / site" def="Flushing Toilets" />
                 <Row term="Domain" def="flushingtoilets.com" />
-                <Row term="Partner program" def="Flushing Toilets Partners" />
+                <Row term="Plumber program" def="Flushing Toilets for plumbers" />
                 <Row term="Short consumer line" def="Get local toilet help" />
                 <Row
                   term="Legal disclaimer (UI)"
@@ -321,7 +323,7 @@ function BrandSystemPage() {
               <div className="mt-5 grid gap-3 sm:grid-cols-2">
                 <Pill icon={Shield} label="Trust-first" />
                 <Pill icon={Zap} label="Emergency-ready" />
-                <Pill icon={Wrench} label="Licensed partners" />
+                <Pill icon={Wrench} label="Referral, not a plumbing company" />
                 <Pill icon={Search} label="Local SEO engine" />
               </div>
             </Card>
@@ -336,7 +338,7 @@ function BrandSystemPage() {
                 />
                 <Quote
                   label="Consumer hero"
-                  text="Clogged, running, or broken? Get a licensed plumber near you."
+                  text="Fix the toilet yourself, or ask for a plumber."
                 />
                 <Quote
                   label="Partner sales"
@@ -358,7 +360,7 @@ function BrandSystemPage() {
                 Harbor Trust
               </p>
               <p className="mt-3 text-sm leading-relaxed text-fg-muted">
-                Calm, competent emergency service. Feels like a licensed local
+                Calm, competent emergency service. Feels like a calm local
                 pro you’d actually call at 11pm — not a joke site, not a panic
                 red ambulance, not generic SaaS purple.
               </p>
@@ -415,8 +417,8 @@ function BrandSystemPage() {
                   Get help in your city
                 </p>
                 <p className="text-sm text-fg-muted">
-                  Tell us your ZIP and what’s wrong. We’ll match you with a
-                  licensed local plumber.
+                  Tell us your ZIP and what’s wrong. A person reads it and
+                  passes it on if a plumber covers your area.
                 </p>
                 <div className="flex flex-wrap gap-2">
                   <span className="rounded-lg bg-signal px-3 py-2 text-sm font-semibold text-ink">
@@ -573,7 +575,7 @@ function BrandSystemPage() {
             <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
               <TypeSample label="Display XL" className="font-display text-4xl font-semibold text-harbor" sample="Austin, TX" />
               <TypeSample label="Display L" className="font-display text-2xl font-semibold text-harbor" sample="Clogged toilet" />
-              <TypeSample label="Body" className="text-base text-fg" sample="Licensed plumbers near you." />
+              <TypeSample label="Body" className="text-base text-fg" sample="Ask for a plumber near you." />
               <TypeSample label="Caption" className="text-xs font-semibold uppercase tracking-[0.12em] text-fg-subtle" sample="Response goal" />
             </div>
           </Card>

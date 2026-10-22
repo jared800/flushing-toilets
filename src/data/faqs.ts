@@ -20,7 +20,7 @@ export function serviceFaqs(service: Service): FaqItem[] {
     {
       question: "Is Flushing Toilets the plumbing company?",
       answer:
-        "No. We are a free referral service that passes your request to independent licensed local plumbers. The plumber who contacts you quotes and does the work.",
+        "No. We are a free referral service. A person reads your request and passes it to an independent plumber when one covers your area. The plumber who contacts you quotes and does the work.",
     },
     {
       question: "What should I do while I wait?",
@@ -33,18 +33,18 @@ export function serviceFaqs(service: Service): FaqItem[] {
 export function cityFaqs(cityName: string, stateAbbr: string): FaqItem[] {
   return [
     {
-      question: `Are plumbers in ${cityName} licensed?`,
-      answer: `Any plumber we send to a ${cityName}, ${stateAbbr} request must give us a current ${stateAbbr} license number and proof of insurance first. Flushing Toilets is a referral service; the plumber you hire does the work and gives you the quote.`,
+      question: `How do I check a plumber's license in ${cityName}?`,
+      answer: `Ask the plumber for their ${stateAbbr} license number before any work starts and look it up with the state licensing board. Flushing Toilets is a referral service; the plumber you hire does the work and gives you the quote.`,
     },
     {
-      question: `How does matching work in ${cityName}?`,
+      question: `What happens to my request in ${cityName}?`,
       answer:
-        "A person reviews your request and sends it to a licensed independent plumber who covers your ZIP code. If no plumber covers your area yet, we follow up by phone so you can call someone else right away.",
+        "A person reviews your request. If an independent plumber who covers your ZIP code is available, we pass it on. If no plumber covers your area yet, we follow up by phone so you can call someone else right away.",
     },
     {
       question: "Will I get multiple calls?",
       answer:
-        "No more than three plumbers will ever receive your request, and usually just one. You are never obligated to hire anyone who calls.",
+        "We pass your request to one plumber at a time, and only one who covers your area. You are never obligated to hire anyone who calls.",
     },
   ];
 }
@@ -58,7 +58,7 @@ export function cityServiceFaqs(
   const base = [
     {
       question: `Who handles ${service.name.toLowerCase()} in ${cityName}?`,
-      answer: `Independent licensed plumbers who cover ${cityName}, ${stateAbbr}. Send the form on this page and a person will try to match you with one. We are a referral service, not the plumbing company.`,
+      answer: `Any independent plumber who covers ${cityName}, ${stateAbbr}. If you send the form on this page, a person reads it and passes it on when a plumber who covers your area is available. We are a referral service, not the plumbing company.`,
     },
     ...serviceFaqs(service).slice(0, 2),
     {

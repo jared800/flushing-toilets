@@ -16,6 +16,7 @@ import {
   getMetroContent,
   hasUniqueLocalContent,
 } from "@/data/metro-content";
+import { isIndexableCityService } from "@/data/indexable-city-services";
 
 export const Route = createFileRoute("/locations/$state_/$city_/$service")({
   loader: ({ params }) => {
@@ -47,10 +48,17 @@ export const Route = createFileRoute("/locations/$state_/$city_/$service")({
             ? `${loaderData.service.seoBlurb} Serving ${loaderData.city.name}, ${loaderData.state.abbr}.`
             : "",
       },
-      // Templated cities stay out of the index until they have real local
-      // copy — see hasUniqueLocalContent() for why.
+      // City x service pages are near-duplicates of each other across
+      // cities, so they stay out of the index unless explicitly allowlisted
+      // (src/data/indexable-city-services.ts). Templated cities are always
+      // noindexed — see hasUniqueLocalContent().
       ...(loaderData &&
-      !hasUniqueLocalContent(loaderData.state.slug, loaderData.city.slug)
+      (!hasUniqueLocalContent(loaderData.state.slug, loaderData.city.slug) ||
+        !isIndexableCityService(
+          loaderData.state.slug,
+          loaderData.city.slug,
+          loaderData.service.slug,
+        ))
         ? [{ name: "robots", content: "noindex, follow" }]
         : []),
     ],
@@ -64,7 +72,7 @@ function CityServicePage() {
   const title = metroService?.headline ?? `${service.name} in ${city.name}`;
   const description =
     metroService?.intro ??
-    `${service.summary} Local pages like this help you find licensed help fast in ${city.name}.`;
+    `${service.summary} Send a request and a person reads it before anything happens.`;
 
   const faqs = cityServiceFaqs(
     city.name,
@@ -105,7 +113,7 @@ function CityServicePage() {
             <p className="mt-3 text-sm leading-relaxed text-fg-muted">
               {metroService
                 ? metroService.intro
-                : `${city.blurb} When you need ${service.name.toLowerCase()} service, Flushing Toilets matches you with independent licensed plumbers covering ${city.name} ZIPs including ${city.zips.slice(0, 3).join(", ")}.`}
+                : `${city.blurb} When you need ${service.name.toLowerCase()} service, send a request from a ${city.name} ZIP such as ${city.zips.slice(0, 3).join(", ")} and a person reads it. If an independent plumber who covers your area is available, we pass it on; if not, we tell you.`}
             </p>
             {metroService && (
               <>
@@ -165,22 +173,21 @@ function CityServicePage() {
             serviceSlug={service.slug}
           />
 
-          <section>
-            <h2 className="font-display text-xl font-semibold text-harbor">
-              Matched partners for this service
-            </h2>
-            <div className="mt-4 space-y-3">
-              {partners.length === 0 ? (
-                <p className="text-sm text-fg-muted">
-                  No signed plumber covers this exact service in {city.name}{" "}
-                  yet. Send the form anyway — your request comes straight to us
-                  and we call you back with a licensed local plumber.
-                </p>
-              ) : (
-                partners.map((p) => <PartnerCard key={p.id} partner={p} />)
-              )}
-            </div>
-          </section>
+          {/* The "Matched partners" block was removed 2026-10-22: no plumber
+              has signed, so it was an empty claim. It only renders again if a
+              real signed plumber is added to src/data/partners.ts. */}
+          {partners.length > 0 && (
+            <section>
+              <h2 className="font-display text-xl font-semibold text-harbor">
+                Plumbers who cover this service
+              </h2>
+              <div className="mt-4 space-y-3">
+                {partners.map((p) => (
+                  <PartnerCard key={p.id} partner={p} />
+                ))}
+              </div>
+            </section>
+          )}
 
           <FaqSection
             title={`FAQ · ${service.name} in ${city.name}`}
@@ -213,7 +220,7 @@ function CityServicePage() {
               urgency: isEmergency ? "emergency" : "today",
             }}
             title={`${service.name} in ${city.name}`}
-            subtitle="We’ll notify local partner plumbers who cover this area."
+            subtitle="A person reads your request. If a plumber who covers this area is available, we pass it on; if not, we tell you."
           />
         </div>
       </div>

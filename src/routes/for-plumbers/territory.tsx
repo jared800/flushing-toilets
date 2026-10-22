@@ -13,7 +13,7 @@ export const Route = createFileRoute("/for-plumbers/territory")({
   component: TerritoryBoardPage,
   head: () => ({
     meta: [
-      { title: "Territory board — Flushing Toilets Partners" },
+      { title: "Territory board — Flushing Toilets" },
       {
         name: "description",
         content:

@@ -77,7 +77,7 @@ export const GUIDES: Guide[] = [
       {
         heading: "4. Weak flush from the tank side",
         paragraphs: [
-          "Sometimes the bowl is fine and the flush just isn't delivering enough water. Check that the tank fills to the line marked inside it (usually about an inch below the overflow tube), that the flapper chain has only a little slack, and that the small holes under the rim aren't crusted with mineral scale. Hard water, which is common along Utah's Wasatch Front and much of Texas, Arizona and Florida, slowly closes those holes.",
+          "Sometimes the bowl is fine and the flush just isn't delivering enough water. Check that the tank fills to the line marked inside it (usually about an inch below the overflow tube), that the flapper chain has only a little slack, and that the small holes under the rim aren't crusted with mineral scale. Hard water slowly closes those holes.",
           "Our guide to a toilet that won't flush properly walks through each of these checks.",
         ],
       },

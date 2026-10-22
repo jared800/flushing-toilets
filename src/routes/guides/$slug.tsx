@@ -231,8 +231,8 @@ function GuidePage() {
             Tried it and it didn&rsquo;t hold?
           </p>
           <p className="mt-1 text-sm text-fg-muted">
-            Tell us your ZIP and what happened, and we&rsquo;ll find a licensed
-            plumber near you.
+            Tell us your ZIP and what happened. A person reads it and passes it
+            on if a plumber who covers your area is available.
           </p>
           <div className="mt-4 flex flex-wrap gap-2">
             <Button asChild>

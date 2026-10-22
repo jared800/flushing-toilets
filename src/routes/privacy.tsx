@@ -19,8 +19,8 @@ function PrivacyPage() {
         <p>
           When you submit a request we collect your name, phone number, ZIP
           code, a description of the problem, and any photo you choose to
-          attach. We use it for one purpose: connecting you with a licensed
-          plumber who can do the work.
+          attach. We use it for one purpose: passing your request to an
+          independent plumber who covers your area, if one is available.
         </p>
         <p>
           That information is stored in our database and is sent by email to

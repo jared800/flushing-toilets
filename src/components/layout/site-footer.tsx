@@ -13,8 +13,8 @@ export function SiteFooter() {
             <p className="font-display text-lg font-semibold">Flushing Toilets</p>
           </div>
           <p className="mt-3 text-sm leading-relaxed text-bg-elevated/75">
-            Local plumbers for toilet trouble — fast. We connect homeowners with
-            independent licensed plumbers. We are not the plumbing company.
+            Toilet repair guides, a free diagnostic and a free referral
+            request. We are not a plumbing company.
           </p>
         </div>
 
@@ -105,11 +105,6 @@ export function SiteFooter() {
             <li>
               <Link to="/for-plumbers" className="hover:text-bg-elevated">
                 For plumbers
-              </Link>
-            </li>
-            <li>
-              <Link to="/partners/login" className="hover:text-bg-elevated">
-                Partner login
               </Link>
             </li>
             <li>

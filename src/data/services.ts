@@ -41,7 +41,7 @@ export const SERVICES: Service[] = [
       "Advise if sewer line work is needed",
     ],
     seoBlurb:
-      "Fast local help for clogged toilets — matched to licensed plumbers near you.",
+      "Clogged toilet? Try the safe fixes first, then send a free request if you still need a plumber.",
   },
   {
     slug: "running-toilet",
@@ -63,7 +63,7 @@ export const SERVICES: Service[] = [
       "Check for silent leaks",
     ],
     seoBlurb:
-      "Stop a running toilet for good with a licensed local plumber.",
+      "Stop a running toilet: find the worn part with a dye test, or send a free request for a plumber.",
   },
   {
     slug: "toilet-leak",
@@ -85,7 +85,7 @@ export const SERVICES: Service[] = [
       "Repair tank-to-bowl issues",
     ],
     seoBlurb:
-      "Toilet leaking? Local licensed plumbers for fast diagnosis and repair.",
+      "Toilet leaking? Find where the water is coming from, then fix it or send a free request for a plumber.",
   },
   {
     slug: "toilet-install",
@@ -107,7 +107,7 @@ export const SERVICES: Service[] = [
       "Ask whether haul-away of the old toilet is included",
     ],
     seoBlurb:
-      "Professional toilet installation by licensed local plumbers.",
+      "Toilet installation: what the job involves, what it costs, and a free request if you want a plumber.",
   },
   {
     slug: "toilet-replacement",
@@ -129,7 +129,7 @@ export const SERVICES: Service[] = [
       "Full leak test",
     ],
     seoBlurb:
-      "Toilet replacement quotes from licensed plumbers in your city.",
+      "Toilet replacement: when to replace instead of repair, and a free request if you want a plumber.",
   },
   {
     slug: "emergency-plumber",
@@ -199,7 +199,7 @@ export const SERVICES: Service[] = [
       {
         heading: "How Flushing Toilets fits in",
         paragraphs: [
-          "We're a free referral service, not a plumbing company, and we don't promise a response time. Send a request marked Emergency with your ZIP. A person reviews it and tries to match you with an independent licensed plumber who covers your area, and we follow up by phone. If water is actively flowing, shut it off first, and don't wait on us if you already know a plumber who can come.",
+          "We're a free referral service, not a plumbing company, and we don't promise a response time. Send a request marked Emergency with your ZIP. A person reviews it and passes it on if an independent plumber who covers your area is available, and we follow up by phone. If water is actively flowing, shut it off first, and don't wait on us if you already know a plumber who can come.",
         ],
       },
     ],
@@ -257,7 +257,7 @@ export const SERVICES: Service[] = [
       "Coordinate larger line repairs",
     ],
     seoBlurb:
-      "Sewer backup help from licensed local plumbers — fast response.",
+      "Sewer backup: what to do right now, when it is the main line, and a free request for a plumber.",
   },
 ];
 

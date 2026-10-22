@@ -27,10 +27,10 @@ export function CityTrustBlock({
       <div className="flex flex-wrap items-center justify-between gap-3">
         <div>
           <h2 className="font-display text-xl font-semibold text-harbor">
-            Trust in {cityName}
+            How requests in {cityName} are handled
           </h2>
           <p className="mt-1 text-sm text-fg-muted">
-            Independent local plumbers · free referral service
+            Free referral service · not a plumbing company
           </p>
         </div>
         {trust && (
@@ -48,10 +48,10 @@ export function CityTrustBlock({
         <Badge variant="harbor">
           <span className="inline-flex items-center gap-1">
             <Shield className="h-3 w-3" />
-            License required to join
+            Not a plumbing company
           </span>
         </Badge>
-        <Badge variant="stream">Independent local plumbers</Badge>
+        <Badge variant="stream">Free for homeowners</Badge>
         <Badge variant="signal">Clear contact consent</Badge>
       </div>
 
@@ -76,9 +76,9 @@ export function CityTrustBlock({
         </ul>
       ) : (
         <p className="mt-4 text-sm text-fg-muted">
-          No customer reviews yet for {cityName} — we only publish reviews real
-          customers leave. Every partner still has to show a license and proof
-          of insurance before we activate them.
+          No customer reviews yet for {cityName}. We only publish reviews real
+          customers leave. Before you hire any plumber, ask for their state
+          license number and check it with the state licensing board.
         </p>
       )}
     </section>

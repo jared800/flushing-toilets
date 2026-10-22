@@ -21,12 +21,12 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       {
-        title: "Flushing Toilets — Local plumbers for toilet trouble",
+        title: "Flushing Toilets — Toilet repair guides and plumber referrals",
       },
       {
         name: "description",
         content:
-          "Clogged, running, or leaking toilet? Get matched with licensed local plumbers in Texas, Florida, Arizona, and Utah.",
+          "Clogged, running, or leaking toilet? Plain-English fix guides, a free diagnostic, and a free referral request a real person reads.",
       },
     ],
   }),
@@ -46,11 +46,13 @@ function HomePage() {
               Free toilet diagnostic
             </Badge>
             <h1 className="font-display text-4xl font-semibold tracking-tight text-harbor sm:text-5xl lg:text-[3.35rem] lg:leading-[1.08]">
-              Local plumbers for toilet trouble — fast.
+              Fix the toilet yourself, or ask for a plumber.
             </h1>
             <p className="mt-5 max-w-xl text-lg leading-relaxed text-fg-muted">
-              Clogged, running, leaking, or emergency? Search your city and get
-              matched with independent licensed plumbers near you.
+              Clogged, running, leaking, or emergency? Run the free diagnostic or
+              read a fix guide. If you need a plumber, send a request: a person
+              reads it and, if an independent plumber covers your area, passes
+              it on. We are a referral service, not a plumbing company.
             </p>
             <div className="mt-8">
               <GeoSearch />
@@ -142,8 +144,8 @@ function HomePage() {
               },
               {
                 n: "2",
-                t: "We match a partner",
-                d: "We send your request to a licensed plumber who covers your ZIP. If nobody covers it yet, we tell you instead of leaving you waiting.",
+                t: "A person reads it",
+                d: "If an independent plumber who covers your ZIP is available, we pass your request on. If nobody covers it yet, we tell you instead of leaving you waiting.",
               },
               {
                 n: "3",
@@ -253,7 +255,7 @@ function HomePage() {
             </span>
             <span className="inline-flex items-center gap-1.5">
               <Shield className="h-4 w-4 text-stream" />
-              License &amp; insurance required for partners
+              Referral service, not a plumbing company
             </span>
           </div>
         </div>

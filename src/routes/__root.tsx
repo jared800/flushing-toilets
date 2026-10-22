@@ -22,7 +22,7 @@ export const Route = createRootRoute({
       {
         name: "description",
         content:
-          "Free referral service for clogged, running, leaking, or overflowing toilets. Plain-English fix guides, a free diagnostic, and licensed local plumbers in Texas, Florida, Arizona, and Utah.",
+          "Free referral service for clogged, running, leaking, or overflowing toilets. Plain-English fix guides, a free diagnostic, and a free plumber referral request.",
       },
     ],
     links: [
@@ -69,7 +69,7 @@ const ORG_LD = {
       url: `${SITE_ORIGIN}/`,
       email: "hello@flushingtoilets.com",
       description:
-        "Free referral service that connects homeowners with independent, licensed local plumbers for toilet and drain problems. Not a plumbing company.",
+        "Free referral service and toilet repair guides. A person reads each request and passes it to an independent plumber when one covers the area. Not a plumbing company.",
       areaServed: ["Texas", "Florida", "Arizona", "Utah"],
     },
     {

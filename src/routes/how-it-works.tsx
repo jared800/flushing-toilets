@@ -11,7 +11,7 @@ export const Route = createFileRoute("/how-it-works")({
       {
         name: "description",
         content:
-          "How Flushing Toilets matches homeowners with independent licensed local plumbers.",
+          "How Flushing Toilets handles homeowner requests: a person reads each one and passes it to an independent plumber only when one covers the area.",
       },
     ],
   }),
@@ -23,7 +23,7 @@ function HowItWorksPage() {
       <PageHero
         kicker="How it works"
         title="Simple for homeowners. Clear for plumbers."
-        description="We’re a lead marketplace focused on toilet and closely related drain problems — not a national plumbing company."
+        description="We’re a referral service focused on toilet and closely related drain problems, not a plumbing company."
       />
       <div className="mx-auto max-w-3xl space-y-6 px-4 py-10 sm:px-6">
         {[
@@ -32,16 +32,16 @@ function HowItWorksPage() {
             d: "City or ZIP, service type, urgency, and phone. We keep the form short so you can finish on a wet bathroom floor with one hand.",
           },
           {
-            t: "We match a local plumber",
-            d: "A person reviews your request and sends it to a licensed independent plumber who covers your ZIP. No more than three plumbers ever see it. If nobody covers your area yet, we tell you.",
+            t: "A person reads your request",
+            d: "If an independent plumber who covers your ZIP is available, we pass your request on. If nobody covers your area yet, we tell you.",
           },
           {
-            t: "A licensed plumber contacts you",
+            t: "The plumber contacts you",
             d: "They confirm details, pricing approach, and timing. You’re never obligated to book.",
           },
           {
             t: "Transparency always",
-            d: "We are a free referral service, not a plumbing company. Independent plumbers quote and do the work, and must show a current license and insurance before we send them anything.",
+            d: "We are a free referral service, not a plumbing company. Independent plumbers quote and do the work. Before you hire anyone, ask for their state license number and check it with the state licensing board.",
           },
         ].map((item, i) => (
           <div
@@ -62,7 +62,7 @@ function HowItWorksPage() {
             <Link to="/get-help">Get a plumber</Link>
           </Button>
           <Button asChild variant="outline" size="lg">
-            <Link to="/for-plumbers">Partner with us</Link>
+            <Link to="/for-plumbers">For plumbers</Link>
           </Button>
         </div>
       </div>

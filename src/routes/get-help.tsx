@@ -11,7 +11,7 @@ export const Route = createFileRoute("/get-help")({
       {
         name: "description",
         content:
-          "Request a licensed local plumber for toilet clogs, leaks, installs, and emergencies.",
+          "Send a free request for help with toilet clogs, leaks, installs, and emergencies. A person reads every request.",
       },
     ],
   }),
@@ -29,7 +29,7 @@ function GetHelpPage() {
       <PageHero
         kicker="Get help"
         title="Match with a local plumber"
-        description="Share a few details. We’ll route your request to licensed partners in your area."
+        description="Share a few details. A person reads your request and passes it on if a plumber who covers your area is available."
       />
       <div className="mx-auto max-w-xl space-y-6 px-4 py-10 sm:px-6">
         <LeadForm

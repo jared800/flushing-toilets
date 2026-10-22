@@ -27,7 +27,7 @@ export const METRO_CONTENT: MetroContent[] = [
     heroExtra:
       "Houston’s clay soil, slab foundations, and heavy rain weeks mean toilet seals, cleanouts, and main lines take real stress — especially inside the Loop and older bungalow belts.",
     trustLine:
-      "Requests from Houston ZIPs are reviewed by a person and passed to an independent, licensed Texas plumber who covers your area, when one is available.",
+      "Requests from Houston ZIPs are reviewed by a person and passed to an independent Texas plumber who covers your area, when one is available.",
     localFactors: [
       "Expansive clay soil can shift slabs and stress drain lines",
       "Tropical storm weeks spike sewer backup and overflow calls",
@@ -57,9 +57,9 @@ export const METRO_CONTENT: MetroContent[] = [
       "running-toilet": {
         headline: "Running toilet repair in Houston",
         intro:
-          "Humidity and mineral content wear flappers and fill valves faster than homeowners expect. A quiet runner can still spike the water bill in a week.",
+          "Flappers and fill valves are wear parts and eventually stop sealing. A quiet runner can still spike the water bill in a week.",
         localFactors: [
-          "Mineral film shortens flapper life",
+          "Flappers harden with age and stop sealing",
           "Older tanks often need full fill-valve replacement",
         ],
         neighborhoods: ["West U", "Memorial", "Spring Branch"],
@@ -93,7 +93,7 @@ export const METRO_CONTENT: MetroContent[] = [
           "Chronic clogs on older low-flow models or cracked tanks are often cheaper as a clean replacement than repeat snake visits.",
         localFactors: [
           "Comfort-height models are popular for aging-in-place homes",
-          "Hard-water staining may hide hairline cracks",
+          "Stains around the base may hide hairline cracks",
         ],
         neighborhoods: ["Memorial", "Heights", "Pearland-adjacent"],
         responseNote: "Ask whether the quote includes a new wax ring, closet bolts, supply line and haul-away.",
@@ -128,7 +128,7 @@ export const METRO_CONTENT: MetroContent[] = [
     heroExtra:
       "Miami condos, coastal humidity, and older supply lines make toilet leaks and emergency overflows a year-round problem — from Brickell towers to Coral Gables homes.",
     trustLine:
-      "Requests from Miami ZIPs are reviewed by a person and passed to an independent, licensed Florida plumber who covers your area, when one is available.",
+      "Requests from Miami ZIPs are reviewed by a person and passed to an independent Florida plumber who covers your area, when one is available.",
     localFactors: [
       "High-rise shutoff logistics and building access rules",
       "Salt air and humidity accelerate supply-line corrosion",
@@ -160,7 +160,7 @@ export const METRO_CONTENT: MetroContent[] = [
         intro:
           "A running toilet in a condo still hits your bill — and can disturb neighbors. Most fixes are flapper, chain, or fill valve related.",
         localFactors: [
-          "Hard water and mineral deposits shorten part life",
+          "Older tank parts wear out and stop sealing",
           "Quiet runners are easy to miss in large units",
         ],
         neighborhoods: ["Coral Gables", "Coconut Grove", "Key Biscayne-adjacent"],
@@ -229,11 +229,11 @@ export const METRO_CONTENT: MetroContent[] = [
     citySlug: "austin",
     heroExtra:
       "Austin’s mix of older central homes and fast-growing suburbs means constant demand for clogged toilets, flange repairs, and new installs in South Austin, East Austin, and the Domain corridor.",
-    trustLine: "Requests from Austin ZIPs are reviewed by a person and passed to an independent, licensed Texas plumber who covers your area, when one is available.",
+    trustLine: "Requests from Austin ZIPs are reviewed by a person and passed to an independent Texas plumber who covers your area, when one is available.",
     localFactors: [
       "Older central Austin flanges and wax rings fail often",
       "Student and short-term rentals spike clog calls",
-      "Hard water deposits wear flappers and fill valves",
+      "Flappers and fill valves wear out with age",
       "New construction still needs correct rough-in installs",
     ],
     neighborhoods: ["South Congress", "East Austin", "Hyde Park", "Mueller", "Domain area", "Round Rock-adjacent"],
@@ -248,7 +248,7 @@ export const METRO_CONTENT: MetroContent[] = [
       "running-toilet": {
         headline: "Running toilet repair in Austin",
         intro: "A quiet runner still racks up water costs in Austin summers. Most fixes are flapper or fill valve same-day jobs.",
-        localFactors: ["Mineral film shortens flapper life", "Older tanks often need full fill-valve kits"],
+        localFactors: ["Flappers harden with age and stop sealing", "Older tanks often need full fill-valve kits"],
         neighborhoods: ["Tarrytown", "Mueller", "North Loop"],
         responseNote: "Do the dye test first: a few drops of food colouring in the tank tells you flapper vs. fill valve.",
       },
@@ -294,7 +294,7 @@ export const METRO_CONTENT: MetroContent[] = [
     citySlug: "dallas",
     heroExtra:
       "Dallas spans mid-century homes, high-rise condos, and sprawling suburbs — toilet failures, install work, and after-hours emergencies stay busy year-round.",
-    trustLine: "Requests from Dallas ZIPs are reviewed by a person and passed to an independent, licensed Texas plumber who covers your area, when one is available.",
+    trustLine: "Requests from Dallas ZIPs are reviewed by a person and passed to an independent Texas plumber who covers your area, when one is available.",
     localFactors: [
       "Condo building access rules slow unprepared techs",
       "Clay soil movement stresses drain lines",
@@ -313,7 +313,7 @@ export const METRO_CONTENT: MetroContent[] = [
       "running-toilet": {
         headline: "Running toilet repair in Dallas",
         intro: "Running toilets waste water fast in large DFW homes. Quick part swaps usually solve it.",
-        localFactors: ["Hard water deposits", "Aging fill valves on 90s homes"],
+        localFactors: ["Worn flappers", "Aging fill valves on 90s homes"],
         neighborhoods: ["Park Cities", "Lake Highlands", "Richardson-adjacent"],
         responseNote: "Do the dye test first: a few drops of food colouring in the tank tells you flapper vs. fill valve.",
       },
@@ -358,10 +358,10 @@ export const METRO_CONTENT: MetroContent[] = [
     stateSlug: "arizona",
     citySlug: "phoenix",
     heroExtra:
-      "Phoenix hard water and extreme heat put constant stress on flappers, fill valves, and seals across a huge metro service area.",
-    trustLine: "Requests from Phoenix ZIPs are reviewed by a person and passed to an independent, licensed Arizona plumber who covers your area, when one is available.",
+      "Phoenix is a huge metro, and flappers, fill valves and seals wear out in every part of it.",
+    trustLine: "Requests from Phoenix ZIPs are reviewed by a person and passed to an independent Arizona plumber who covers your area, when one is available.",
     localFactors: [
-      "Hard water shortens flapper and valve life",
+      "Flappers and fill valves are wear parts",
       "Desert heat expands/contracts supply lines",
       "Large geography — ZIP routing matters",
       "New construction install volume remains high",
@@ -370,15 +370,15 @@ export const METRO_CONTENT: MetroContent[] = [
     services: {
       "clogged-toilet": {
         headline: "Clogged toilet help in Phoenix",
-        intro: "High household volume and hard-water scale make clogs a daily call type across Phoenix.",
+        intro: "Clogs are the most common toilet problem in any large metro, Phoenix included.",
         localFactors: ["Scale narrows passages over time", "Rental turnover spikes"],
         neighborhoods: ["Central Phoenix", "Ahwatukee", "Arcadia"],
         responseNote: "Stop flushing after one failed attempt — a second flush is what overflows the bowl.",
       },
       "running-toilet": {
         headline: "Running toilet repair in Phoenix",
-        intro: "Hard water is the #1 reason Phoenix toilets never fully shut off. Part replacement is usually quick.",
-        localFactors: ["Mineral film on flappers", "Fill valves wear early"],
+        intro: "A Phoenix toilet that never fully shuts off usually has a worn flapper or fill valve. Part replacement is usually quick.",
+        localFactors: ["Worn or warped flappers", "Fill valves wear out"],
         neighborhoods: ["Biltmore", "North Phoenix", "Desert Ridge-adjacent"],
         responseNote: "Do the dye test first: a few drops of food colouring in the tank tells you flapper vs. fill valve.",
       },
@@ -391,7 +391,7 @@ export const METRO_CONTENT: MetroContent[] = [
       },
       "toilet-install": {
         headline: "Toilet installation in Phoenix",
-        intro: "New homes and remodels need correct seals against hard-water conditions and proper flange height.",
+        intro: "New homes and remodels need a good wax seal and the right flange height.",
         localFactors: ["Rough-in checks", "Haul-away options"],
         neighborhoods: ["North Phoenix", "Ahwatukee", "Laveen-adjacent"],
         responseNote: "Measure the rough-in (wall to bolt centre, usually 12 in.) before buying a new toilet.",
@@ -399,7 +399,7 @@ export const METRO_CONTENT: MetroContent[] = [
       "toilet-replacement": {
         headline: "Toilet replacement in Phoenix",
         intro: "Replacing scale-damaged older toilets often ends chronic running and clog issues.",
-        localFactors: ["Hard-water staining can hide cracks", "Comfort height popular"],
+        localFactors: ["Stains can hide cracks", "Comfort height popular"],
         neighborhoods: ["Biltmore", "Central Phoenix", "Glendale-adjacent"],
         responseNote: "Ask whether the quote includes a new wax ring, closet bolts, supply line and haul-away.",
       },
@@ -424,7 +424,7 @@ export const METRO_CONTENT: MetroContent[] = [
     citySlug: "tampa",
     heroExtra:
       "Tampa Bay humidity, older bungalows, and storm seasons drive toilet leaks, clogs, and sewer calls across South Tampa, Seminole Heights, and nearby suburbs.",
-    trustLine: "Requests from Tampa ZIPs are reviewed by a person and passed to an independent, licensed Florida plumber who covers your area, when one is available.",
+    trustLine: "Requests from Tampa ZIPs are reviewed by a person and passed to an independent Florida plumber who covers your area, when one is available.",
     localFactors: [
       "Humidity accelerates supply-line corrosion",
       "Storm weeks spike backup calls",
@@ -442,7 +442,7 @@ export const METRO_CONTENT: MetroContent[] = [
       },
       "running-toilet": {
         headline: "Running toilet repair in Tampa",
-        intro: "Humidity and mineral content wear tank parts. A short visit usually stops the run.",
+        intro: "Tank parts wear out. A short visit usually stops the run.",
         localFactors: ["Flapper wear", "Fill valve failures"],
         neighborhoods: ["Hyde Park", "South Tampa", "Carrollwood-adjacent"],
         responseNote: "Do the dye test first: a few drops of food colouring in the tank tells you flapper vs. fill valve.",
@@ -488,10 +488,10 @@ export const METRO_CONTENT: MetroContent[] = [
     stateSlug: "utah",
     citySlug: "salt-lake-city",
     heroExtra:
-      "Hard water, freezing winters, and older homes with finished basements make toilet leaks and backups a costly problem in Salt Lake City, from the Avenues to Rose Park.",
+      "Freezing winters and older homes with finished basements make toilet leaks and backups a costly problem in Salt Lake City, from the Avenues to Rose Park.",
     trustLine:
-      "Requests from Salt Lake City ZIPs are reviewed by a person and passed to an independent, licensed Utah plumber who covers your area, when one is available.",
-    localFactors: ["Hard water along the Wasatch Front scales up flappers, fill valves, and rim jets", "Finished basements turn small leaks into ceiling and drywall damage", "Older neighborhoods still have original clay or cast-iron sewer laterals", "Winter cold snaps add frozen and burst pipes to the same week"],
+      "Requests from Salt Lake City ZIPs are reviewed by a person and passed to an independent Utah plumber who covers your area, when one is available.",
+    localFactors: ["Finished basements turn small leaks into ceiling and drywall damage", "Older neighborhoods still have original clay or cast-iron sewer laterals", "Winter cold snaps add frozen and burst pipes to the same week"],
     neighborhoods: ["Sugar House", "The Avenues", "Rose Park", "Liberty Wells", "Capitol Hill", "East Bench"],
     services: {
       "clogged-toilet": {
@@ -503,7 +503,7 @@ export const METRO_CONTENT: MetroContent[] = [
       },
       "running-toilet": {
         headline: "Running toilet repair in Salt Lake City",
-        intro: "Hard water leaves scale on flappers, seats and fill valves, so Salt Lake toilets start running sooner than in soft-water cities. It's usually a cheap part.",
+        intro: "A Salt Lake toilet that runs or refills on its own usually has a worn flapper, a scaled seat or a tired fill valve. It's usually a cheap part.",
         localFactors: ["Mineral scale on the flapper seat stops a new flapper sealing", "Fill valves clog with sediment and hiss or refill slowly"],
         neighborhoods: ["Sugar House", "Capitol Hill", "Glendale", "East Bench"],
         responseNote: "Do the dye test first: a few drops of food colouring in the tank tells you flapper vs. fill valve.",
@@ -549,10 +549,10 @@ export const METRO_CONTENT: MetroContent[] = [
     stateSlug: "utah",
     citySlug: "provo",
     heroExtra:
-      "Heavy-use rentals and student housing, hard water, and basement apartments make Provo a city of worn flappers, frequent clogs, and leaks into the unit below.",
+      "Heavy-use rentals, student housing and basement apartments make Provo a city of worn flappers, frequent clogs, and leaks into the unit below.",
     trustLine:
-      "Requests from Provo ZIPs are reviewed by a person and passed to an independent, licensed Utah plumber who covers your area, when one is available.",
-    localFactors: ["Shared bathrooms in student and rental housing wear parts out faster", "Utah County hard water scales flappers and fill valves", "Basement apartments sit under upstairs bathrooms", "Older laterals near downtown are prone to roots"],
+      "Requests from Provo ZIPs are reviewed by a person and passed to an independent Utah plumber who covers your area, when one is available.",
+    localFactors: ["Shared bathrooms in student and rental housing wear parts out faster", "Basement apartments sit under upstairs bathrooms", "Older laterals near downtown are prone to roots"],
     neighborhoods: ["Joaquin", "Pleasant View", "Grandview", "Edgemont", "Riverbottoms", "North Park"],
     services: {
       "clogged-toilet": {
@@ -564,7 +564,7 @@ export const METRO_CONTENT: MetroContent[] = [
       },
       "running-toilet": {
         headline: "Running toilet repair in Provo",
-        intro: "Utah County's hard water scales up flappers and fill valves. A toilet that runs or refills on its own is usually a cheap part.",
+        intro: "A toilet that runs or refills on its own usually needs a new flapper or fill valve, which is a cheap part.",
         localFactors: ["Scale on the flapper seat causes slow tank-to-bowl leaks", "Heavily used rental toilets wear out flappers sooner"],
         neighborhoods: ["Edgemont", "Riverbottoms", "Joaquin", "Carterville"],
         responseNote: "Do the dye test first: a few drops of food colouring in the tank tells you flapper vs. fill valve.",
@@ -612,11 +612,11 @@ export const METRO_CONTENT: MetroContent[] = [
     heroExtra:
       "Orem is full of 1950s-1970s ramblers and split-levels, many with a basement apartment rented to UVU students, so an upstairs toilet leak often ends up as somebody else's ceiling stain.",
     trustLine:
-      "Requests from Orem ZIPs are reviewed by a person and passed to an independent, licensed Utah plumber who covers your area, when one is available.",
+      "Requests from Orem ZIPs are reviewed by a person and passed to an independent Utah plumber who covers your area, when one is available.",
     localFactors: [
       "Mid-century homes still have original shut-off valves that seize when you finally need them",
       "Basement apartments sit directly under the main-floor bathroom",
-      "Utah County hard water scales flappers, fill valves and rim jets",
+      "Flappers, fill valves and rim jets wear and clog with age",
       "Mature trees on older lots send roots into aging sewer laterals",
     ],
     neighborhoods: ["Windsor", "Northridge", "Lakeridge", "Cascade", "Sunset Heights", "Scera Park"],
@@ -636,7 +636,7 @@ export const METRO_CONTENT: MetroContent[] = [
       "running-toilet": {
         headline: "Running toilet repair in Orem",
         intro:
-          "Hard water leaves a crust on the flapper seat, so a new flapper on an old Orem toilet sometimes still leaks. If the dye test shows a leak after you've replaced the flapper, scrub the seat smooth or replace the flush valve.",
+          "A crusted or pitted flapper seat can keep a new flapper on an old Orem toilet from sealing. If the dye test shows a leak after you've replaced the flapper, scrub the seat smooth or replace the flush valve.",
         localFactors: [
           "Scale on the flush valve seat stops even a new flapper from sealing",
           "Rental units often run for weeks before anyone reports it",
@@ -713,7 +713,7 @@ export const METRO_CONTENT: MetroContent[] = [
     heroExtra:
       "Most of Lehi was built in the last twenty years, so toilet calls here are less about corroded pipes and more about builder-grade parts wearing out, installs that were never quite level, and new basements being finished.",
     trustLine:
-      "Requests from Lehi ZIPs are reviewed by a person and passed to an independent, licensed Utah plumber who covers your area, when one is available.",
+      "Requests from Lehi ZIPs are reviewed by a person and passed to an independent Utah plumber who covers your area, when one is available.",
     localFactors: [
       "Builder-grade fill valves and flappers in 2000s and 2010s homes are reaching the end of their life",
       "Toilets set fast during construction can rock and break the wax seal over time",
@@ -739,7 +739,7 @@ export const METRO_CONTENT: MetroContent[] = [
           "If your Lehi home is ten to twenty years old, the original builder-grade fill valves and flappers are due. A toilet that hisses or refills on its own is usually a part you can replace in half an hour.",
         localFactors: [
           "Original plastic fill valves from the build commonly fail at 10-15 years",
-          "Hard water shortens flapper life across Utah County",
+          "Flappers are a wear part and fail first",
         ],
         neighborhoods: ["Ivory Ridge", "Traverse Mountain", "Thanksgiving Point area", "Holbrook Farms"],
         responseNote:
@@ -809,11 +809,11 @@ export const METRO_CONTENT: MetroContent[] = [
     stateSlug: "utah",
     citySlug: "american-fork",
     heroExtra:
-      "American Fork mixes older homes near Main Street, some with original galvanized pipes and cast-iron drains, with newer subdivisions on the benches, and hard water wears out toilet parts in both.",
+      "American Fork mixes older homes near Main Street, some with original galvanized pipes and cast-iron drains, with newer subdivisions on the benches, and toilet parts wear out in both.",
     trustLine:
-      "Requests from American Fork ZIPs are reviewed by a person and passed to an independent, licensed Utah plumber who covers your area, when one is available.",
+      "Requests from American Fork ZIPs are reviewed by a person and passed to an independent Utah plumber who covers your area, when one is available.",
     localFactors: [
-      "Hard water scale clogs rim jets and makes flappers leak",
+      "Scale in rim jets weakens the flush",
       "Older homes near Main Street may still have galvanized supply pipes and cast-iron drains",
       "Pressurized irrigation lines carry untreated water and must never connect to indoor plumbing",
       "Finished basements turn upstairs leaks into ceiling repairs",
@@ -823,7 +823,7 @@ export const METRO_CONTENT: MetroContent[] = [
       "clogged-toilet": {
         headline: "Clogged toilet help in American Fork",
         intro:
-          "A toilet that flushes weakly and clogs often in an American Fork home is frequently a scale problem, not a drain problem. Mineral buildup narrows the rim jets and the siphon jet, so less water hits the trap. Clear those, then plunge.",
+          "A toilet that flushes weakly and clogs often is sometimes a weak-flush problem, not a drain problem. Check that the tank fills to its line and the rim holes are clear, then plunge.",
         localFactors: [
           "Scale in the siphon jet weakens the flush and leads to more clogs",
           "Older cast-iron drains near downtown can be rough inside and catch paper",
@@ -834,7 +834,7 @@ export const METRO_CONTENT: MetroContent[] = [
       "running-toilet": {
         headline: "Running toilet repair in American Fork",
         intro:
-          "Hard water is tough on flappers and fill valves, so American Fork toilets tend to start running or phantom-flushing sooner than you'd expect. The dye test tells you which part to buy.",
+          "An American Fork toilet that runs or phantom-flushes usually has a worn flapper or fill valve. The dye test tells you which part to buy.",
         localFactors: [
           "Scale on the flush valve seat stops a new flapper from sealing",
           "Sediment clogs the fill valve screen, causing slow refills or hissing",
@@ -910,7 +910,7 @@ export const METRO_CONTENT: MetroContent[] = [
     heroExtra:
       "Sandy runs from the Jordan River up into the Wasatch foothills, so water pressure varies a lot from street to street, and most homes have a finished basement where a small leak turns into a big repair.",
     trustLine:
-      "Requests from Sandy ZIPs are reviewed by a person and passed to an independent, licensed Utah plumber who covers your area, when one is available.",
+      "Requests from Sandy ZIPs are reviewed by a person and passed to an independent Utah plumber who covers your area, when one is available.",
     localFactors: [
       "Big elevation changes mean some homes see high water pressure that wears out fill valves and supply lines",
       "Many homes have a pressure-reducing valve near the main that eventually fails",
@@ -1008,11 +1008,11 @@ export const METRO_CONTENT: MetroContent[] = [
     heroExtra:
       "West Jordan has grown in waves, from older homes on the east side to newer subdivisions toward the Oquirrhs, so toilet calls range from cracked 1970s tanks to builder-grade parts in homes a few years old.",
     trustLine:
-      "Requests from West Jordan ZIPs are reviewed by a person and passed to an independent, licensed Utah plumber who covers your area, when one is available.",
+      "Requests from West Jordan ZIPs are reviewed by a person and passed to an independent Utah plumber who covers your area, when one is available.",
     localFactors: [
       "Older east-side homes have original valves, supply lines and wax rings",
       "Newer west-side homes have builder-grade parts now wearing out",
-      "Hard water scales flappers, fill valves and rim jets",
+      "Flappers, fill valves and rim jets wear and clog with age",
       "Finished basements make slow leaks expensive",
     ],
     neighborhoods: ["Jordan Landing", "Copper Hills", "Gardner Village area", "Sugar Factory area", "Ron Wood Park area", "West side subdivisions"],
@@ -1031,7 +1031,7 @@ export const METRO_CONTENT: MetroContent[] = [
       "running-toilet": {
         headline: "Running toilet repair in West Jordan",
         intro:
-          "Hard water and age are the usual suspects. On an older east-side toilet, it's often a scaled flapper seat. In a newer west-side home, it's often the original plastic fill valve giving out. The dye test tells you which.",
+          "Age is the usual suspect. On an older east-side toilet, it's often a scaled flapper seat. In a newer west-side home, it's often the original plastic fill valve giving out. The dye test tells you which.",
         localFactors: [
           "Original fill valves in 2000s-2010s homes are reaching end of life",
           "Scale on older flush valve seats stops new flappers sealing",
@@ -1106,7 +1106,7 @@ export const METRO_CONTENT: MetroContent[] = [
     heroExtra:
       "Ogden has some of the oldest housing on the Wasatch Front, with historic districts full of pre-war homes and original cast-iron drains, so seized valves, corroded supply lines and root-filled sewer laterals are everyday calls.",
     trustLine:
-      "Requests from Ogden ZIPs are reviewed by a person and passed to an independent, licensed Utah plumber who covers your area, when one is available.",
+      "Requests from Ogden ZIPs are reviewed by a person and passed to an independent Utah plumber who covers your area, when one is available.",
     localFactors: [
       "Pre-war and mid-century homes often have original cast-iron drains and clay sewer laterals",
       "Original shut-off valves seize or snap when finally turned",

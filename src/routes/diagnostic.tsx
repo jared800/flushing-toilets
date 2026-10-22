@@ -276,12 +276,12 @@ function DiagnosticPage() {
             title={
               outcome?.severity === "emergency"
                 ? "Get someone out now"
-                : "Want a licensed plumber instead?"
+                : "Want a plumber instead?"
             }
             subtitle={
               outcome
                 ? "Your ZIP finds local help. We already know what the problem is."
-                : "Enter a ZIP and phone number and we'll find licensed help near you."
+                : "Enter a ZIP and phone number and a person will read your request."
             }
           />
           <p className="mt-3 px-1 text-xs leading-relaxed text-fg-subtle">

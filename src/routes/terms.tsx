@@ -15,11 +15,11 @@ function TermsPage() {
         <p>
           Flushing Toilets provides a platform that connects consumers with
           independent plumbing contractors. We do not perform plumbing services
-          and are not responsible for workmanship of partner plumbers.
+          and are not responsible for the workmanship of any plumber.
         </p>
         <p>
           The service is free for homeowners. Plumbers who receive requests
-          agree to separate partner terms. Any quote, price, warranty, or
+          agree to separate plumber terms. Any quote, price, warranty, or
           schedule comes from the plumber you choose, not from us.
         </p>
         <p>

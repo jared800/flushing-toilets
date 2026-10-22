@@ -19,7 +19,7 @@ export const STATES: State[] = [
     name: "Texas",
     abbr: "TX",
     blurb:
-      "From Gulf humidity to North Texas clay soil, Texas homes put real stress on toilets, wax rings, and sewer lines. We match you with licensed local plumbers in major metros and growing suburbs.",
+      "From Gulf humidity to North Texas clay soil, Texas homes put real stress on toilets, wax rings, and sewer lines. Send a request and a person reads it; if an independent plumber who covers your area is available, we pass it on.",
     cities: [
       {
         slug: "houston",
@@ -46,7 +46,7 @@ export const STATES: State[] = [
         slug: "san-antonio",
         name: "San Antonio",
         blurb:
-          "Hard water and aging plumbing stock in San Antonio make running toilets, leaks, and flange repairs common service calls.",
+          "Aging plumbing stock in San Antonio makes running toilets, leaks, and flange repairs common service calls.",
         zips: ["78205", "78209", "78212", "78230", "78258"],
       },
       {
@@ -60,7 +60,7 @@ export const STATES: State[] = [
         slug: "el-paso",
         name: "El Paso",
         blurb:
-          "Desert mineral content and older housing in El Paso mean supply-line leaks and running toilets show up often.",
+          "Older housing in El Paso means supply-line leaks and running toilets show up often.",
         zips: ["79901", "79902", "79912", "79924", "79936"],
       },
       {
@@ -81,7 +81,7 @@ export const STATES: State[] = [
         slug: "plano",
         name: "Plano",
         blurb:
-          "Plano’s suburban housing stock needs dependable install, replacement, and clog service from licensed North Texas plumbers.",
+          "Plano’s suburban housing stock needs dependable install, replacement, and clog service from North Texas plumbers.",
         zips: ["75023", "75024", "75025", "75074", "75075"],
       },
       {
@@ -118,7 +118,7 @@ export const STATES: State[] = [
         slug: "tampa",
         name: "Tampa",
         blurb:
-          "Tampa Bay homes deal with humidity-driven seal issues, clogs, and sewer concerns — local licensed help matters.",
+          "Tampa Bay homes deal with humidity-driven seal issues, clogs, and sewer concerns — local help matters.",
         zips: ["33602", "33606", "33609", "33611", "33629"],
       },
       {
@@ -146,7 +146,7 @@ export const STATES: State[] = [
         slug: "port-st-lucie",
         name: "Port St. Lucie",
         blurb:
-          "Growing Port St. Lucie neighborhoods need install, replacement, and reliable clog service from nearby licensed plumbers.",
+          "Growing Port St. Lucie neighborhoods need install, replacement, and reliable clog service from nearby plumbers.",
         zips: ["34952", "34953", "34983", "34986", "34987"],
       },
       {
@@ -177,20 +177,20 @@ export const STATES: State[] = [
     name: "Arizona",
     abbr: "AZ",
     blurb:
-      "Hard water, desert heat, and rapid suburban growth make Arizona a high-demand market for toilet installs, mineral-related running toilets, and emergency clogs.",
+      "Rapid suburban growth makes Arizona a busy market for toilet installs, running toilets, and emergency clogs.",
     cities: [
       {
         slug: "phoenix",
         name: "Phoenix",
         blurb:
-          "Phoenix metro volume is high — clogs, hard-water running toilets, and same-day emergency calls across a huge service area.",
+          "Phoenix metro volume is high — clogs, running toilets, and emergency calls across a huge service area.",
         zips: ["85003", "85012", "85016", "85018", "85020"],
       },
       {
         slug: "tucson",
         name: "Tucson",
         blurb:
-          "Tucson’s older homes and mineral-heavy water mean flappers, fill valves, and seals need regular professional attention.",
+          "Tucson’s older homes mean flappers, fill valves, and seals need regular attention.",
         zips: ["85701", "85705", "85711", "85716", "85719"],
       },
       {
@@ -239,7 +239,7 @@ export const STATES: State[] = [
         slug: "peoria",
         name: "Peoria",
         blurb:
-          "Peoria homeowners want licensed local plumbers for toilet installs, hard-water issues, and weekend emergencies.",
+          "Peoria homeowners need plumbers for toilet installs, running toilets, and weekend emergencies.",
         zips: ["85345", "85381", "85382", "85383"],
       },
       {
@@ -256,7 +256,7 @@ export const STATES: State[] = [
     name: "Utah",
     abbr: "UT",
     blurb:
-      "Hard water along the Wasatch Front, freezing winters, and a lot of homes with finished basements make toilet leaks, worn fill valves, and backups a costly problem in Utah. We match you with licensed local plumbers from Ogden to Utah County.",
+      "Freezing winters and a lot of homes with finished basements make toilet leaks, worn fill valves, and backups a costly problem in Utah. Send a request from anywhere between Ogden and Utah County and a person reads it; if an independent plumber who covers your area is available, we pass it on.",
     cities: [
       {
         slug: "salt-lake-city",
@@ -290,7 +290,7 @@ export const STATES: State[] = [
         slug: "american-fork",
         name: "American Fork",
         blurb:
-          "American Fork homeowners deal with hard-water scale on flappers and rim jets, and with older homes near Main Street that need valve and seal work.",
+          "American Fork homeowners deal with worn flappers and clogged rim jets, and with older homes near Main Street that need valve and seal work.",
         zips: ["84003"],
       },
       {

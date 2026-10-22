@@ -24,7 +24,7 @@ export type LeadFormDefaults = {
 export function LeadForm({
   defaults,
   title = "Get a local plumber",
-  subtitle = "Takes about a minute. We’ll match you with licensed partners near you.",
+  subtitle = "Takes about a minute. A real person reads every request.",
   variant = "full",
 }: {
   defaults?: LeadFormDefaults;
@@ -176,8 +176,8 @@ export function LeadForm({
               Thanks{name ? `, ${name.split(" ")[0]}` : ""}. We have your{" "}
               {service.name.toLowerCase()} request for{" "}
               {resolved?.cityLabel ?? zip}. A real person reviews every
-              request and tries to match it with a licensed local plumber who
-              covers your area. Either way, we&apos;ll follow up by phone so you
+              request and passes it on if an independent plumber who covers
+              your area is available. Either way, we&apos;ll follow up by phone so you
               are not left waiting.
             </p>
             {urgency === "emergency" && (

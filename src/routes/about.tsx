@@ -10,7 +10,7 @@ export const Route = createFileRoute("/about")({
       {
         name: "description",
         content:
-          "Flushing Toilets is a hybrid lead marketplace connecting homeowners with licensed local plumbers for toilet problems.",
+          "Flushing Toilets is a free referral service and set of toilet repair guides. We are not a plumbing company.",
       },
     ],
   }),
@@ -22,26 +22,28 @@ function AboutPage() {
       <PageHero
         kicker="About"
         title="Built for one stressful problem"
-        description="When a toilet fails, you don’t want a generic directory. You want local, licensed help — fast."
+        description="Plain-English toilet guides, a free diagnostic, and a referral request a real person reads."
       />
       <div className="mx-auto max-w-3xl space-y-5 px-4 py-10 text-sm leading-relaxed text-fg-muted sm:px-6">
         <p>
-          Flushing Toilets is a lead-generation marketplace specializing in toilet
-          and closely related drain/sewer issues. We publish deep local pages by
-          city and service, capture high-intent homeowner requests, and route
-          them to independent partner plumbers.
+          Flushing Toilets is a referral service for toilet and closely related
+          drain and sewer problems. We publish repair guides and a free
+          diagnostic, and we take requests from homeowners who want a plumber.
+          When an independent plumber who covers the area is available, we
+          pass the request on. When nobody covers it, we say so.
         </p>
         <p>
           We are not a plumbing company and we do not send technicians. We
           write plain-English guides for the most common toilet problems, a
           free diagnostic to help you decide whether you need a pro at all,
-          and a short request form that a real person reviews before it goes
-          to a licensed local plumber. The service is free for homeowners;
-          plumbers pay to receive requests.
+          and a short request form that a real person reviews. The service is
+          free for homeowners. Before you hire any plumber, ask for their state
+          license number and check it with the state licensing board.
         </p>
         <p>
-          We launch deep in Texas, Florida, Arizona, and Utah first, then expand state
-          by state once supply and conversion are proven.
+          We are starting in Utah. We do not have plumbers signed up in every
+          city listed on this site, and we will tell you if nobody covers your
+          area.
         </p>
       </div>
     </SiteShell>

@@ -13,7 +13,7 @@ import { submitApplicationFn } from "@/lib/marketplace.functions";
 export const Route = createFileRoute("/for-plumbers/apply")({
   component: ApplyPage,
   head: () => ({
-    meta: [{ title: "Partner application — Flushing Toilets" }],
+    meta: [{ title: "Plumber application — Flushing Toilets" }],
   }),
 });
 
@@ -44,7 +44,7 @@ function ApplyPage() {
                 </p>
                 <div className="mt-4 flex flex-wrap gap-2">
                   <Button asChild variant="secondary">
-                    <Link to="/partners/login">Partner login</Link>
+                    <Link to="/partners/login">Plumber login</Link>
                   </Button>
                   <Button asChild variant="outline">
                     <Link to="/for-plumbers/territory">View territory board</Link>
