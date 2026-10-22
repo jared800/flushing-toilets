@@ -202,7 +202,7 @@ export const METRO_CONTENT: MetroContent[] = [
       "emergency-plumber": {
         headline: "Emergency plumber for toilets in Miami",
         intro:
-          "After-hours overflows in towers need fast callbacks and someone who can work with building access.",
+          "After-hours overflows in towers often need someone who can work with building management and access rules.",
         localFactors: [
           "After-hours security desk procedures matter",
           "Stop using other fixtures if a main backup is possible",
@@ -275,7 +275,7 @@ export const METRO_CONTENT: MetroContent[] = [
       },
       "emergency-plumber": {
         headline: "Emergency toilet plumber in Austin",
-        intro: "Overflows at night and weekend failures need fast callbacks — set urgency to Emergency for priority routing.",
+        intro: "For an overflow at night or on a weekend, shut off the water at the valve behind the toilet first, then send a request marked Emergency. We do not promise a response time.",
         localFactors: ["Shut off supply if safe", "Avoid other fixtures if a main backup is possible"],
         neighborhoods: ["Downtown", "South Congress", "East Austin"],
         responseNote: "If water is still running, shut the valve behind the toilet or the house main before anything else.",

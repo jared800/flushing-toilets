@@ -32,7 +32,7 @@ export const STATES: State[] = [
         slug: "dallas",
         name: "Dallas",
         blurb:
-          "Dallas plumbers handle everything from mid-century remodels to high-rise condo toilet failures — fast response matters in dense neighborhoods.",
+          "Dallas toilet calls range from mid-century remodels to high-rise condo failures, where building access rules can matter.",
         zips: ["75201", "75205", "75219", "75225", "75230"],
       },
       {
