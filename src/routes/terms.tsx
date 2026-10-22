@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteShell } from "@/components/layout/site-shell";
 import { PageHero } from "@/components/shared/page-hero";
 
@@ -26,7 +26,11 @@ function TermsPage() {
           When you submit a request you agree that we and up to three
           independent plumbers may contact you about it by call, text, or
           email, as described on the form. Reply STOP to any text to opt out,
-          or email hello@flushingtoilets.com.
+          or tell us through{" "}
+          <Link className="underline" to="/get-help">
+            our request form
+          </Link>
+          .
         </p>
         <p>
           Guides on this site are general information. If you are unsure, or

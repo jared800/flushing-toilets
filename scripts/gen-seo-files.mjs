@@ -171,7 +171,7 @@ const llms = [
   "",
   "> Free referral service for toilet and drain problems. Plain-English repair guides, a free diagnostic, and requests routed to independent, licensed local plumbers. Flushing Toilets is not a plumbing company and does not do the work.",
   "",
-  "Coverage: Texas, Florida, Arizona, and Utah (Salt Lake City and Utah County). Contact: hello@flushingtoilets.com",
+  "Coverage: Texas, Florida, Arizona, and Utah (Salt Lake City and Utah County). Contact: https://www.flushingtoilets.com/get-help",
   "",
   "## Repair guides",
   ...guides.map((g) => `- [${titleOf(guidesSrc, g)}](${SITE}/guides/${g})`),

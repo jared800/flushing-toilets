@@ -67,7 +67,6 @@ const ORG_LD = {
       "@id": `${SITE_ORIGIN}/#org`,
       name: "Flushing Toilets",
       url: `${SITE_ORIGIN}/`,
-      email: "hello@flushingtoilets.com",
       description:
         "Free referral service and toilet repair guides. A person reads each request and passes it to an independent plumber when one covers the area. Not a plumbing company.",
       areaServed: ["Texas", "Florida", "Arizona", "Utah"],

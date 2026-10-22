@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteShell } from "@/components/layout/site-shell";
 import { PageHero } from "@/components/shared/page-hero";
 
@@ -29,18 +29,19 @@ function PrivacyPage() {
           anyone outside that matching process.
         </p>
         <p>
-          You can ask us to delete your request at any time by emailing{" "}
-          <a className="underline" href="mailto:hello@flushingtoilets.com">
-            hello@flushingtoilets.com
-          </a>
-          , and we will remove it. Requests we have not acted on are deleted
-          after 12 months.
+          You can ask us to delete your request at any time through{" "}
+          <Link className="underline" to="/get-help">
+            our request form
+          </Link>
+          : enter the phone number you used, tap “Add more details,” and write
+          DELETE in the notes box. We will remove it. Requests we have not
+          acted on are deleted after 12 months.
         </p>
         <p>
           If you are a resident of California, Colorado, Connecticut, Utah, or
           Virginia, you have the right to know what personal information we
           hold about you, to request its deletion, and to opt out of its sale —
-          we do not sell it. Use the same address above to exercise any of
+          we do not sell it. Use the same request form to exercise any of
           those rights.
         </p>
       </div>

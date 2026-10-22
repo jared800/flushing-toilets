@@ -51,8 +51,13 @@ function ContactPage() {
             Support
           </h2>
           <p className="mt-2 text-sm text-fg-muted">
-            hello@flushingtoilets.com
+            Questions, corrections, or a request to delete your information:
+            use the request form, tap “Add more details,” and tell us what you
+            need.
           </p>
+          <Button asChild className="mt-4" variant="secondary">
+            <Link to="/get-help">Contact us</Link>
+          </Button>
         </div>
       </div>
     </SiteShell>
