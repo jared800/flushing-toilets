@@ -137,14 +137,38 @@ function priority(path) {
   return "0.5";
 }
 
-const today = new Date().toISOString().slice(0, 10);
+// <lastmod> is the date the page's content last really changed, not the build
+// date. Stamping every URL with "today" on every deploy taught Google to ignore
+// our lastmod. Guides use `updated` in guides.ts; everything else comes from
+// src/data/page-dates.ts. A URL with no known date gets no <lastmod> at all.
+const pageDates = new Map(
+  [
+    ...read("src/data/page-dates.ts").matchAll(
+      /"(\/[a-z0-9/-]*)":\s*"(\d{4}-\d{2}-\d{2})"/g,
+    ),
+  ].map((m) => [m[1], m[2]]),
+);
+for (const m of read("src/data/guides.ts").matchAll(
+  /slug:\s*"([a-z0-9-]+)",[\s\S]*?updated:\s*"(\d{4}-\d{2}-\d{2})"/g,
+)) {
+  if (!pageDates.has(`/guides/${m[1]}`)) pageDates.set(`/guides/${m[1]}`, m[2]);
+}
+const undated = [];
 const body = [...urls]
   .sort()
-  .map(
-    (p) =>
-      `  <url>\n    <loc>${SITE}${p === "/" ? "/" : p}</loc>\n    <lastmod>${today}</lastmod>\n    <priority>${priority(p)}</priority>\n  </url>`,
-  )
+  .map((p) => {
+    const lastmod = pageDates.get(p);
+    if (!lastmod) undated.push(p);
+    return `  <url>\n    <loc>${SITE}${p === "/" ? "/" : p}</loc>\n${
+      lastmod ? `    <lastmod>${lastmod}</lastmod>\n` : ""
+    }    <priority>${priority(p)}</priority>\n  </url>`;
+  })
   .join("\n");
+if (undated.length) {
+  console.warn(
+    `[seo] no lastmod for ${undated.length} url(s), add them to src/data/page-dates.ts: ${undated.join(", ")}`,
+  );
+}
 
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${body}\n</urlset>\n`;
 
@@ -169,7 +193,7 @@ const guidesSrc = read("src/data/guides.ts");
 const llms = [
   "# Flushing Toilets",
   "",
-  "> Free referral service for toilet and drain problems. Plain-English repair guides, a free diagnostic, and requests routed to independent, licensed local plumbers. Flushing Toilets is not a plumbing company and does not do the work.",
+  "> Free referral service for toilet and drain problems. Plain-English repair guides, a free diagnostic, and requests a person reads and passes to an independent local plumber when one covers the area. Flushing Toilets is not a plumbing company and does not do the work.",
   "",
   "Coverage: Texas, Florida, Arizona, and Utah (Salt Lake City and Utah County). Contact: https://www.flushingtoilets.com/get-help",
   "",

@@ -137,7 +137,20 @@ export default defineConfig(({ command }) => ({
     authPopupPlugin(),
     tailwindcss(),
     tanstackStart(),
-    ...(command === "build" ? [nitro({ preset: "vercel" })] : []),
+    ...(command === "build"
+      ? [
+          nitro({
+            preset: "vercel",
+            // /feed and /feed/ are left over from the domain's earlier life
+            // (Google still lists /feed/ as a referring URL). There is no feed
+            // here, so send both to the home page in one permanent hop.
+            routeRules: {
+              "/feed": { redirect: { to: "/", status: 301 } },
+              "/feed/": { redirect: { to: "/", status: 301 } },
+            },
+          }),
+        ]
+      : []),
     viteReact(),
   ],
 }));

@@ -4,6 +4,11 @@ import { PageHero } from "@/components/shared/page-hero";
 import { GeoSearch } from "@/components/search/geo-search";
 import { getState } from "@/data/locations";
 import { SERVICES } from "@/data/services";
+import { WhoRunsThis } from "@/components/shared/who-runs-this";
+import { pageUpdated } from "@/data/page-dates";
+
+/** Utah's official license lookup (Division of Professional Licensing). */
+const UTAH_LICENSE_LOOKUP = "https://secure.utah.gov/llv/search/index.html";
 
 export const Route = createFileRoute("/locations/$state")({
   loader: ({ params }) => {
@@ -39,8 +44,57 @@ function StatePage() {
       </PageHero>
 
       <div className="mx-auto max-w-6xl px-4 py-10 sm:px-6">
+        <section
+          aria-label="Short answer"
+          className="mb-10 max-w-3xl rounded-xl border border-border bg-surface p-5 shadow-sm"
+        >
+          <h2 className="font-display text-lg font-semibold text-harbor">
+            Short answer
+          </h2>
+          {state.slug === "utah" ? (
+            <p className="mt-2 leading-relaxed text-fg">
+              Send a free request from anywhere between Ogden and Utah County.
+              A person reads it and passes it to an independent plumber who
+              covers your ZIP when one is available. If nobody does, we tell you
+              instead of leaving you waiting. We are not a plumbing company.
+              Before you hire anyone, check their license with Utah&rsquo;s
+              Division of Professional Licensing.
+            </p>
+          ) : (
+            <p className="mt-2 leading-relaxed text-fg">
+              You can send a free request from {state.name}. A person reads it
+              and passes it on only if an independent plumber covers your ZIP.
+              We are starting in Utah and do not have plumbers signed up
+              everywhere in {state.name} yet, so if nobody covers your area we
+              tell you. For many problems you can start with our free
+              diagnostic and repair guides.
+            </p>
+          )}
+          <p className="mt-3 text-sm">
+            {state.slug === "utah" ? (
+              <a
+                href={UTAH_LICENSE_LOOKUP}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-semibold text-stream hover:underline"
+              >
+                Utah license lookup (Division of Professional Licensing)
+              </a>
+            ) : (
+              <span className="text-fg-muted">
+                Before you hire any plumber, ask for their state license number
+                and check it with the state licensing board.
+              </span>
+            )}
+            {" · "}
+            <Link to="/diagnostic" className="font-semibold text-stream hover:underline">
+              Run the free diagnostic
+            </Link>
+          </p>
+        </section>
+
         <h2 className="font-display text-2xl font-semibold text-harbor">
-          Cities we cover
+          Cities with local pages
         </h2>
         <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
           {state.cities.map((city) => (
@@ -78,6 +132,11 @@ function StatePage() {
             </Link>
           ))}
         </div>
+
+        <WhoRunsThis
+          className="mt-12"
+          updated={pageUpdated(`/locations/${state.slug}`)}
+        />
       </div>
     </SiteShell>
   );

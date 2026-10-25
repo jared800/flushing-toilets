@@ -286,7 +286,7 @@ export const GUIDES: Guide[] = [
     excerpt:
       "The plunger technique most people get wrong, what to do when it fails, and the one product to keep away from your toilet.",
     readMinutes: 7,
-    updated: "2026-08-06",
+    updated: "2026-10-25",
     body: [],
     sections: [
       {
@@ -359,6 +359,13 @@ export const GUIDES: Guide[] = [
           "If flushing this toilet makes a nearby tub gurgle, or other drains have gone slow, the blockage is not in the toilet — it is in the line that both fixtures share, downstream of everything. Plunging cannot help with that and can make the mess worse. Stop using water in the house and get a plumber out, because the next stage is usually wastewater coming up through the lowest drain in the building.",
         ],
       },
+      {
+        heading: "What a plumber charges if you can't clear it",
+        paragraphs: [
+          "HomeGuide puts the typical plumber cost to unclog a toilet at $100 to $275, and notes that the price goes up when the clog is further down the sewer line and needs bigger equipment. Most plumbers also have a minimum call-out charge, which HomeGuide lists at $50 to $200.",
+          "That is why the plunger and closet auger are worth a proper try first. If both fail, or other drains in the house are slow too, the problem is probably past the toilet and a plumber is the right call.",
+        ],
+      },
     ],
     faqs: [
       {
@@ -392,6 +399,9 @@ export const GUIDES: Guide[] = [
           "No. They pass through the toilet but do not break apart the way toilet paper does, and they are one of the leading causes of both household clogs and municipal sewer problems. The label describes what fits down the pipe, not what dissolves.",
       },
     ],
+    sources: [
+      { label: "HomeGuide: Toilet repair cost (2024)", url: "https://homeguide.com/costs/toilet-repair-cost" },
+    ],
   },
   {
     slug: "why-is-my-toilet-running",
@@ -402,7 +412,7 @@ export const GUIDES: Guide[] = [
     excerpt:
       "A running toilet is almost always one of three cheap parts. Here's the test that tells you which, in fifteen minutes.",
     readMinutes: 6,
-    updated: "2026-08-06",
+    updated: "2026-10-25",
     body: [],
     sections: [
       {
@@ -467,6 +477,13 @@ export const GUIDES: Guide[] = [
           "If the valve won't turn, or starts dripping once you've moved it, stop there and call someone. The alternative is finding your house main in a hurry.",
         ],
       },
+      {
+        heading: "The numbers behind a running toilet",
+        paragraphs: [
+          "EPA says household leaks can waste 180 gallons a week, that toilets are often the culprit, and that most toilet leaks come from old or worn-out flappers. EPA also says fixing easy household leaks can save about 10 percent on a water bill.",
+          "The part is cheap. HomeGuide puts a flapper fix at about $12 to $30 if you do it yourself, and about $130 for a plumber to fit a new flapper and chain. HomeGuide says flappers usually last 4 to 5 years, less if you use harsh in-tank cleaners.",
+        ],
+      },
     ],
     faqs: [
       {
@@ -505,6 +522,11 @@ export const GUIDES: Guide[] = [
           "That is called phantom flushing, and it is a slow flapper leak. The tank level drops gradually as water seeps past into the bowl, and when it drops far enough the fill valve kicks in to top it up. It is the same fix as a continuously running toilet: replace the flapper.",
       },
     ],
+    sources: [
+      { label: "US EPA WaterSense: Residential toilets", url: "https://www.epa.gov/watersense/residential-toilets" },
+      { label: "US EPA WaterSense: Fix a Leak Week (checking for leaks)", url: "https://www.epa.gov/watersense/fix-leak-week" },
+      { label: "HomeGuide: Toilet repair cost (2024)", url: "https://homeguide.com/costs/toilet-repair-cost" },
+    ],
   },
   {
     slug: "toilet-wont-flush",
@@ -515,7 +537,7 @@ export const GUIDES: Guide[] = [
     excerpt:
       "When nothing is blocked but the flush is weak, the cause is usually in the tank or under the rim — and both are things you can check yourself.",
     readMinutes: 6,
-    updated: "2026-08-06",
+    updated: "2026-10-25",
     body: [],
     sections: [
       {
@@ -573,6 +595,13 @@ export const GUIDES: Guide[] = [
           "No amount of adjustment fixes a bad design. If you are servicing the same toilet repeatedly and it clogs constantly, replacing it usually costs less over a couple of years than continuing to work around it.",
         ],
       },
+      {
+        heading: "Why older toilets flush weakly",
+        paragraphs: [
+          "EPA says the early low-flow toilets of the 1990s were sometimes linked to performance problems such as needing a double flush. Today's WaterSense-labeled toilets use 1.28 gallons per flush or less and are independently tested to clear waste from the bowl.",
+          "If you've worked through the checks above and the toilet still flushes badly, HomeGuide puts typical toilet repair at $130 to $300 for parts and labor. On an old, weak-flushing toilet, replacing it can be the better spend.",
+        ],
+      },
     ],
     faqs: [
       {
@@ -591,6 +620,10 @@ export const GUIDES: Guide[] = [
           "Usually not on its own — a weak flush with everything else in the house draining normally points at the toilet. But if the bowl also drains slowly, or a nearby tub or sink gurgles when you flush, that combination suggests a partial blockage or venting problem further down the line and is worth having looked at.",
       },
     ],
+    sources: [
+      { label: "US EPA WaterSense: Residential toilets", url: "https://www.epa.gov/watersense/residential-toilets" },
+      { label: "HomeGuide: Toilet installation and repair costs", url: "https://homeguide.com/costs/toilet-installation-cost" },
+    ],
   },
   {
     slug: "toilet-leaking-at-base",
@@ -601,7 +634,7 @@ export const GUIDES: Guide[] = [
     excerpt:
       "Four different faults look identical on the floor. Ten minutes with paper towel tells you which one you have.",
     readMinutes: 6,
-    updated: "2026-08-06",
+    updated: "2026-10-25",
     body: [],
     sections: [
       {
@@ -647,6 +680,13 @@ export const GUIDES: Guide[] = [
           "Do not fix a rocking toilet with shims alone. Shims stop the wobble you can feel while the flange keeps deteriorating underneath, and each rock works the wax seal a little looser — so a rocking toilet reliably becomes a leaking toilet. Check whether the closet bolts at the base are simply loose first, but if the movement is coming from the flange, that needs proper repair.",
         ],
       },
+      {
+        heading: "What fixing the seal costs",
+        paragraphs: [
+          "Water at the base usually means the wax ring under the toilet has failed. HomeGuide puts the cost to have a plumber pull the toilet, replace the wax ring and reseat it at around $230. Doing it yourself, a flange kit, wax ring and spacers run about $10 to $50.",
+          "HomeGuide says a wax ring should last 20 to 30 years, and lists sewer smell, water stains on the ceiling below, and a toilet that wobbles as signs it has cracked. Don't wait on a leak at the base: water that sits under the toilet can rot the subfloor.",
+        ],
+      },
     ],
     faqs: [
       {
@@ -664,6 +704,9 @@ export const GUIDES: Guide[] = [
         answer:
           "Typically decades if the toilet is stable and never moves. They fail early when a toilet rocks, when it has been reset without replacing the ring, or when the flange sits too low relative to a floor that has had tile added on top of it.",
       },
+    ],
+    sources: [
+      { label: "HomeGuide: Toilet repair cost (2024)", url: "https://homeguide.com/costs/toilet-repair-cost" },
     ],
   },
   {
@@ -766,7 +809,7 @@ export const GUIDES: Guide[] = [
     answer:
       "A toilet tank that won't fill, or fills slowly, is usually a partly closed shut-off valve, a fill valve clogged with sediment, a float set too low, or a kinked supply line. Open the valve behind the toilet fully, flush the fill valve to clear debris, and replace the fill valve if it still won't refill.",
     readMinutes: 5,
-    updated: "2026-10-09",
+    updated: "2026-10-25",
     body: [],
     sections: [
       {
@@ -808,6 +851,12 @@ export const GUIDES: Guide[] = [
           "If the valve is open, the line is clear and the tank still won't fill properly, the fill valve itself has worn out. Fill valves are close to universal and are one of the easier toilet repairs. If the whole house has low pressure, not just the toilet, that is a plumbing issue to have looked at.",
         ],
       },
+      {
+        heading: "What it costs if you'd rather not do it",
+        paragraphs: [
+          "Most slow or empty tanks come down to the fill valve or the shut-off valve, and the parts are inexpensive. If you hire it out, HomeGuide puts typical toilet repair at $130 to $300 for parts and labor, and most plumbers have a minimum call-out charge of $50 to $200.",
+        ],
+      },
     ],
     faqs: [
       {
@@ -826,6 +875,10 @@ export const GUIDES: Guide[] = [
           "Most toilets refill within about a minute. If yours takes several minutes, start by flushing debris out of the fill valve.",
       },
     ],
+    sources: [
+      { label: "HomeGuide: Toilet repair cost (2024)", url: "https://homeguide.com/costs/toilet-repair-cost" },
+      { label: "HomeGuide: Toilet installation and repair costs", url: "https://homeguide.com/costs/toilet-installation-cost" },
+    ],
   },
   {
     // "toilet runs intermittently" 400/mo KD 0; "phantom flush" 150 KD 0; "toilet phantom flush" 100 KD 0
@@ -837,7 +890,7 @@ export const GUIDES: Guide[] = [
     answer:
       "A toilet that runs on its own for a few seconds every so often, called a phantom flush, is leaking water from the tank into the bowl. The usual cause is a worn flapper or a dirty flapper seat. Confirm it with a dye test, clean the seat, and replace the flapper if colour still reaches the bowl.",
     readMinutes: 4,
-    updated: "2026-10-09",
+    updated: "2026-10-25",
     body: [],
     sections: [
       {
@@ -864,6 +917,13 @@ export const GUIDES: Guide[] = [
           "Finally, clip the refill tube so its end sits above the top of the overflow pipe, not down inside it.",
         ],
       },
+      {
+        heading: "Why it matters",
+        paragraphs: [
+          "EPA says an old or worn flapper can make a toilet flush on its own or silently leak thousands of gallons a year. EPA's own test is the same one above: put a few drops of food colouring in the tank and see whether colour shows up in the bowl.",
+          "A flapper is usually a $12 to $30 fix if you do it yourself, according to HomeGuide. Take the old one (or a photo of it) to the hardware store so the new one fits, which is also EPA's tip.",
+        ],
+      },
     ],
     faqs: [
       {
@@ -877,6 +937,10 @@ export const GUIDES: Guide[] = [
           "The seat the flapper sits on may be scratched or scaled, the new flapper may be the wrong size, or the refill tube may be siphoning water. Check those three. If the flush valve seat is damaged, the flush valve or the whole tank kit needs replacing.",
       },
     ],
+    sources: [
+      { label: "US EPA WaterSense: Fix a Leak Week (checking for leaks)", url: "https://www.epa.gov/watersense/fix-leak-week" },
+      { label: "HomeGuide: Toilet repair cost (2024)", url: "https://homeguide.com/costs/toilet-repair-cost" },
+    ],
   },
   {
     // "toilet overflowing" 1,700/mo KD 0 (parent: "what to do if toilet is overflowing")
@@ -888,7 +952,7 @@ export const GUIDES: Guide[] = [
     answer:
       "If a toilet is overflowing, lift the tank lid and push the flapper down to stop water entering the bowl, then turn the shut-off valve behind the toilet clockwise. Don't flush again. Once the water stops, clear the clog with a flange plunger. If other drains are backing up too, call a plumber.",
     readMinutes: 4,
-    updated: "2026-10-09",
+    updated: "2026-10-25",
     body: [],
     sections: [
       {
@@ -915,6 +979,12 @@ export const GUIDES: Guide[] = [
           "If water has soaked into the floor or is coming through a ceiling below, dry it fast and check for damage. Water that sits under flooring causes rot and mould.",
         ],
       },
+      {
+        heading: "If you need a plumber",
+        paragraphs: [
+          "HomeGuide puts the typical plumber cost to unclog a toilet at $100 to $275, and says it costs more when the clog is further down the sewer line. If other drains are backing up too, read our guide to telling a toilet clog from a sewer backup before you call, so you can describe what's happening.",
+        ],
+      },
     ],
     faqs: [
       {
@@ -928,6 +998,9 @@ export const GUIDES: Guide[] = [
           "Treat it as contaminated if it came from the bowl. Wear gloves, clean hard surfaces with disinfectant, and throw away soaked rugs or cardboard. Sewage from a main-line backup needs a more thorough clean-up.",
       },
     ],
+    sources: [
+      { label: "HomeGuide: Toilet repair cost (2024)", url: "https://homeguide.com/costs/toilet-repair-cost" },
+    ],
   },
   {
     // "toilet leaking from tank" 1,900/mo KD 3
@@ -939,7 +1012,7 @@ export const GUIDES: Guide[] = [
     answer:
       "A toilet leaking from the tank is usually leaking at the tank bolts, the rubber tank-to-bowl gasket, or the supply line connection, and sometimes through a hairline crack. Dry the tank, run your hand under each bolt and the fill-valve nut, and look for the first drip. Worn bolts and gaskets come as an inexpensive kit.",
     readMinutes: 5,
-    updated: "2026-10-09",
+    updated: "2026-10-25",
     body: [],
     sections: [
       {
@@ -967,6 +1040,13 @@ export const GUIDES: Guide[] = [
           "A hairline crack that weeps cannot be reliably repaired. Turn the water off and replace the tank or the whole toilet. A crack can split further without warning.",
         ],
       },
+      {
+        heading: "What the fix usually costs",
+        paragraphs: [
+          "EPA says most toilet leaks come from old or worn-out flappers, and that a few drops of food colouring in the tank will show a leak into the bowl. HomeGuide puts a flapper fix at about $12 to $30 if you do it yourself.",
+          "If the leak is from the tank bolts or the tank-to-bowl gasket instead, HomeGuide says a full tank rebuild (handle, flush valve, flapper, fill valve and tank bolts) by a plumber costs around $300. A cracked tank can't be reliably repaired and should be replaced.",
+        ],
+      },
     ],
     faqs: [
       {
@@ -974,6 +1054,11 @@ export const GUIDES: Guide[] = [
         answer:
           "For a slow drip at a bolt, yes, for a short time with a towel underneath, but get it fixed soon. Water under the floor causes rot. For a cracked tank, turn the water off and don't use it.",
       },
+    ],
+    sources: [
+      { label: "US EPA WaterSense: Residential toilets", url: "https://www.epa.gov/watersense/residential-toilets" },
+      { label: "US EPA WaterSense: Fix a Leak Week (checking for leaks)", url: "https://www.epa.gov/watersense/fix-leak-week" },
+      { label: "HomeGuide: Toilet repair cost (2024)", url: "https://homeguide.com/costs/toilet-repair-cost" },
     ],
   },
   {

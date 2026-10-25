@@ -6,6 +6,8 @@ import { FaqSection } from "@/components/shared/faq-section";
 import { JsonLd } from "@/components/shared/json-ld";
 import { getGuide, GUIDE_LINKS, relatedGuides } from "@/data/guides";
 import { getService } from "@/data/services";
+import { WhoRunsThis } from "@/components/shared/who-runs-this";
+import { formatDate } from "@/data/page-dates";
 
 const SITE = (
   import.meta.env?.VITE_SITE_URL ?? "https://www.flushingtoilets.com"
@@ -51,6 +53,11 @@ function GuidePage() {
           description: guide.answer ?? guide.excerpt,
           mainEntityOfPage: `${SITE}/guides/${guide.slug}`,
           ...(guide.updated ? { dateModified: guide.updated } : {}),
+          author: {
+            "@type": "Organization",
+            name: "Flushing Toilets",
+            url: `${SITE}/about`,
+          },
           publisher: {
             "@type": "Organization",
             name: "Flushing Toilets",
@@ -99,7 +106,8 @@ function GuidePage() {
             <p className="mt-2 leading-relaxed text-fg">{guide.answer}</p>
             {guide.updated && (
               <p className="mt-2 text-xs text-fg-subtle">
-                Updated {guide.updated}
+                Updated{" "}
+                <time dateTime={guide.updated}>{formatDate(guide.updated)}</time>
               </p>
             )}
           </section>
@@ -193,6 +201,8 @@ function GuidePage() {
             </p>
           </section>
         ) : null}
+
+        <WhoRunsThis updated={guide.updated} />
 
         {(fixService || related.length > 0) && (
           <section aria-label="Related" className="space-y-3">

@@ -7,6 +7,8 @@ import { LeadForm } from "@/components/leads/lead-form";
 import { Badge } from "@/components/ui/badge";
 import { FaqSection } from "@/components/shared/faq-section";
 import { JsonLd } from "@/components/shared/json-ld";
+import { WhoRunsThis } from "@/components/shared/who-runs-this";
+import { pageUpdated } from "@/data/page-dates";
 import {
   OUTCOMES,
   QUESTIONS,
@@ -54,7 +56,7 @@ const FAQS = [
   {
     question: "How much does it cost to fix a running toilet?",
     answer:
-      "If you do it yourself, usually between $8 and $20 for the part — a flapper, a fill valve, or nothing at all if the water level just needs adjusting. If you call someone it is normally a minimum service call since the labour is short. A toilet that runs continuously wastes water every day, so it is worth doing promptly either way.",
+      "If you do it yourself, HomeGuide puts a flapper fix at about $12 to $30, and sometimes it costs nothing because the water level just needs adjusting. HomeGuide puts a plumber fitting a new flapper and chain at about $130. EPA says household leaks can waste 180 gallons a week and that worn flappers cause most toilet leaks, so it is worth fixing promptly either way.",
   },
 ];
 
@@ -111,6 +113,23 @@ function DiagnosticPage() {
 
       <div className="mx-auto grid max-w-6xl gap-8 px-4 py-10 sm:px-6 lg:grid-cols-[1.15fr_0.85fr]">
         <div className="space-y-6">
+          {!outcome && history.length === 1 && (
+            <section
+              aria-label="Short answer"
+              className="rounded-xl border border-border bg-bg-elevated p-4 text-sm leading-relaxed text-fg-muted"
+            >
+              <p>
+                <span className="font-semibold text-harbor">Short answer: </span>
+                Most toilet problems come down to a clog in the bowl or trap, a
+                worn flapper, a fill valve that won&rsquo;t shut off, a failed
+                wax seal at the base, or a blockage further down the main line.
+                If only one toilet is affected, it is usually a cheap fix you can
+                do yourself. If several drains are slow or gurgle, it is likely
+                the main line, and that is a job for a plumber. The questions
+                below tell you which one you have.
+              </p>
+            </section>
+          )}
           {!outcome && question && (
             <section className="rounded-xl border border-border bg-surface p-5 shadow-sm">
               <div className="flex items-center justify-between gap-3">
@@ -263,6 +282,36 @@ function DiagnosticPage() {
             schemaId="diagnostic"
             emitSchema={false}
           />
+
+          <section aria-label="Sources" className="border-t border-border pt-5">
+            <h2 className="font-display text-lg font-semibold text-harbor">
+              Sources
+            </h2>
+            <ul className="mt-2 space-y-1 text-sm text-fg-muted">
+              <li>
+                <a
+                  href="https://www.epa.gov/watersense/residential-toilets"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-stream hover:underline"
+                >
+                  US EPA WaterSense: Residential toilets
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://homeguide.com/costs/toilet-repair-cost"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-stream hover:underline"
+                >
+                  HomeGuide: Toilet repair cost (2024)
+                </a>
+              </li>
+            </ul>
+          </section>
+
+          <WhoRunsThis updated={pageUpdated("/diagnostic")} />
         </div>
 
         <div className="lg:sticky lg:top-24 lg:self-start">

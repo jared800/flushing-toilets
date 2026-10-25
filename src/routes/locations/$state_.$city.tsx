@@ -11,6 +11,10 @@ import { partnersForCity } from "@/data/partners";
 import { SERVICES } from "@/data/services";
 import { cityFaqs } from "@/data/faqs";
 import { getMetroContent, hasUniqueLocalContent } from "@/data/metro-content";
+import { WhoRunsThis } from "@/components/shared/who-runs-this";
+import { pageUpdated } from "@/data/page-dates";
+
+const UTAH_LICENSE_LOOKUP = "https://secure.utah.gov/llv/search/index.html";
 
 export const Route = createFileRoute("/locations/$state_/$city")({
   loader: ({ params }) => {
@@ -65,6 +69,38 @@ function CityPage() {
 
       <div className="mx-auto grid max-w-6xl gap-8 px-4 py-10 sm:px-6 lg:grid-cols-[1.15fr_0.85fr]">
         <div className="space-y-8">
+          {state.slug === "utah" && metro && (
+            <section
+              aria-label="Short answer"
+              className="rounded-xl border border-border bg-surface p-5 shadow-sm"
+            >
+              <h2 className="font-display text-lg font-semibold text-harbor">
+                Short answer
+              </h2>
+              <p className="mt-2 leading-relaxed text-fg">
+                Need a plumber for a toilet in {city.name}? Send a free request
+                with your ZIP. A person reads it and passes it to an independent
+                plumber who covers your area when one is available. If nobody
+                does, we tell you. We are a referral service, not a plumbing
+                company. Many toilet problems are a cheap part you can fix
+                yourself, so the free diagnostic is a good first step.
+              </p>
+              <p className="mt-3 text-sm">
+                <Link to="/diagnostic" className="font-semibold text-stream hover:underline">
+                  Run the free diagnostic
+                </Link>
+                {" · "}
+                <a
+                  href={UTAH_LICENSE_LOOKUP}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-semibold text-stream hover:underline"
+                >
+                  Check a Utah plumbing license
+                </a>
+              </p>
+            </section>
+          )}
           {metro && (
             <section className="rounded-xl border border-stream/25 bg-stream-soft/40 p-5">
               <h2 className="font-display text-xl font-semibold text-harbor">
@@ -78,7 +114,7 @@ function CityPage() {
                 ))}
               </ul>
               <p className="mt-4 text-xs font-bold uppercase tracking-[0.12em] text-fg-subtle">
-                Neighborhoods often served
+                Neighborhoods include
               </p>
               <div className="mt-2 flex flex-wrap gap-2">
                 {metro.neighborhoods.map((n) => (
@@ -165,6 +201,10 @@ function CityPage() {
             title={`FAQ · ${city.name}`}
             items={faqs}
             schemaId={`city-${state.slug}-${city.slug}`}
+          />
+
+          <WhoRunsThis
+            updated={pageUpdated(`/locations/${state.slug}/${city.slug}`)}
           />
 
           <section className="rounded-xl border border-border bg-bg-elevated p-5">

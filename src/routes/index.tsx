@@ -15,6 +15,8 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { STATES } from "@/data/locations";
 import { SERVICES } from "@/data/services";
+import { WhoRunsThis } from "@/components/shared/who-runs-this";
+import { pageUpdated } from "@/data/page-dates";
 
 export const Route = createFileRoute("/")({
   component: HomePage,
@@ -85,6 +87,84 @@ function HomePage() {
               subtitle="Emergency: ZIP + phone. Or add details and a photo."
               defaults={{ sourcePath: "/", urgency: "emergency" }}
             />
+          </div>
+        </div>
+      </section>
+
+      <section className="border-b border-border py-12 sm:py-14">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6">
+          <p className="text-xs font-bold uppercase tracking-[0.14em] text-stream">
+            Start here
+          </p>
+          <h2 className="mt-2 font-display text-3xl font-semibold text-harbor">
+            Most-read guides and local pages
+          </h2>
+          <div className="mt-6 grid gap-6 md:grid-cols-2">
+            <div>
+              <h3 className="font-display text-lg font-semibold text-harbor">
+                Fix it yourself
+              </h3>
+              <ul className="mt-3 space-y-2 text-sm">
+                {[
+                  { slug: "why-is-my-toilet-running", label: "Why your toilet keeps running" },
+                  { slug: "toilet-leaking-at-base", label: "Water around the base of the toilet" },
+                  { slug: "how-to-unclog-a-toilet", label: "How to unclog a toilet" },
+                  { slug: "toilet-installation-cost", label: "How much toilet installation costs" },
+                ].map((g) => (
+                  <li key={g.slug}>
+                    <Link
+                      to="/guides/$slug"
+                      params={{ slug: g.slug }}
+                      className="font-semibold text-stream hover:underline"
+                    >
+                      {g.label}
+                    </Link>
+                  </li>
+                ))}
+                <li>
+                  <Link to="/guides" className="text-stream hover:underline">
+                    All repair guides
+                  </Link>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="font-display text-lg font-semibold text-harbor">
+                Find a plumber in Utah
+              </h3>
+              <p className="mt-2 text-sm leading-relaxed text-fg-muted">
+                We are starting in Utah, from Ogden to Utah County.
+              </p>
+              <ul className="mt-3 space-y-2 text-sm">
+                <li>
+                  <Link
+                    to="/locations/$state"
+                    params={{ state: "utah" }}
+                    className="font-semibold text-stream hover:underline"
+                  >
+                    Toilet plumbers in Utah
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/locations/$state/$city"
+                    params={{ state: "utah", city: "salt-lake-city" }}
+                    className="font-semibold text-stream hover:underline"
+                  >
+                    Toilet plumbers in Salt Lake City
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/locations/$state/$city"
+                    params={{ state: "utah", city: "provo" }}
+                    className="font-semibold text-stream hover:underline"
+                  >
+                    Toilet plumbers in Provo
+                  </Link>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </section>
@@ -184,12 +264,13 @@ function HomePage() {
                 Locations
               </p>
               <h2 className="mt-2 font-display text-3xl font-semibold text-harbor">
-                Deep coverage to start
+                Where we take requests
               </h2>
               <p className="mt-2 max-w-xl text-fg-muted">
-                Texas, Florida, Arizona, and Utah, with local pages for Houston,
-                Miami, Austin, Dallas, Phoenix, Tampa, and eight Wasatch Front
-                cities from Ogden to Provo.
+                We are starting in Utah, with local pages for eight Wasatch Front
+                cities from Ogden to Provo. We also take requests in Texas,
+                Florida, and Arizona, but we do not have plumbers signed up
+                everywhere yet. If nobody covers your area, we tell you.
               </p>
             </div>
             <Button asChild variant="outline" className="hidden sm:inline-flex">
@@ -260,6 +341,10 @@ function HomePage() {
           </div>
         </div>
       </section>
+
+      <div className="mx-auto max-w-6xl px-4 pb-12 sm:px-6">
+        <WhoRunsThis updated={pageUpdated("/")} />
+      </div>
 
       <StickyMobileCta />
       <div className="h-16 sm:hidden" />
