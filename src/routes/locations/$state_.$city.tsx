@@ -1,4 +1,4 @@
-import { createFileRoute, Link, notFound } from "@tanstack/react-router";
+import { createFileRoute, Link, notFound, redirect } from "@tanstack/react-router";
 import { SiteShell } from "@/components/layout/site-shell";
 import { PageHero } from "@/components/shared/page-hero";
 import { LeadForm } from "@/components/leads/lead-form";
@@ -13,11 +13,16 @@ import { cityFaqs } from "@/data/faqs";
 import { getMetroContent, hasUniqueLocalContent } from "@/data/metro-content";
 import { WhoRunsThis } from "@/components/shared/who-runs-this";
 import { pageUpdated } from "@/data/page-dates";
+import { redirectForCityHub } from "@/data/out-of-state-redirects";
 
 const UTAH_LICENSE_LOOKUP = "https://secure.utah.gov/llv/search/index.html";
 
 export const Route = createFileRoute("/locations/$state_/$city")({
   loader: ({ params }) => {
+    const dest = redirectForCityHub(params.state, params.city);
+    if (dest) {
+      throw redirect({ to: dest, statusCode: 301 });
+    }
     const match = getCity(params.state, params.city);
     if (!match) throw notFound();
     const partners = partnersForCity(match.state.slug, match.city.slug);

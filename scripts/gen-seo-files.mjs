@@ -105,11 +105,32 @@ const disallow = [
   "/for-plumbers/territory",
 ];
 
+// City hubs permanently redirected off-site (2026-11-10). Keep them out of
+// the sitemap so we do not ask Google to recrawl URLs that 301 away.
+const redirectedHubs = new Set(
+  [
+    ...read("src/data/out-of-state-redirects.ts").matchAll(
+      /state:\s*"([a-z0-9-]+)",\s*city:\s*"([a-z0-9-]+)"/g,
+    ),
+  ].map((m) => `${m[1]}/${m[2]}`),
+);
+if (redirectedHubs.size !== 6) {
+  console.error(
+    `[seo] expected 6 redirected city hubs, found ${redirectedHubs.size}`,
+  );
+  process.exit(1);
+}
+
 const urls = new Set(staticPaths);
 let skipped = 0;
 for (const s of states) {
   urls.add(`/locations/${s.slug}`);
   for (const c of s.cities) {
+    if (redirectedHubs.has(`${s.slug}/${c}`)) {
+      // Hub 301s to /locations/utah; city x service URLs 301 to /services/{slug}.
+      skipped += services.length;
+      continue;
+    }
     if (!deepMetros.has(`${s.slug}/${c}`)) {
       // Template city page is noindexed in the route; keep it out of the sitemap too.
       skipped += services.length;

@@ -1,4 +1,4 @@
-import { createFileRoute, Link, notFound } from "@tanstack/react-router";
+import { createFileRoute, Link, notFound, redirect } from "@tanstack/react-router";
 import { SiteShell } from "@/components/layout/site-shell";
 import { PageHero } from "@/components/shared/page-hero";
 import { LeadForm } from "@/components/leads/lead-form";
@@ -17,9 +17,18 @@ import {
   hasUniqueLocalContent,
 } from "@/data/metro-content";
 import { isIndexableCityService } from "@/data/indexable-city-services";
+import { redirectForCityService } from "@/data/out-of-state-redirects";
 
 export const Route = createFileRoute("/locations/$state_/$city_/$service")({
   loader: ({ params }) => {
+    const dest = redirectForCityService(
+      params.state,
+      params.city,
+      params.service,
+    );
+    if (dest) {
+      throw redirect({ to: dest, statusCode: 301 });
+    }
     const match = getCity(params.state, params.city);
     const service = getService(params.service);
     if (!match || !service) throw notFound();

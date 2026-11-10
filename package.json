@@ -15,7 +15,8 @@
     "typecheck": "tsc --noEmit",
     "lint": "eslint .",
     "format": "prettier --write .",
-    "seo:files": "node scripts/gen-seo-files.mjs"
+    "seo:files": "node scripts/gen-seo-files.mjs",
+    "verify:redirects": "node scripts/gen-seo-files.mjs && node scripts/verify-redirects.mjs"
   },
   "dependencies": {
     "@electric-sql/pglite": "^0.5.3",
