@@ -4,6 +4,7 @@ import { tanstackStart } from "@tanstack/react-start/plugin/vite";
 import viteReact from "@vitejs/plugin-react";
 import tailwindcss from "@tailwindcss/vite";
 import { nitro } from "nitro/vite";
+import { nitroRedirectRules } from "./src/data/out-of-state-redirects";
 
 /**
  * Finish PGLite bootstrap during dev-server setup (before traffic). Vite awaits
@@ -147,6 +148,7 @@ export default defineConfig(({ command }) => ({
             routeRules: {
               "/feed": { redirect: { to: "/", status: 301 } },
               "/feed/": { redirect: { to: "/", status: 301 } },
+              ...nitroRedirectRules(),
             },
           }),
         ]
