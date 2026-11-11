@@ -286,7 +286,7 @@ export const GUIDES: Guide[] = [
     excerpt:
       "The plunger technique most people get wrong, what to do when it fails, and the one product to keep away from your toilet.",
     readMinutes: 7,
-    updated: "2026-10-25",
+    updated: "2026-11-11",
     body: [],
     sections: [
       {
@@ -368,6 +368,16 @@ export const GUIDES: Guide[] = [
       },
     ],
     faqs: [
+      {
+        question: "What is the fastest way to clear a clogged toilet?",
+        answer:
+          "Stop flushing, then use a flange plunger: seat it in the drain opening, push down slowly once to set the seal, and pump firmly 10 to 15 times. Repeat two or three times. If it still won't drain, a closet auger is the next step, not chemical drain cleaner.",
+      },
+      {
+        question: "What is the best solution for a clogged toilet?",
+        answer:
+          "For most clogs, a flange plunger used properly, and a closet auger if plunging fails twice. Dish soap and hot (not boiling) tap water can soften a paper clog. Skip chemical drain cleaner. If other drains in the house are slow too, the clog is past the toilet and a plumber is the right call.",
+      },
       {
         question: "How do you unclog a toilet without a plunger?",
         answer:
