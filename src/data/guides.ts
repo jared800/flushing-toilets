@@ -547,7 +547,7 @@ export const GUIDES: Guide[] = [
     excerpt:
       "When nothing is blocked but the flush is weak, the cause is usually in the tank or under the rim — and both are things you can check yourself.",
     readMinutes: 6,
-    updated: "2026-10-25",
+    updated: "2026-11-12",
     body: [],
     sections: [
       {
@@ -623,6 +623,16 @@ export const GUIDES: Guide[] = [
         question: "Why do I have to hold the handle down to flush?",
         answer:
           "The chain between the handle arm and the flapper has too much slack, so the flapper only lifts while you hold it. Shorten the chain to about half an inch of slack. If the handle itself spins loosely, tighten the nut inside the tank — on most toilets it is reverse-threaded, so it tightens counter-clockwise.",
+      },
+      {
+        question: "Why won't my toilet flush when I push the handle?",
+        answer:
+          "If the handle moves but nothing happens, lift the tank lid: the chain has usually come off the handle arm or the flapper, or the handle arm has snapped. If the tank is empty or only part full, check that the shutoff valve behind the toilet is fully open and that the fill valve refills the tank after a flush.",
+      },
+      {
+        question: "How do I make my toilet flush stronger?",
+        answer:
+          "Set the tank water to the fill line, about an inch below the top of the overflow tube, give the flapper chain about half an inch of slack, remove any brick or bottle from the tank, and clear mineral scale from the rim holes and siphon jet. If the bowl still drains slowly, plunge or auger for a partial clog in the trap.",
       },
       {
         question: "Is a weak flush a sign of a sewer problem?",
