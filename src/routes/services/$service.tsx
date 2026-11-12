@@ -37,7 +37,9 @@ function ServicePage() {
   const { service } = Route.useLoaderData();
   const faqs = service.faqs ?? serviceFaqs(service);
   const guides = guidesForService(service.slug);
-  const localPages = METRO_CONTENT.filter((m) => m.services[service.slug]).map(
+  const localPages = METRO_CONTENT.filter(
+    (m) => m.stateSlug === "utah" && m.services[service.slug],
+  ).map(
     (m) => {
       const state = STATES.find((st) => st.slug === m.stateSlug);
       const city = state?.cities.find((c) => c.slug === m.citySlug);

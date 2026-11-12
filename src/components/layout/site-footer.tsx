@@ -56,37 +56,19 @@ export function SiteFooter() {
             <li>
               <Link
                 to="/locations/$state/$city"
-                params={{ state: "texas", city: "houston" }}
+                params={{ state: "utah", city: "salt-lake-city" }}
                 className="text-sm text-bg-elevated/80 hover:text-bg-elevated"
               >
-                Houston
+                Salt Lake City
               </Link>
             </li>
             <li>
               <Link
                 to="/locations/$state/$city"
-                params={{ state: "texas", city: "austin" }}
+                params={{ state: "utah", city: "provo" }}
                 className="text-sm text-bg-elevated/80 hover:text-bg-elevated"
               >
-                Austin
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/locations/$state/$city"
-                params={{ state: "florida", city: "miami" }}
-                className="text-sm text-bg-elevated/80 hover:text-bg-elevated"
-              >
-                Miami
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/locations/$state/$city"
-                params={{ state: "arizona", city: "phoenix" }}
-                className="text-sm text-bg-elevated/80 hover:text-bg-elevated"
-              >
-                Phoenix
+                Provo
               </Link>
             </li>
           </ul>
