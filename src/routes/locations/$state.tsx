@@ -6,6 +6,7 @@ import { getState } from "@/data/locations";
 import { SERVICES } from "@/data/services";
 import { WhoRunsThis } from "@/components/shared/who-runs-this";
 import { pageUpdated } from "@/data/page-dates";
+import { redirectForCityHub } from "@/data/out-of-state-redirects";
 
 /** Utah's official license lookup (Division of Professional Licensing). */
 const UTAH_LICENSE_LOOKUP = "https://secure.utah.gov/llv/search/index.html";
@@ -97,7 +98,9 @@ function StatePage() {
           Cities with local pages
         </h2>
         <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-          {state.cities.map((city) => (
+          {state.cities
+            .filter((city) => !redirectForCityHub(state.slug, city.slug))
+            .map((city) => (
             <Link
               key={city.slug}
               to="/locations/$state/$city"
