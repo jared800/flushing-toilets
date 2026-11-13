@@ -972,7 +972,7 @@ export const GUIDES: Guide[] = [
     answer:
       "If a toilet is overflowing, lift the tank lid and push the flapper down to stop water entering the bowl, then turn the shut-off valve behind the toilet clockwise. Don't flush again. Once the water stops, clear the clog with a flange plunger. If other drains are backing up too, call a plumber.",
     readMinutes: 4,
-    updated: "2026-10-25",
+    updated: "2026-11-13",
     body: [],
     sections: [
       {
@@ -1016,6 +1016,16 @@ export const GUIDES: Guide[] = [
         question: "Is toilet overflow water dangerous?",
         answer:
           "Treat it as contaminated if it came from the bowl. Wear gloves, clean hard surfaces with disinfectant, and throw away soaked rugs or cardboard. Sewage from a main-line backup needs a more thorough clean-up.",
+      },
+      {
+        question: "Why does my toilet overflow when I flush?",
+        answer:
+          "Almost always because the drain is partly or fully clogged, so water fills the bowl faster than it can leave. Less often the fill valve or float is set too high or stuck, so the tank keeps sending water. If the bowl rises and then slowly drains, it's a clog: plunge it. If the tank keeps running after the flush, lift the float and check the fill valve.",
+      },
+      {
+        question: "Should I turn off the water if my toilet is overflowing?",
+        answer:
+          "Yes. Turn the shut-off valve behind the toilet clockwise until it stops, and push the flapper closed in the tank to stop water entering the bowl right away. If the valve is stuck or there's no valve, shut off the main water valve to the house.",
       },
     ],
     sources: [
