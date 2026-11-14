@@ -1042,7 +1042,7 @@ export const GUIDES: Guide[] = [
     answer:
       "A toilet leaking from the tank is usually leaking at the tank bolts, the rubber tank-to-bowl gasket, or the supply line connection, and sometimes through a hairline crack. Dry the tank, run your hand under each bolt and the fill-valve nut, and look for the first drip. Worn bolts and gaskets come as an inexpensive kit.",
     readMinutes: 5,
-    updated: "2026-10-25",
+    updated: "2026-11-14",
     body: [],
     sections: [
       {
@@ -1083,6 +1083,16 @@ export const GUIDES: Guide[] = [
         question: "Can I keep using a toilet that leaks from the tank?",
         answer:
           "For a slow drip at a bolt, yes, for a short time with a towel underneath, but get it fixed soon. Water under the floor causes rot. For a cracked tank, turn the water off and don't use it.",
+      },
+      {
+        question: "Why is my toilet leaking between the tank and bowl?",
+        answer:
+          "Usually the rubber tank-to-bowl gasket or the washers on the tank bolts have hardened. Tightening the bolts a little can stop a drip, but over-tightening cracks porcelain. If it still drips, replace the bolts, washers and gasket together as a kit.",
+      },
+      {
+        question: "How can I tell if my toilet tank is leaking into the bowl?",
+        answer:
+          "Put a few drops of food colouring in the tank and don't flush. If colour shows up in the bowl, water is leaking past the flapper. EPA says worn flappers cause most toilet leaks, and HomeGuide puts a DIY flapper fix at about $12 to $30.",
       },
     ],
     sources: [
