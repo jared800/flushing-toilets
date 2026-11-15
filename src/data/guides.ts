@@ -286,7 +286,7 @@ export const GUIDES: Guide[] = [
     excerpt:
       "The plunger technique most people get wrong, what to do when it fails, and the one product to keep away from your toilet.",
     readMinutes: 7,
-    updated: "2026-11-11",
+    updated: "2026-11-15",
     body: [],
     sections: [
       {
@@ -392,6 +392,16 @@ export const GUIDES: Guide[] = [
         question: "Will a clogged toilet eventually unclog itself?",
         answer:
           "Sometimes. Waste and toilet paper break down in water, so a soft clog often clears on its own within a few hours, and letting the bowl sit is a legitimate first move. An object, a wipe, or anything fibrous will not break down and will not clear itself no matter how long you wait.",
+      },
+      {
+        question: "What can I pour down a toilet to unclog it?",
+        answer:
+          "A generous squirt of dish soap, left for 10 to 15 minutes, followed by a bucket of hot tap water poured from waist height. That can loosen an ordinary paper clog. Do not pour boiling water, which can crack porcelain, or chemical drain cleaner, which rarely reaches a toilet clog and leaves caustic liquid in the bowl. If the water does not drop, use a flange plunger or a closet auger.",
+      },
+      {
+        question: "How do I unclog a toilet that is full of water?",
+        answer:
+          "Do not flush again. Lift the tank lid and push the flapper down to stop more water coming in, or turn off the valve behind the toilet. Wait 20 minutes for the level to drop, or bail some water into a bucket, leaving enough to cover the plunger cup. Then plunge with a flange plunger: one slow push to set the seal, then 10 to 15 firm strokes.",
       },
       {
         question: "Does dish soap and hot water actually work?",
