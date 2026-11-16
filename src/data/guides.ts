@@ -43,7 +43,7 @@ export const GUIDES: Guide[] = [
     excerpt:
       "Recurring clogs usually mean something specific is wrong, not just too much paper. Here's how to work out which, in order of likelihood.",
     readMinutes: 7,
-    updated: "2026-10-10",
+    updated: "2026-11-16",
     body: [],
     sections: [
       {
@@ -106,6 +106,16 @@ export const GUIDES: Guide[] = [
         question: "Can too much toilet paper cause repeated clogs?",
         answer:
           "Yes, especially with older low-flow toilets and thick quilted paper. Try flushing halfway through for big loads, or switch to a paper that breaks up faster. If the clogs keep happening with ordinary use, look for one of the other causes.",
+      },
+      {
+        question: "Why does my toilet keep clogging when I only use toilet paper?",
+        answer:
+          "With only toilet paper, the usual suspects are a weak flush (a low tank fill, a flapper chain with too much slack, or mineral-clogged rim holes), a toilet that never flushed well, or a partial blockage in the trap. If other drains are also slow or gurgle, the cause is more likely a blocked vent or the main line.",
+      },
+      {
+        question: "Is a toilet that clogs every week a sign of a bigger problem?",
+        answer:
+          "It can be. A weekly clog means something specific is wrong, so plunging harder won't fix it. Check what is being flushed, run a closet auger for an object in the trap, and see whether other drains are slow. If several fixtures are affected, call a plumber to check the main drain or sewer line.",
       },
       {
         question: "Should I replace a toilet that keeps clogging?",
