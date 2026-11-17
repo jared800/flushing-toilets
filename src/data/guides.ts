@@ -674,7 +674,7 @@ export const GUIDES: Guide[] = [
     excerpt:
       "Four different faults look identical on the floor. Ten minutes with paper towel tells you which one you have.",
     readMinutes: 6,
-    updated: "2026-10-25",
+    updated: "2026-11-17",
     body: [],
     sections: [
       {
@@ -729,6 +729,16 @@ export const GUIDES: Guide[] = [
       },
     ],
     faqs: [
+      {
+        question: "Why does my toilet leak at the base only when I flush?",
+        answer:
+          "Water that shows up under the base shortly after a flush, while the floor stays dry between flushes, almost always means the wax ring under the toilet has failed. Each flush pushes a little water past the broken seal. Stop using that toilet until the seal is replaced, because most of the water goes into the subfloor where you can't see it.",
+      },
+      {
+        question: "How much does it cost to fix a toilet leaking at the base?",
+        answer:
+          "If it is the wax seal, HomeGuide puts a plumber pulling the toilet, replacing the wax ring and resetting it at around $230. Doing it yourself, a flange kit, wax ring and spacers run about $10 to $50. A leaking supply line is cheaper still: a braided stainless line costs about ten dollars. Costs go up if the flange is broken or the subfloor has rotted.",
+      },
       {
         question: "Can I just caulk around the base to stop the leak?",
         answer:
