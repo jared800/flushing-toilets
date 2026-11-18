@@ -1142,7 +1142,7 @@ export const GUIDES: Guide[] = [
     excerpt:
       "Sourced national price ranges for installing or replacing a toilet, what's included, the extras that change a quote, and how to get an accurate price.",
     readMinutes: 8,
-    updated: "2026-10-10",
+    updated: "2026-11-18",
     body: [],
     sections: [
       {
@@ -1214,6 +1214,16 @@ export const GUIDES: Guide[] = [
         question: "Is toilet installation cheaper if I buy the toilet myself?",
         answer:
           "Often, because you control the fixture price, and installation-only labor runs $150-$450 according to HomeGuide. Make sure it matches your rough-in and that the plumber is willing to install a customer-supplied toilet; some don't warranty fixtures they didn't supply.",
+      },
+      {
+        question: "How much do plumbers charge to install a toilet?",
+        answer:
+          "Angi puts professional toilet installation at about $224-$533, with most homeowners paying around $374 (2026). HomeGuide puts installation labor alone at $150-$450, or $350-$800 if the plumber supplies a standard toilet. Removing the old toilet, a broken flange or after-hours service adds to that, so ask for a flat written price.",
+      },
+      {
+        question: "Does toilet installation cost include removing the old toilet?",
+        answer:
+          "Not always. Removing and disposing of the old toilet adds $50-$200 according to both Angi and HomeGuide, while Angi's full replacement figure of about $275-$480 already includes removal. Ask whether removal, a new wax ring, closet bolts and a supply line are included before you compare quotes.",
       },
       {
         question: "Can I install a toilet myself?",
