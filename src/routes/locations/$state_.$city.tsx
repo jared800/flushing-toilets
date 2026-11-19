@@ -13,7 +13,10 @@ import { cityFaqs } from "@/data/faqs";
 import { getMetroContent, hasUniqueLocalContent } from "@/data/metro-content";
 import { WhoRunsThis } from "@/components/shared/who-runs-this";
 import { pageUpdated } from "@/data/page-dates";
-import { redirectForCityHub } from "@/data/out-of-state-redirects";
+import {
+  redirectForCityHub,
+  redirectForCityService,
+} from "@/data/out-of-state-redirects";
 
 const UTAH_LICENSE_LOOKUP = "https://secure.utah.gov/llv/search/index.html";
 
@@ -157,6 +160,31 @@ function CityPage() {
             <div className="mt-4 grid gap-2 sm:grid-cols-2">
               {SERVICES.map((s) => {
                 const metroSvc = metro?.services[s.slug];
+                const chipClass =
+                  "rounded-lg border border-border bg-surface px-3 py-3 text-sm font-semibold text-harbor shadow-sm hover:border-stream/40";
+                const chipBody = (
+                  <>
+                    {s.name}
+                    <span className="mt-1 block text-xs font-normal text-fg-muted">
+                      {metroSvc?.headline ?? s.seoBlurb}
+                    </span>
+                  </>
+                );
+                // Out-of-state city x service pages 301 to /services/{slug}
+                // (out-of-state-redirects.ts). Link straight to the target
+                // so this page never links to a redirect.
+                if (redirectForCityService(state.slug, city.slug, s.slug)) {
+                  return (
+                    <Link
+                      key={s.slug}
+                      to="/services/$service"
+                      params={{ service: s.slug }}
+                      className={chipClass}
+                    >
+                      {chipBody}
+                    </Link>
+                  );
+                }
                 return (
                   <Link
                     key={s.slug}
@@ -166,12 +194,9 @@ function CityPage() {
                       city: city.slug,
                       service: s.slug,
                     }}
-                    className="rounded-lg border border-border bg-surface px-3 py-3 text-sm font-semibold text-harbor shadow-sm hover:border-stream/40"
+                    className={chipClass}
                   >
-                    {s.name}
-                    <span className="mt-1 block text-xs font-normal text-fg-muted">
-                      {metroSvc?.headline ?? s.seoBlurb}
-                    </span>
+                    {chipBody}
                   </Link>
                 );
               })}

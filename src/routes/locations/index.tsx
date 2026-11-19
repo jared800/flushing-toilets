@@ -3,6 +3,7 @@ import { SiteShell } from "@/components/layout/site-shell";
 import { PageHero } from "@/components/shared/page-hero";
 import { GeoSearch } from "@/components/search/geo-search";
 import { STATES } from "@/data/locations";
+import { isRedirectedCityHub } from "@/data/out-of-state-redirects";
 
 export const Route = createFileRoute("/locations/")({
   component: LocationsIndexPage,
@@ -59,7 +60,10 @@ function LocationsIndexPage() {
                 </Link>
               </div>
               <div className="mt-4 flex flex-wrap gap-2">
-                {state.cities.map((city) => (
+                {/* Hubs that 301 to /locations/utah are not linked. */}
+                {state.cities
+                  .filter((city) => !isRedirectedCityHub(state.slug, city.slug))
+                  .map((city) => (
                   <Link
                     key={city.slug}
                     to="/locations/$state/$city"
