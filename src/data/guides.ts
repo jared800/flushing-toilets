@@ -768,7 +768,7 @@ export const GUIDES: Guide[] = [
     excerpt:
       "Knowing the difference tells you whether to grab the plunger or stop using water and call a plumber, before wastewater spreads.",
     readMinutes: 8,
-    updated: "2026-10-10",
+    updated: "2026-11-19",
     body: [],
     sections: [
       {
@@ -838,6 +838,16 @@ export const GUIDES: Guide[] = [
         question: "Is a sewer backup an emergency?",
         answer:
           "Yes, if sewage is coming into the house. It's a health hazard and the damage spreads the longer water keeps flowing. Stop using water immediately; a plumber can usually clear the line the same day.",
+      },
+      {
+        question: "Why does my toilet gurgle or bubble when the shower or washing machine drains?",
+        answer:
+          "Water from one fixture showing up in another is a warning sign of a partial main sewer line clog: the drain water can't get past the blockage, so it pushes air and water back up the nearest low opening, often the toilet or tub. If more than one drain is slow or gurgling at once, stop running water and call a plumber before it turns into a full backup.",
+      },
+      {
+        question: "How much does it cost to clear a main sewer line clog?",
+        answer:
+          "National guides put emergency sewer line work at $500 to $3,800 (HomeGuide), and Angi lists main sewer line clog repair at $1,325 to $5,000. A root clog cleared with a snake through the cleanout sits at the low end; a broken or collapsed pipe that has to be dug up sits at the high end. If it keeps coming back, ask for a camera inspection so you fix the cause.",
       },
     ],
     sources: [
