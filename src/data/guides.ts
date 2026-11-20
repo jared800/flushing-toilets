@@ -136,7 +136,7 @@ export const GUIDES: Guide[] = [
     excerpt:
       "A quiet runner can waste a lot of water before you notice. Here's how to estimate what yours is costing, and the cheap part that usually fixes it.",
     readMinutes: 6,
-    updated: "2026-10-10",
+    updated: "2026-11-20",
     body: [],
     sections: [
       {
@@ -195,6 +195,16 @@ export const GUIDES: Guide[] = [
         question: "Do I need a plumber to fix a running toilet?",
         answer:
           "Usually not. Flappers and fill valves are designed to be replaced by homeowners. Call a plumber if the shut-off valve behind the toilet won't turn or starts leaking when you move it, or if the tank is cracked.",
+      },
+      {
+        question: "How much water does a running toilet waste?",
+        answer:
+          "It depends on how fast it leaks, so measure yours: read the water meter, use no water for an hour, and read it again, then close the toilet's shut-off valve and repeat. EPA says household leaks can waste 180 gallons a week and that most toilet leaks come from old or worn flappers.",
+      },
+      {
+        question: "How much does it cost to fix a running toilet?",
+        answer:
+          "Usually under twenty dollars if you do it yourself, because the fix is most often a new flapper or fill valve from a hardware store. If you hire a plumber, HomeGuide puts typical toilet repair at $130 to $300 for parts and labor.",
       },
     ],
     sources: [
