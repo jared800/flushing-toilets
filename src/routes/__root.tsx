@@ -92,6 +92,22 @@ function OrgJsonLd() {
   );
 }
 
+/**
+ * Microsoft Clarity (project zghc0y3qod). Jared's standing yes, Nov 19 2026.
+ * Session recordings and heatmaps only; no form values are sent by default.
+ */
+const CLARITY_ID = "zghc0y3qod";
+function ClarityScript() {
+  return (
+    <script
+      type="text/javascript"
+      dangerouslySetInnerHTML={{
+        __html: `(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, document, "clarity", "script", "${CLARITY_ID}");`,
+      }}
+    />
+  );
+}
+
 function RootComponent() {
   return (
     <RootDocument>
@@ -107,6 +123,7 @@ function RootDocument({ children }: Readonly<{ children: ReactNode }>) {
         <HeadContent />
         <CanonicalLink />
         <OrgJsonLd />
+        <ClarityScript />
       </head>
       <body className="min-h-screen bg-bg text-fg antialiased">
         {children}
