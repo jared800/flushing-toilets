@@ -1,5 +1,6 @@
 import { createFileRoute, Link, notFound, redirect } from "@tanstack/react-router";
 import { SiteShell } from "@/components/layout/site-shell";
+import { fitMetaDescription, META_FALLBACK, nearbyMetaLine } from "@/lib/meta-description";
 import { PageHero } from "@/components/shared/page-hero";
 import { LeadForm } from "@/components/leads/lead-form";
 import { PartnerCard } from "@/components/partners/partner-card";
@@ -40,8 +41,13 @@ export const Route = createFileRoute("/locations/$state_/$city")({
       },
       {
         name: "description",
-        content:
-          loaderData?.metro?.heroExtra ?? loaderData?.city.blurb ?? "",
+        content: loaderData
+          ? fitMetaDescription(
+              `Toilet plumbers in ${loaderData.city.name}, ${loaderData.state.abbr}.`,
+              [loaderData.metro?.heroExtra, loaderData.city.blurb],
+              [nearbyMetaLine(loaderData.metro?.neighborhoods), META_FALLBACK],
+            )
+          : "",
       },
       // Template-filled cities measured ~69% identical to each other
       // (2026-10-09 audit). Keep them usable for visitors but out of the

@@ -18,7 +18,7 @@ import {
   getQuestion,
 } from "@/data/diagnostic";
 
-const TITLE = "Toilet problem diagnostic — find out what's wrong in 30 seconds";
+const TITLE = "Toilet problem diagnostic in 30 seconds";
 const DESCRIPTION =
   "Answer two or three questions about what your toilet is doing and get a straight answer: what's causing it, whether you can fix it yourself, and when you actually need a plumber.";
 

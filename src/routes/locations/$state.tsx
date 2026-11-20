@@ -1,5 +1,6 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { SiteShell } from "@/components/layout/site-shell";
+import { fitMetaDescription, META_FALLBACK } from "@/lib/meta-description";
 import { PageHero } from "@/components/shared/page-hero";
 import { GeoSearch } from "@/components/search/geo-search";
 import { getState } from "@/data/locations";
@@ -25,7 +26,13 @@ export const Route = createFileRoute("/locations/$state")({
       },
       {
         name: "description",
-        content: loaderData?.state.blurb ?? "",
+        content: loaderData
+          ? fitMetaDescription(
+              `Toilet plumbers in ${loaderData.state.name}.`,
+              [loaderData.state.blurb],
+              [META_FALLBACK],
+            )
+          : "",
       },
     ],
   }),

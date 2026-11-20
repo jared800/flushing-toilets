@@ -1,5 +1,6 @@
 import { createFileRoute, Link, notFound, redirect } from "@tanstack/react-router";
 import { SiteShell } from "@/components/layout/site-shell";
+import { fitMetaDescription, META_FALLBACK } from "@/lib/meta-description";
 import { PageHero } from "@/components/shared/page-hero";
 import { LeadForm } from "@/components/leads/lead-form";
 import { PartnerCard } from "@/components/partners/partner-card";
@@ -51,11 +52,17 @@ export const Route = createFileRoute("/locations/$state_/$city_/$service")({
       },
       {
         name: "description",
-        content: loaderData?.metroService
-          ? loaderData.metroService.intro
-          : loaderData
-            ? `${loaderData.service.seoBlurb} Serving ${loaderData.city.name}, ${loaderData.state.abbr}.`
-            : "",
+        content: loaderData
+          ? fitMetaDescription(
+              `${loaderData.service.name} in ${loaderData.city.name}, ${loaderData.state.abbr}.`,
+              [
+                loaderData.metroService?.intro,
+                loaderData.service.seoBlurb,
+                loaderData.service.summary,
+              ],
+              [META_FALLBACK],
+            )
+          : "",
       },
       // City x service pages are near-duplicates of each other across
       // cities, so they stay out of the index unless explicitly allowlisted
