@@ -221,7 +221,7 @@ export const GUIDES: Guide[] = [
     excerpt:
       "Cracks, rocking bases and endless part swaps are signs it may be time for a new toilet. Here's a straight way to decide, with sourced costs.",
     readMinutes: 7,
-    updated: "2026-10-10",
+    updated: "2026-11-21",
     body: [],
     sections: [
       {
@@ -278,6 +278,21 @@ export const GUIDES: Guide[] = [
         question: "Can a cracked toilet tank be repaired?",
         answer:
           "Not reliably. Sealants can slow a weep, but a tank or bowl that holds water under pressure and is cracked should be replaced before it fails and floods the floor.",
+      },
+      {
+        question: "How much does it cost to replace a toilet?",
+        answer:
+          "Angi puts professional installation at $224 to $533, about $374 on average, for the labor. HomeGuide puts the total with a standard toilet at $350 to $800, about $600 on average. Removing and disposing of the old toilet adds $50 to $200 (Angi), and a damaged flange or floor costs extra.",
+      },
+      {
+        question: "Is it cheaper to repair or replace a toilet?",
+        answer:
+          "Repair is almost always cheaper when the problem is a part. A flapper or fill valve is usually under twenty dollars if you do it yourself, and HomeGuide puts a plumber's toilet repair at $130 to $300, against $350 to $800 for a new toilet installed. Replace when the porcelain is cracked, the toilet rocks and keeps breaking its seal, or it clogs no matter what you fix.",
+      },
+      {
+        question: "Should I replace a 20-year-old toilet?",
+        answer:
+          "Not because of age alone. HomeGuide says most toilets last 10 to 20 years and some 50 or more, and the worn parts inside are meant to be replaced. If the porcelain is sound and it flushes well, repair it. If it is an older high-volume or weak-flushing model, a WaterSense toilet uses 1.28 gallons per flush or less.",
       },
     ],
     sources: [
